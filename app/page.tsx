@@ -1,0 +1,116 @@
+import Image from "next/image";
+import Link from "next/link";
+import { Playfair_Display } from "next/font/google";
+
+const elegantFont = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export default function Home() {
+  return (
+    <main
+      style={{
+        minHeight: "100vh",
+        backgroundColor: "#FFF8F5",
+        color: "#6E5A50",
+      }}
+    >
+      <section
+        style={{
+          maxWidth: "1100px",
+          margin: "0 auto",
+          padding: "60px 24px 80px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+        }}
+      >
+        <Image
+          src="/logo.png"
+          alt="My Little Memory Box"
+          width={180}
+          height={180}
+          style={{ objectFit: "contain" }}
+        />
+
+        {/* HERO TEXT */}
+        <h1
+          className={elegantFont.className}
+          style={{
+            fontSize: "48px",
+            lineHeight: "1.2",
+            marginTop: "20px",
+            color: "#8B6F5A",
+            maxWidth: "800px",
+          }}
+        >
+          Ένα μέρος για να κρατήσεις
+          <br />
+          όλες τις στιγμές που δεν θέλεις να ξεχαστούν ποτέ.
+        </h1>
+
+        {/* SUBTITLE */}
+        <p
+          style={{
+            marginTop: "30px",
+            fontSize: "22px",
+            lineHeight: "1.8",
+            maxWidth: "760px",
+            color: "#8A7F7A",
+            fontFamily: "serif",
+          }}
+        >
+          Δημιούργησε το δικό σου Memory Box γεμάτο φωτογραφίες, βίντεο και λόγια αγάπης
+          <br />
+          και χάρισε στο παιδί σου ένα προσωποποιημένο παραμύθι
+          <br />
+          όπου πρωταγωνιστείτε εσύ και εκείνο.
+        </p>
+
+        {/* BUTTONS */}
+        <div
+          style={{
+            marginTop: "40px",
+            display: "flex",
+            gap: "16px",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          <Link
+            href="/preview"
+            style={{
+              padding: "15px 30px",
+              borderRadius: "999px",
+              backgroundColor: "#DCC4B8",
+              color: "#4F4039",
+              textDecoration: "none",
+              fontSize: "16px",
+              fontWeight: 600,
+            }}
+          >
+            Δημιούργησε τη δική σου ανάμνηση
+          </Link>
+
+          <Link
+            href="/preview"
+            style={{
+              padding: "15px 30px",
+              borderRadius: "999px",
+              border: "1px solid #D8C2B8",
+              color: "#6E5A50",
+              textDecoration: "none",
+              fontSize: "16px",
+              fontWeight: 500,
+              backgroundColor: "transparent",
+            }}
+          >
+            Δες πώς λειτουργεί
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+}
