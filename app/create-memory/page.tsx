@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { Playfair_Display } from "next/font/google";
+
+const elegantFont = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const wrap: CSSProperties = {
   minHeight: "100vh",
@@ -10,15 +16,30 @@ const wrap: CSSProperties = {
 };
 
 const inner: CSSProperties = {
-  maxWidth: "980px",
+  maxWidth: "1050px",
   margin: "0 auto",
 };
 
 const card: CSSProperties = {
-  backgroundColor: "rgba(255, 248, 243, 0.94)",
+  backgroundColor: "rgba(255, 248, 243, 0.95)",
   borderRadius: "30px",
-  padding: "38px",
+  padding: "40px",
   boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
+};
+
+const grid: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "32px",
+  marginTop: "20px",
+};
+
+const sectionCard: CSSProperties = {
+  backgroundColor: "#FBF4EE",
+  borderRadius: "22px",
+  padding: "22px",
+  lineHeight: "1.8",
+  color: "#705E55",
 };
 
 const inputStyle: CSSProperties = {
@@ -31,6 +52,7 @@ const inputStyle: CSSProperties = {
   marginBottom: "18px",
   backgroundColor: "#fff",
   color: "#5E4B42",
+  boxSizing: "border-box",
 };
 
 const labelStyle: CSSProperties = {
@@ -38,15 +60,6 @@ const labelStyle: CSSProperties = {
   fontWeight: 600,
   color: "#6B564C",
   display: "block",
-};
-
-const infoCard: CSSProperties = {
-  backgroundColor: "#F8EEE7",
-  borderRadius: "22px",
-  padding: "22px",
-  marginBottom: "28px",
-  lineHeight: "1.85",
-  color: "#705E55",
 };
 
 const checkboxRow: CSSProperties = {
@@ -68,8 +81,8 @@ export default function CreateMemoryPage() {
             <Image
               src="/logo.png"
               alt="My Little Memory Box"
-              width={240}
-              height={240}
+              width={260}
+              height={260}
               style={{
                 objectFit: "contain",
                 cursor: "pointer",
@@ -81,9 +94,10 @@ export default function CreateMemoryPage() {
 
         <div style={card}>
           <h1
+            className={elegantFont.className}
             style={{
               textAlign: "center",
-              fontSize: "40px",
+              fontSize: "42px",
               color: "#7D6457",
               marginBottom: "14px",
             }}
@@ -105,44 +119,71 @@ export default function CreateMemoryPage() {
             προσωποποιημένου Memory Box και του παραμυθιού σας.
           </p>
 
-          <div style={infoCard}>
-            <h2
-              style={{
-                fontSize: "24px",
-                color: "#7B6256",
-                marginBottom: "14px",
-              }}
-            >
-              Πριν προχωρήσεις
-            </h2>
+          <div style={grid}>
+            <div style={sectionCard}>
+              <h2
+                style={{
+                  fontSize: "24px",
+                  color: "#7B6256",
+                  marginBottom: "14px",
+                }}
+              >
+                Πώς θα λειτουργεί ο λογαριασμός σου
+              </h2>
 
-            <p style={{ marginBottom: "12px" }}>
-              Με τη δημιουργία λογαριασμού θα μπορείς να συμπληρώσεις τα
-              στοιχεία της ιστορίας σας, να ανεβάσεις υλικό που χρειάζεται για
-              τη δημιουργία του παραμυθιού και να παρακολουθείς την πορεία της
-              παραγγελίας σου.
-            </p>
+              <p style={{ marginBottom: "12px" }}>
+                Μέσα από τον λογαριασμό σου θα μπορείς να συμπληρώσεις τις
+                πληροφορίες που χρειάζονται για το παραμύθι, να οργανώσεις τις
+                αναμνήσεις σου και να προχωρήσεις στα επόμενα βήματα της
+                παραγγελίας.
+              </p>
 
-            <p style={{ marginBottom: "12px" }}>
-              Όταν ολοκληρωθεί το προσωποποιημένο παραμύθι σου, η προσωπική σου
-              σελίδα θα παραμείνει ενεργή για <strong>30 ημέρες</strong>, ώστε να
-              μπορείς να κάνεις export, να κατεβάσεις το υλικό σου ή να κρατήσεις
-              αντίγραφο των τελικών αρχείων.
-            </p>
+              <p style={{ marginBottom: "12px" }}>
+                Η προσωπική σου σελίδα θα παραμένει ενεργή για{" "}
+                <strong>30 ημέρες</strong> μετά την ολοκλήρωση του παραμυθιού,
+                ώστε να μπορείς να κάνεις export ή να κατεβάσεις το τελικό σου
+                υλικό.
+              </p>
 
-            <p style={{ marginBottom: "12px" }}>
-              Μετά το πέρας των 30 ημερών, η σελίδα αυτή μπορεί να απενεργοποιηθεί
-              ή να διαγραφεί, στο πλαίσιο σωστής διαχείρισης και περιορισμένης
-              αποθήκευσης προσωπικών δεδομένων.
-            </p>
+              <p>
+                Μετά το πέρας των 30 ημερών, η σελίδα μπορεί να απενεργοποιηθεί
+                ή να διαγραφεί στο πλαίσιο ασφαλούς και περιορισμένης φύλαξης
+                προσωπικών δεδομένων.
+              </p>
+            </div>
 
-            <p>
-              Ο λογαριασμός σου χρησιμοποιείται αποκλειστικά για τη δημιουργία,
-              διαχείριση και παράδοση της παραγγελίας σου.
-            </p>
+            <div style={sectionCard}>
+              <h2
+                style={{
+                  fontSize: "24px",
+                  color: "#7B6256",
+                  marginBottom: "14px",
+                }}
+              >
+                Ασφάλεια και συγκατάθεση
+              </h2>
+
+              <p style={{ marginBottom: "12px" }}>
+                Τα στοιχεία που υποβάλλεις χρησιμοποιούνται αποκλειστικά για τη
+                δημιουργία, διαχείριση και παράδοση του προσωποποιημένου Memory
+                Box και του παραμυθιού σου.
+              </p>
+
+              <p style={{ marginBottom: "12px" }}>
+                Το περιεχόμενο που θα ανεβάσεις, όπως φωτογραφίες, βίντεο και
+                κείμενα, θα χρησιμοποιείται μόνο για τον σκοπό της παραγγελίας
+                σου και δεν θα χρησιμοποιείται για άλλον σκοπό χωρίς τη ρητή
+                συγκατάθεσή σου.
+              </p>
+
+              <p>
+                Πριν προχωρήσεις, χρειάζεται να αποδεχθείς τους βασικούς όρους
+                ασφαλείας και επεξεργασίας δεδομένων.
+              </p>
+            </div>
           </div>
 
-          <form style={{ maxWidth: "760px", margin: "0 auto" }}>
+          <div style={{ maxWidth: "760px", margin: "34px auto 0" }}>
             <label style={labelStyle}>Ονοματεπώνυμο</label>
             <input
               type="text"
@@ -184,7 +225,7 @@ export default function CreateMemoryPage() {
                 borderRadius: "18px",
                 padding: "20px",
                 marginTop: "10px",
-                marginBottom: "24px",
+                marginBottom: "28px",
               }}
             >
               <div style={checkboxRow}>
@@ -207,8 +248,8 @@ export default function CreateMemoryPage() {
                 />
                 <label htmlFor="consent2" style={{ cursor: "pointer" }}>
                   Συμφωνώ με την επεξεργασία των προσωπικών δεδομένων που
-                  υποβάλλω για τη δημιουργία του προσωποποιημένου Memory Box
-                  και του παραμυθιού μου.
+                  υποβάλλω για τη δημιουργία του προσωποποιημένου Memory Box και
+                  του παραμυθιού μου.
                 </label>
               </div>
 
@@ -219,17 +260,32 @@ export default function CreateMemoryPage() {
                   style={{ marginTop: "4px" }}
                 />
                 <label htmlFor="consent3" style={{ cursor: "pointer" }}>
-                  Κατανοώ ότι η προσωπική μου σελίδα θα παραμείνει διαθέσιμη
-                  για 30 ημέρες μετά την ολοκλήρωση του παραμυθιού, ώστε να
-                  μπορώ να κάνω export ή download του υλικού μου.
+                  Κατανοώ ότι η προσωπική μου σελίδα θα παραμείνει διαθέσιμη για
+                  30 ημέρες μετά την ολοκλήρωση του παραμυθιού, ώστε να μπορώ να
+                  κάνω export ή download του υλικού μου.
+                </label>
+              </div>
+
+              <div style={checkboxRow}>
+                <input
+                  id="consent4"
+                  type="checkbox"
+                  style={{ marginTop: "4px" }}
+                />
+                <label htmlFor="consent4" style={{ cursor: "pointer" }}>
+                  Δηλώνω ότι έχω το δικαίωμα να υποβάλω το περιεχόμενο που
+                  ανεβάζω και ότι κατανοώ πως η χρήση του γίνεται αποκλειστικά
+                  για τη δημιουργία της παραγγελίας μου.
                 </label>
               </div>
             </div>
 
-            <button
-              type="submit"
+            <Link
+              href="/memory-details"
               style={{
                 width: "100%",
+                display: "block",
+                textAlign: "center",
                 padding: "16px 24px",
                 borderRadius: "20px",
                 border: "none",
@@ -238,10 +294,12 @@ export default function CreateMemoryPage() {
                 fontSize: "18px",
                 fontWeight: "600",
                 cursor: "pointer",
+                textDecoration: "none",
+                boxSizing: "border-box",
               }}
             >
-              Συνέχεια
-            </button>
+              Δημιουργία λογαριασμού
+            </Link>
 
             <div
               style={{
@@ -251,12 +309,12 @@ export default function CreateMemoryPage() {
                 color: "#7A6A62",
               }}
             >
-              Έχεις ήδη λογαριασμό;{" "}
+              Θέλεις να επιστρέψεις;{" "}
               <Link href="/" style={{ color: "#7D6457" }}>
-                Επιστροφή στην αρχική
+                Αρχική σελίδα
               </Link>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </main>
