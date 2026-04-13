@@ -27,15 +27,20 @@ export default function Home() {
           textAlign: "center",
         }}
       >
-        <Image
-          src="/logo.png"
-          alt="My Little Memory Box"
-          width={180}
-          height={180}
-          style={{ objectFit: "contain" }}
-        />
+        <Link href="/" style={{ display: "inline-block" }}>
+          <Image
+            src="/logo.png"
+            alt="My Little Memory Box"
+            width={260}
+            height={260}
+            style={{
+              objectFit: "contain",
+              cursor: "pointer",
+            }}
+            priority
+          />
+        </Link>
 
-        {/* HERO TEXT */}
         <h1
           className={elegantFont.className}
           style={{
@@ -51,7 +56,6 @@ export default function Home() {
           όλες τις στιγμές που δεν θέλεις να ξεχαστούν ποτέ.
         </h1>
 
-        {/* SUBTITLE */}
         <p
           style={{
             marginTop: "30px",
@@ -69,7 +73,6 @@ export default function Home() {
           όπου πρωταγωνιστείτε εσύ και εκείνο.
         </p>
 
-        {/* BUTTONS */}
         <div
           style={{
             marginTop: "40px",
@@ -80,7 +83,7 @@ export default function Home() {
           }}
         >
           <Link
-            href="/preview"
+            href="/create-memory"
             style={{
               padding: "15px 30px",
               borderRadius: "999px",
