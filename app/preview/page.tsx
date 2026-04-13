@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Playfair_Display } from "next/font/google";
 
@@ -102,7 +103,6 @@ export default function PreviewPage() {
         color: "#5E4B42",
       }}
     >
-      {/* 1. INTRO COVER */}
       <section
         style={{
           ...pageWrap,
@@ -113,13 +113,20 @@ export default function PreviewPage() {
           textAlign: "center",
         }}
       >
-        <Image
-          src="/logo.png"
-          alt="My Little Memory Box"
-          width={170}
-          height={170}
-          style={{ objectFit: "contain", marginBottom: "18px" }}
-        />
+        <Link href="/" style={{ display: "inline-block" }}>
+          <Image
+            src="/logo.png"
+            alt="My Little Memory Box"
+            width={250}
+            height={250}
+            style={{
+              objectFit: "contain",
+              marginBottom: "18px",
+              cursor: "pointer",
+            }}
+            priority
+          />
+        </Link>
 
         <h1
           className={elegantFont.className}
@@ -149,7 +156,6 @@ export default function PreviewPage() {
         </p>
       </section>
 
-      {/* 2. FOR YOU WHEN YOU GROW UP */}
       <section style={{ ...pageWrap, display: "flex", alignItems: "center" }}>
         <div
           style={{
@@ -190,7 +196,6 @@ export default function PreviewPage() {
         </div>
       </section>
 
-      {/* 3. FIRST MOMENTS */}
       <section
         style={{
           ...pageWrap,
@@ -221,7 +226,6 @@ export default function PreviewPage() {
         </div>
       </section>
 
-      {/* 4. FIRST DISCOVERIES */}
       <section
         style={{
           ...pageWrap,
@@ -252,7 +256,6 @@ export default function PreviewPage() {
         </div>
       </section>
 
-      {/* 5. GROWING SO FAST */}
       <section style={{ ...pageWrap, display: "flex", alignItems: "center" }}>
         <div
           style={{
@@ -289,224 +292,9 @@ export default function PreviewPage() {
             <br />
             (και λίγο από την ψυχραιμία μου 😅)
           </p>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "26px",
-              marginTop: "40px",
-            }}
-          >
-            <div style={{ ...mediaBox, minHeight: "260px" }}>
-              Μεγάλη φωτογραφία στιγμής
-            </div>
-            <div style={{ ...mediaBox, minHeight: "260px" }}>
-              Μεγάλη φωτογραφία στιγμής
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* 6. FIRST STEPS STANDING/RUNNING */}
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1.2fr 0.8fr",
-          gap: "32px",
-          alignItems: "start",
-        }}
-      >
-        <div style={card}>
-          <h2 className={elegantFont.className} style={titleStyle}>
-            Τα πρώτα σου βήματα
-          </h2>
-
-          <InfoLabel label="Η πρώτη φορά που σηκώθηκες όρθιο:" lines={2} />
-          <InfoLabel label="Η πρώτη σου τούμπα:" lines={2} />
-          <InfoLabel label="Η πρώτη φορά που έτρεξες προς το μέρος μου:" lines={3} />
-        </div>
-
-        <div style={{ display: "grid", gap: "24px" }}>
-          <div style={mediaBox}>Φωτογραφία πρώτων βημάτων</div>
-          <div style={{ ...mediaBox, minHeight: "280px" }}>
-            Βίντεο από τα πρώτα βήματα
-          </div>
-        </div>
-      </section>
-
-      {/* 7. HARD DAYS */}
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "32px",
-        }}
-      >
-        <div style={card}>
-          <h2
-            className={elegantFont.className}
-            style={{
-              ...titleStyle,
-              textAlign: "center",
-              fontSize: "40px",
-              lineHeight: "1.45",
-            }}
-          >
-            Οι μέρες που δεν ήταν εύκολες...
-            <br />
-            αλλά ήταν δικές μας 🤍
-          </h2>
-
-          <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-            <InfoLabel label="Μια μέρα που ένιωσα ότι δεν τα κατάφερνα:" lines={3} />
-            <InfoLabel label="Μια στιγμή που λύγισα (αλλά δεν το έδειξα):" lines={3} />
-            <InfoLabel
-              label="Κάτι που με δυσκόλεψε περισσότερο απ’ όσο περίμενα:"
-              lines={3}
-            />
-            <InfoLabel label="Και παρ’ όλα αυτά... συνέχισα γιατί:" lines={2} />
-          </div>
-        </div>
-      </section>
-
-      {/* 8. YOU MADE ME FEEL EVERYTHING */}
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1.1fr 0.9fr",
-          gap: "32px",
-          alignItems: "start",
-        }}
-      >
-        <div style={card}>
-          <h2 className={elegantFont.className} style={titleStyle}>
-            Οι στιγμές που με έκανες να νιώθω τα πάντα
-          </h2>
-
-          <InfoLabel label="Η στιγμή που ένιωσα περήφανη για σένα:" lines={2} />
-          <InfoLabel label="Κάτι μικρό που για μένα ήταν τεράστιο:" lines={3} />
-          <InfoLabel label="Μια αγκαλιά που δεν ήθελα να τελειώσει:" lines={2} />
-          <InfoLabel label='Η στιγμή που σκέφτηκα “αυτό είναι η ευτυχία”:' lines={2} />
-        </div>
-
-        <div style={mediaBox}>
-          Εδώ θα μπαίνουν
-          <br />
-          οι φωτογραφίες
-          <br />
-          των πιο συγκινητικών στιγμών
-        </div>
-      </section>
-
-      {/* 9. NOT ALL DAYS BEAUTIFUL */}
-      <section style={{ ...pageWrap, display: "flex", alignItems: "center" }}>
-        <div
-          style={{
-            ...card,
-            width: "100%",
-            textAlign: "center",
-            padding: "70px 34px",
-          }}
-        >
-          <h2
-            className={elegantFont.className}
-            style={{
-              fontSize: "44px",
-              lineHeight: "1.5",
-              color: "#7D6457",
-              marginBottom: "26px",
-            }}
-          >
-            Δεν είναι όλες οι μέρες όμορφες...
-          </h2>
-
-          <p
-            style={{
-              ...textStyle,
-              fontSize: "26px",
-              maxWidth: "820px",
-              margin: "0 auto",
-            }}
-          >
-            αλλά όλες είναι αληθινές.
-            <br />
-            <br />
-            Και μέσα σε όλα αυτά,
-            <br />
-            σε αγαπώ ακόμη πιο πολύ.
-          </p>
-        </div>
-      </section>
-
-      {/* 10. TOWARDS THE WORLD */}
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "32px",
-        }}
-      >
-        <div style={card}>
-          <h2
-            className={elegantFont.className}
-            style={{
-              ...titleStyle,
-              textAlign: "center",
-              fontSize: "40px",
-            }}
-          >
-            Τα πρώτα σου βήματα προς τον κόσμο
-          </h2>
-
-          <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-            <InfoLabel label="Η πρώτη φορά που έπαιξες με άλλα παιδάκια:" lines={2} />
-            <InfoLabel label='Η πρώτη σου “φιλία” (όπως την είδα εγώ):' lines={2} />
-            <InfoLabel label="Κάτι που σε ενθουσίασε πολύ:" lines={2} />
-            <InfoLabel label="Κάτι που σε φόβισε:" lines={2} />
-            <InfoLabel label="Η στιγμή που κατάλαβα ότι μεγαλώνεις:" lines={2} />
-          </div>
-        </div>
-      </section>
-
-      {/* 11. PERSONALITY FROM MOM'S EYES */}
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "32px",
-        }}
-      >
-        <div style={card}>
-          <h2
-            className={elegantFont.className}
-            style={{
-              ...titleStyle,
-              textAlign: "center",
-              fontSize: "40px",
-            }}
-          >
-            Η προσωπικότητά σου
-            <br />
-            από τα μάτια της μαμάς
-          </h2>
-
-          <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-            <InfoLabel label="Αυτό που σε κάνει να γελάς:" lines={2} />
-            <InfoLabel label="Αυτό που σε θυμώνει:" lines={2} />
-            <InfoLabel label="Αυτό που σε ηρεμεί:" lines={2} />
-            <InfoLabel label="Το πιο όμορφο κομμάτι του χαρακτήρα σου:" lines={2} />
-            <InfoLabel label="Κάτι που σε κάνει μοναδικό πλάσμα:" lines={3} />
-          </div>
-        </div>
-      </section>
-
-      {/* 12. STORYBOOK */}
       <section
         style={{
           ...pageWrap,
@@ -552,7 +340,6 @@ export default function PreviewPage() {
         </div>
       </section>
 
-      {/* 13. WHAT IS INCLUDED */}
       <section style={pageWrap}>
         <div style={card}>
           <h2
@@ -610,7 +397,6 @@ export default function PreviewPage() {
         </div>
       </section>
 
-      {/* 14. FINAL CTA */}
       <section
         style={{
           minHeight: "70vh",
@@ -645,8 +431,10 @@ export default function PreviewPage() {
             και όλα όσα θέλεις μια μέρα να θυμάται το παιδί σου.
           </p>
 
-          <button
+          <Link
+            href="/create-memory"
             style={{
+              display: "inline-block",
               padding: "18px 40px",
               borderRadius: "30px",
               border: "none",
@@ -655,10 +443,11 @@ export default function PreviewPage() {
               fontSize: "18px",
               cursor: "pointer",
               fontWeight: "600",
+              textDecoration: "none",
             }}
           >
             Αγόρασέ το
-          </button>
+          </Link>
         </div>
       </section>
     </main>
