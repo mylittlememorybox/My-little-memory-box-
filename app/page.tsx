@@ -83,7 +83,7 @@ export default function Home() {
           }}
         >
           <Link
-            href="/create-memory"
+            href="/checkout"
             style={{
               padding: "15px 30px",
               borderRadius: "999px",
