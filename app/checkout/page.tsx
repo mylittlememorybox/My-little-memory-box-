@@ -88,13 +88,97 @@ export default function CheckoutPage() {
             Πριν ξεκινήσει η δημιουργία του παραμυθιού και του Memory Box σου,
             ολοκλήρωσε πρώτα την αγορά σου.
           </p>
-<div style={grid}>
+          <div style={{ marginTop: "26px" }}>
   <div style={infoBox}>
-    ... Τι περιλαμβάνει ...
+    <h2
+      style={{
+        fontSize: "24px",
+        color: "#7B6256",
+        marginBottom: "14px",
+      }}
+    >
+      Τι περιλαμβάνει
+    </h2>
+
+    <p style={{ marginBottom: "10px" }}>
+      • Πρόσβαση στη δημιουργία του προσωποποιημένου Memory Box
+    </p>
+    <p style={{ marginBottom: "10px" }}>
+      • Δημιουργία προσωποποιημένου παραμυθιού
+    </p>
+    <p style={{ marginBottom: "10px" }}>
+      • Συμπλήρωση αναμνήσεων και πληροφοριών
+    </p>
+    <p style={{ marginBottom: "10px" }}>
+      • Δυνατότητα export / download
+    </p>
+    <p>
+      • Προσωπική σελίδα για 30 ημέρες
+    </p>
   </div>
 
-  <div>
-    ... τιμή + κουμπί ...
+  {/* 🔥 ΤΙΜΗ ΑΠΟ ΚΑΤΩ */}
+  <div
+    style={{
+      marginTop: "30px",
+      backgroundColor: "#FFF",
+      borderRadius: "22px",
+      padding: "26px",
+      boxShadow: "0 8px 22px rgba(0,0,0,0.04)",
+      textAlign: "center",
+    }}
+  >
+    <h2
+      style={{
+        fontSize: "28px",
+        color: "#7B6256",
+        marginBottom: "12px",
+      }}
+    >
+      Memory Box + Παραμύθι
+    </h2>
+
+    <div
+      style={{
+        fontSize: "36px",
+        fontWeight: "700",
+        color: "#5E4B42",
+        marginBottom: "18px",
+      }}
+    >
+      24.99€
+    </div>
+
+    <p
+      style={{
+        fontSize: "15px",
+        lineHeight: "1.7",
+        color: "#7A6A62",
+        marginBottom: "24px",
+      }}
+    >
+      Με την πληρωμή ξεκινά η δημιουργία της δικής σου ανάμνησης 💛
+    </p>
+
+    <a
+      href="https://buy.stripe.com/test_8x2dRa2aT4aWajM9W67g400"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        width: "100%",
+        display: "block",
+        textAlign: "center",
+        padding: "16px 24px",
+        borderRadius: "20px",
+        backgroundColor: "#EAD7CF",
+        color: "#5C4A42",
+        fontSize: "18px",
+        fontWeight: "600",
+        textDecoration: "none",
+      }}
+    >
+      Πληρωμή 24.99€
+    </a>
   </div>
 </div>
                 }}
