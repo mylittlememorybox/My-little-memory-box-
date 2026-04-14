@@ -29,27 +29,26 @@ const iframeWrap: CSSProperties = {
   overflow: "hidden",
   boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
   border: "1px solid #EAD7CF",
+  backgroundColor: "#fff",
 };
 
 export default function MemoryDetailsPage() {
   return (
     <main style={wrap}>
       <div style={inner}>
-        
-        {/* LOGO */}
         <div style={headerBox}>
-          <Link href="/">
+          <Link href="/" style={{ display: "inline-block" }}>
             <Image
               src="/logo.png"
-              alt="logo"
+              alt="My Little Memory Box"
               width={200}
               height={200}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", objectFit: "contain" }}
+              priority
             />
           </Link>
         </div>
 
-        {/* TITLE */}
         <div style={headerBox}>
           <h1
             className={elegantFont.className}
@@ -62,19 +61,29 @@ export default function MemoryDetailsPage() {
             Η δημιουργία της ανάμνησής σου
           </h1>
 
-          <p style={{ color: "#7A6A62" }}>
-            Συμπλήρωσε τη φόρμα για να δημιουργήσουμε το παραμύθι σας 💛
+          <p
+            style={{
+              color: "#7A6A62",
+              fontSize: "17px",
+              lineHeight: "1.7",
+              maxWidth: "760px",
+              margin: "0 auto",
+            }}
+          >
+            Συμπλήρωσε τη φόρμα για να οργανώσουμε όλες τις αναμνήσεις,
+            τις φωτογραφίες και τις στιγμές που θα γίνουν το δικό σας
+            προσωποποιημένο παραμύθι.
           </p>
         </div>
 
-        {/* FILLOUT EMBED */}
         <div style={iframeWrap}>
           <iframe
-            src="https://form.fillout.com/t/abc123"
+            src="https://forms.fillout.com/t/gs4nsBTGBGus"
             width="100%"
-            height="900"
+            height="950"
             frameBorder="0"
-            style={{ background: "white" }}
+            style={{ display: "block", background: "white" }}
+            title="Memory Details Form"
           />
         </div>
       </div>
