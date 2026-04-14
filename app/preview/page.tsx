@@ -432,7 +432,7 @@ export default function PreviewPage() {
           </p>
 
           <Link
-            href="/create-memory"
+            href="/checkout"
             style={{
               display: "inline-block",
               padding: "18px 40px",
