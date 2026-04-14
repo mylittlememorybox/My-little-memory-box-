@@ -88,14 +88,15 @@ export default function CheckoutPage() {
             Πριν ξεκινήσει η δημιουργία του παραμυθιού και του Memory Box σου,
             ολοκλήρωσε πρώτα την αγορά σου.
           </p>
+<div style={grid}>
+  <div style={infoBox}>
+    ... Τι περιλαμβάνει ...
+  </div>
 
-          <div style={grid}>
-            <div style={infoBox}>
-              <h2
-                style={{
-                  fontSize: "24px",
-                  color: "#7B6256",
-                  marginBottom: "14px",
+  <div>
+    ... τιμή + κουμπί ...
+  </div>
+</div>
                 }}
               >
                 Τι περιλαμβάνει
