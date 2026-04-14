@@ -11,7 +11,7 @@ const elegantFont = Playfair_Display({
 const wrap: CSSProperties = {
   minHeight: "100vh",
   backgroundColor: "#F6EFE8",
-  padding: "60px 24px",
+  padding: "48px 20px",
   color: "#5E4B42",
 };
 
@@ -22,20 +22,33 @@ const inner: CSSProperties = {
 
 const card: CSSProperties = {
   backgroundColor: "rgba(255, 248, 243, 0.95)",
-  borderRadius: "30px",
-  padding: "38px",
+  borderRadius: "28px",
+  padding: "28px",
   boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
-  marginBottom: "26px",
+  marginBottom: "18px",
+};
+
+const sectionTitle: CSSProperties = {
+  fontSize: "30px",
+  color: "#7D6457",
+  marginBottom: "14px",
+};
+
+const labelStyle: CSSProperties = {
+  fontSize: "15px",
+  fontWeight: 600,
+  color: "#6B564C",
+  display: "block",
+  marginBottom: "6px",
 };
 
 const inputStyle: CSSProperties = {
   width: "100%",
-  padding: "14px 16px",
+  padding: "12px 14px",
   borderRadius: "14px",
   border: "1px solid #D8C5B9",
-  fontSize: "16px",
-  marginTop: "8px",
-  marginBottom: "18px",
+  fontSize: "15px",
+  marginBottom: "14px",
   backgroundColor: "#fff",
   color: "#5E4B42",
   boxSizing: "border-box",
@@ -43,69 +56,80 @@ const inputStyle: CSSProperties = {
 
 const textareaStyle: CSSProperties = {
   ...inputStyle,
-  minHeight: "120px",
+  minHeight: "90px",
   resize: "vertical",
 };
 
-const labelStyle: CSSProperties = {
-  fontSize: "16px",
-  fontWeight: 600,
-  color: "#6B564C",
-  display: "block",
+const mediaGrid: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "14px",
+  marginTop: "10px",
+};
+
+const mediaBox: CSSProperties = {
+  backgroundColor: "#FBF4EE",
+  border: "1px dashed #D8C5B9",
+  borderRadius: "18px",
+  padding: "16px",
+};
+
+const helperText: CSSProperties = {
+  fontSize: "13px",
+  color: "#8A7F7A",
+  marginBottom: "10px",
+  lineHeight: "1.5",
+};
+
+const topText: CSSProperties = {
+  fontSize: "17px",
+  lineHeight: "1.65",
+  color: "#7A6A62",
+  maxWidth: "760px",
+  margin: "0 auto 20px",
+  textAlign: "center",
 };
 
 export default function MemoryDetailsPage() {
   return (
     <main style={wrap}>
       <div style={inner}>
-        <div style={{ textAlign: "center", marginBottom: "28px" }}>
+        <div style={{ textAlign: "center", marginBottom: "18px" }}>
           <Link href="/" style={{ display: "inline-block" }}>
             <Image
               src="/logo.png"
               alt="My Little Memory Box"
-              width={240}
-              height={240}
-              style={{
-                objectFit: "contain",
-                cursor: "pointer",
-              }}
+              width={220}
+              height={220}
+              style={{ objectFit: "contain", cursor: "pointer" }}
               priority
             />
           </Link>
         </div>
 
-        <div style={{ textAlign: "center", marginBottom: "30px" }}>
+        <div style={{ textAlign: "center", marginBottom: "22px" }}>
           <h1
             className={elegantFont.className}
             style={{
-              fontSize: "42px",
+              fontSize: "40px",
               color: "#7D6457",
-              marginBottom: "12px",
+              marginBottom: "10px",
             }}
           >
             Η δημιουργία της ανάμνησής σου
           </h1>
 
-          <p
-            style={{
-              fontSize: "18px",
-              lineHeight: "1.85",
-              color: "#7A6A62",
-              maxWidth: "760px",
-              margin: "0 auto",
-            }}
-          >
-            Συμπλήρωσε τις πιο σημαντικές στιγμές σας, για να δημιουργηθεί
-            ένα προσωποποιημένο παραμύθι γεμάτο αλήθεια, αγάπη και αναμνήσεις.
+          <p style={topText}>
+            Συμπλήρωσε τις πιο σημαντικές στιγμές σας και πρόσθεσε φωτογραφίες
+            και βίντεο στα σωστά σημεία, ώστε να δημιουργηθεί ένα προσωποποιημένο
+            παραμύθι γεμάτο αλήθεια, αγάπη και μνήμη.
           </p>
         </div>
 
         <form>
+          {/* 1 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Οι πρώτες σου στιγμές
             </h2>
 
@@ -129,13 +153,31 @@ export default function MemoryDetailsPage() {
 
             <label style={labelStyle}>Η πρώτη φορά που χαμογέλασες</label>
             <textarea style={textareaStyle} />
+
+            <div style={mediaGrid}>
+              <div style={mediaBox}>
+                <div style={labelStyle}>Φωτογραφία από τις πρώτες μέρες</div>
+                <div style={helperText}>Ανέβασε μία βασική φωτογραφία από τις πρώτες στιγμές.</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+
+              <div style={mediaBox}>
+                <div style={labelStyle}>Φωτογραφία αγκαλιάς</div>
+                <div style={helperText}>Μια τρυφερή φωτογραφία δική σας.</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+
+              <div style={mediaBox}>
+                <div style={labelStyle}>Φωτογραφία από το σπίτι</div>
+                <div style={helperText}>Από τις πρώτες μέρες μετά την επιστροφή σας.</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+            </div>
           </div>
 
+          {/* 2 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Οι πρώτες σου ανακαλύψεις
             </h2>
 
@@ -147,13 +189,25 @@ export default function MemoryDetailsPage() {
 
             <label style={labelStyle}>Η πρώτη φορά που μπουσούλησες</label>
             <textarea style={textareaStyle} />
+
+            <div style={mediaGrid}>
+              <div style={mediaBox}>
+                <div style={labelStyle}>Κάδρο φωτογραφίας</div>
+                <div style={helperText}>Μια φωτογραφία από αυτή την περίοδο.</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+
+              <div style={mediaBox}>
+                <div style={labelStyle}>Βίντεο από τις πρώτες ανακαλύψεις</div>
+                <div style={helperText}>Μπορεί να είναι μπουσούλημα, παιχνίδι ή μια γλυκιά στιγμή.</div>
+                <input type="file" accept="video/*" style={inputStyle} />
+              </div>
+            </div>
           </div>
 
+          {/* 3 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Τα πρώτα σου βήματα
             </h2>
 
@@ -165,13 +219,23 @@ export default function MemoryDetailsPage() {
 
             <label style={labelStyle}>Η πρώτη φορά που έτρεξες προς το μέρος μου</label>
             <textarea style={textareaStyle} />
+
+            <div style={mediaGrid}>
+              <div style={mediaBox}>
+                <div style={labelStyle}>Φωτογραφία πρώτων βημάτων</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+
+              <div style={mediaBox}>
+                <div style={labelStyle}>Βίντεο πρώτων βημάτων</div>
+                <input type="file" accept="video/*" style={inputStyle} />
+              </div>
+            </div>
           </div>
 
+          {/* 4 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Οι μέρες που δεν ήταν εύκολες
             </h2>
 
@@ -188,11 +252,9 @@ export default function MemoryDetailsPage() {
             <textarea style={textareaStyle} />
           </div>
 
+          {/* 5 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Οι στιγμές που με έκανες να νιώθω τα πάντα
             </h2>
 
@@ -207,13 +269,23 @@ export default function MemoryDetailsPage() {
 
             <label style={labelStyle}>Η στιγμή που σκέφτηκα “αυτό είναι η ευτυχία”</label>
             <textarea style={textareaStyle} />
+
+            <div style={mediaGrid}>
+              <div style={mediaBox}>
+                <div style={labelStyle}>Φωτογραφία ιδιαίτερης στιγμής</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+
+              <div style={mediaBox}>
+                <div style={labelStyle}>Βίντεο ιδιαίτερης στιγμής</div>
+                <input type="file" accept="video/*" style={inputStyle} />
+              </div>
+            </div>
           </div>
 
+          {/* 6 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Τα πρώτα σου βήματα προς τον κόσμο
             </h2>
 
@@ -231,13 +303,18 @@ export default function MemoryDetailsPage() {
 
             <label style={labelStyle}>Η στιγμή που κατάλαβα ότι μεγαλώνεις</label>
             <textarea style={textareaStyle} />
+
+            <div style={mediaGrid}>
+              <div style={mediaBox}>
+                <div style={labelStyle}>Φωτογραφία με άλλα παιδάκια / κοινωνική στιγμή</div>
+                <input type="file" accept="image/*" style={inputStyle} />
+              </div>
+            </div>
           </div>
 
+          {/* 7 */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Η προσωπικότητά σου από τα μάτια της μαμάς
             </h2>
 
@@ -257,36 +334,35 @@ export default function MemoryDetailsPage() {
             <textarea style={textareaStyle} />
           </div>
 
+          {/* FINAL */}
           <div style={card}>
-            <h2
-              className={elegantFont.className}
-              style={{ fontSize: "34px", color: "#7D6457", marginBottom: "20px" }}
-            >
+            <h2 className={elegantFont.className} style={sectionTitle}>
               Έτοιμη να συνεχίσεις;
             </h2>
 
             <p
               style={{
-                fontSize: "17px",
-                lineHeight: "1.8",
+                fontSize: "15px",
+                lineHeight: "1.6",
                 color: "#7A6A62",
-                marginBottom: "24px",
+                marginBottom: "16px",
               }}
             >
-              Στο επόμενο στάδιο θα προστεθούν φωτογραφίες, βίντεο και επιπλέον
-              στοιχεία για να γίνει το παραμύθι ακόμη πιο προσωπικό.
+              Στο επόμενο στάδιο μπορούμε να συνδέσουμε τη φόρμα με Make, ώστε
+              όλα τα στοιχεία, οι φωτογραφίες και τα βίντεο να οργανώνονται
+              αυτόματα.
             </p>
 
             <button
               type="button"
               style={{
                 width: "100%",
-                padding: "16px 24px",
-                borderRadius: "20px",
+                padding: "15px 22px",
+                borderRadius: "18px",
                 border: "none",
                 backgroundColor: "#EAD7CF",
                 color: "#5C4A42",
-                fontSize: "18px",
+                fontSize: "17px",
                 fontWeight: "600",
                 cursor: "pointer",
               }}
