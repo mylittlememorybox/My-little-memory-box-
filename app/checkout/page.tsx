@@ -27,19 +27,26 @@ const card: CSSProperties = {
   boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
 };
 
-const infoBox: CSSProperties = {
+const box: CSSProperties = {
   backgroundColor: "#FBF4EE",
   borderRadius: "22px",
   padding: "22px",
   lineHeight: "1.8",
   color: "#705E55",
-  marginTop: "26px",
+};
+
+const stack: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "30px",
+  marginTop: "30px",
 };
 
 export default function CheckoutPage() {
   return (
     <main style={wrap}>
       <div style={inner}>
+        {/* LOGO */}
         <div style={{ textAlign: "center", marginBottom: "28px" }}>
           <Link href="/" style={{ display: "inline-block" }}>
             <Image
@@ -47,10 +54,7 @@ export default function CheckoutPage() {
               alt="My Little Memory Box"
               width={250}
               height={250}
-              style={{
-                objectFit: "contain",
-                cursor: "pointer",
-              }}
+              style={{ objectFit: "contain", cursor: "pointer" }}
               priority
             />
           </Link>
@@ -73,114 +77,75 @@ export default function CheckoutPage() {
             style={{
               textAlign: "center",
               fontSize: "18px",
-              lineHeight: "1.85",
+              lineHeight: "1.8",
               color: "#7A6A62",
-              maxWidth: "760px",
-              margin: "0 auto 10px",
+              marginBottom: "10px",
             }}
           >
-            Πριν ξεκινήσει η δημιουργία του παραμυθιού και του Memory Box σου,
-            ολοκλήρωσε πρώτα την αγορά σου.
+            Πριν ξεκινήσει η δημιουργία της ανάμνησης, ολοκλήρωσε την αγορά σου 💛
           </p>
 
-          <div style={infoBox}>
-            <h2
-              style={{
-                fontSize: "24px",
-                color: "#7B6256",
-                marginBottom: "14px",
-              }}
-            >
-              Τι περιλαμβάνει
-            </h2>
+          {/* 🔥 ΕΔΩ ΜΠΑΙΝΟΥΝ ΤΑ ΚΟΥΤΙΑ ΚΑΘΕΤΑ */}
+          <div style={stack}>
+            
+            {/* 📦 ΤΙ ΠΕΡΙΛΑΜΒΑΝΕΙ */}
+            <div style={box}>
+              <h2 style={{ fontSize: "24px", marginBottom: "14px" }}>
+                Τι περιλαμβάνει
+              </h2>
 
-            <p style={{ marginBottom: "10px" }}>
-              • Πρόσβαση στη δημιουργία του προσωποποιημένου Memory Box
-            </p>
-            <p style={{ marginBottom: "10px" }}>
-              • Δημιουργία προσωποποιημένου παραμυθιού
-            </p>
-            <p style={{ marginBottom: "10px" }}>
-              • Συμπλήρωση αναμνήσεων και πληροφοριών
-            </p>
-            <p style={{ marginBottom: "10px" }}>
-              • Δυνατότητα export / download
-            </p>
-            <p>
-              • Προσωπική σελίδα διαθέσιμη για 30 ημέρες μετά την ολοκλήρωση
-            </p>
-          </div>
-
-          <div
-            style={{
-              marginTop: "34px",
-              textAlign: "center",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "14px",
-                color: "#8A7F7A",
-                marginBottom: "8px",
-              }}
-            >
-              Τιμή
+              <p>• Προσωποποιημένο Memory Box</p>
+              <p>• Δημιουργία παραμυθιού</p>
+              <p>• Συμπλήρωση αναμνήσεων</p>
+              <p>• Download / export</p>
+              <p>• Πρόσβαση για 30 ημέρες</p>
             </div>
 
+            {/* 💰 ΚΟΥΤΑΚΙ ΤΙΜΗΣ */}
             <div
               style={{
-                fontSize: "42px",
-                fontWeight: "700",
-                color: "#5E4B42",
-                marginBottom: "18px",
-              }}
-            >
-              24.99€
-            </div>
-
-            <p
-              style={{
-                fontSize: "15px",
-                lineHeight: "1.7",
-                color: "#7A6A62",
-                maxWidth: "520px",
-                margin: "0 auto 24px",
-              }}
-            >
-              Με την επιτυχημένη πληρωμή θα προχωρήσεις στο επόμενο βήμα,
-              όπου θα δημιουργήσεις λογαριασμό και θα ξεκινήσεις να
-              συμπληρώνεις τις αναμνήσεις σας.
-            </p>
-
-            <a
-              href="https://buy.stripe.com/test_8x2dRa2aT4aWajM9W67g400"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: "inline-block",
-                padding: "16px 40px",
-                borderRadius: "25px",
-                backgroundColor: "#EAD7CF",
-                color: "#5C4A42",
-                fontSize: "18px",
-                fontWeight: "600",
-                textDecoration: "none",
-              }}
-            >
-              Πληρωμή τώρα
-            </a>
-
-            <p
-              style={{
-                marginTop: "16px",
-                fontSize: "13px",
-                color: "#8A7F7A",
+                backgroundColor: "#FFF",
+                borderRadius: "22px",
+                padding: "26px",
+                boxShadow: "0 8px 22px rgba(0,0,0,0.04)",
                 textAlign: "center",
-                lineHeight: "1.6",
               }}
             >
-              Η πληρωμή ανοίγει σε ασφαλές περιβάλλον Stripe.
-            </p>
+              <h2 style={{ fontSize: "26px", marginBottom: "10px" }}>
+                Memory Box + Παραμύθι
+              </h2>
+
+              <div
+                style={{
+                  fontSize: "40px",
+                  fontWeight: "700",
+                  marginBottom: "16px",
+                }}
+              >
+                24.99€
+              </div>
+
+              <p style={{ marginBottom: "20px", color: "#7A6A62" }}>
+                Ξεκίνα τώρα τη δημιουργία της δικής σου μοναδικής ανάμνησης ✨
+              </p>
+
+              <a
+                href="https://buy.stripe.com/test_8x2dRa2aT4aWajM9W67g400"
+                target="_blank"
+                style={{
+                  display: "inline-block",
+                  padding: "16px 30px",
+                  borderRadius: "25px",
+                  backgroundColor: "#EAD7CF",
+                  color: "#5C4A42",
+                  fontWeight: "600",
+                  textDecoration: "none",
+                }}
+              >
+                Πληρωμή τώρα
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
