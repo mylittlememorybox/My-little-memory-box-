@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
-import { Dancing_Script } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const scriptFont = Dancing_Script({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: "My Little Memory Box",
-  description: "Ένα παντοτινό μέρος αναμνήσεων",
+  description: "A place for your most precious memories.",
 };
 
 export default function RootLayout({
@@ -19,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="el">
-      <body>{children}</body>
+      <body className={`${playfair.variable} ${inter.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }
