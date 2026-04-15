@@ -17,7 +17,7 @@ const font = Playfair_Display({
 });
 
 const WEBHOOK =
-  "https://hook.eu1.make.com/m11u18upfmhcla7dehehgfnogexemto6";
+  "https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55";
 
 type FormValues = {
   firstHold: string;
