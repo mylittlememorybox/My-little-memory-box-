@@ -5,200 +5,562 @@ export default function PreviewPage() {
   return (
     <main style={page}>
       <div style={container}>
-
-        {/* LOGO */}
         <div style={logoWrap}>
-          <Link href="/">
-            <img src="/logo.png" style={logo} />
+          <Link href="/" style={logoLink}>
+            <img src="/logo.png" alt="My Little Memory Box" style={logo} />
           </Link>
         </div>
 
-        {/* BANNER */}
         <div style={banner}>
           Δείγμα από τις 17 ψηφιακές σελίδες του Memory Box & του παραμυθιού σας
         </div>
 
-        {/* SECTION */}
         <Section title="Οι πρώτες σου στιγμές">
           <div style={twoCols}>
             <div>
               <InfoLine label="Όνομα">Ελπίδα</InfoLine>
-              <InfoLine label="Η πρώτη φορά που σε κράτησα">2 Ιουνίου 2025</InfoLine>
+              <InfoLine label="Η πρώτη φορά που σε κράτησα">
+                2 Ιουνίου 2025
+              </InfoLine>
               <InfoLine label="Ζύγιζες μόνο">3,550 γρ</InfoLine>
               <InfoLine label="Είχες ύψος">51 πόντους</InfoLine>
               <InfoLine label="Επιστρέψαμε από το μαιευτήριο">
                 Πέντε μέρες μετά τη γέννησή σου
               </InfoLine>
               <InfoLine label="Οι πρώτες σου στιγμές στο σπίτι ήταν">
-                Ήρεμες, είχες ανάγκη την αγκαλιά της μαμάς
+                Ήρεμες, είχες ανάγκη την αγκαλιά της μαμάς μέχρι να
+                προσαρμοστείς
               </InfoLine>
               <InfoLine label="Η πρώτη φορά που χαμογέλασες">
-                Στους 2 μήνες (ξετρελαθήκαμε)
+                Ήταν στους 2 μήνες (ξετρελαθήκαμε)
               </InfoLine>
             </div>
 
-            <Photo src="https://picsum.photos/seed/baby1/900/1200" />
+            <PhotoSlot
+              src="/preview/newborn.jpg"
+              title="Φωτογραφία νεογέννητου"
+            />
           </div>
         </Section>
 
         <Section title="Ο κόσμος σου">
           <div style={twoCols}>
             <div>
-              <InfoLine label="Οι γονείς σου">Μαριάννα & Γιάννης</InfoLine>
+              <InfoLine label="Οι γονείς σου">Μαριάννα και Γιάννης</InfoLine>
+              <InfoLine label="Οι παππούδες σου">
+                Από τον μπαμπά γιαγιά Ρίτσα και παππούς Μάκης, ενώ από τη μαμά
+                γιαγιά Μαρία και παππούς Χάρης
+              </InfoLine>
               <InfoLine label="Η νονά σου">Ανδριάνα</InfoLine>
               <InfoLine label="Οι φίλοι που έγιναν οικογένεια">
-                Χριστίνα, Γεωργία, Σπύρος, Ορέστης
+                Χριστίνα φίλη μαμάς, Γεωργία φίλη μαμάς, Σπύρος φίλος μπαμπά και
+                Ορέστης φίλος μπαμπά
               </InfoLine>
             </div>
 
-            <Photo src="https://picsum.photos/seed/baby2/900/1200" />
+            <div style={stack}>
+              <PhotoSlot
+                src="/preview/family.jpg"
+                title="Φωτογραφία με γονείς"
+                short
+              />
+              <PhotoSlot
+                src="/preview/grandparents.jpg"
+                title="Φωτογραφία με παππούδες"
+                short
+              />
+            </div>
           </div>
         </Section>
 
         <Section title="Οι πρώτες σου ανακαλύψεις">
           <div style={twoCols}>
             <div>
-              <InfoLine label="Το πρώτο σου δοντάκι">Στους 3 μήνες</InfoLine>
-              <InfoLine label="Μπουσούλησες">Στους 7 μήνες</InfoLine>
-              <InfoLine label="Νάνι νάνι">
-                Αγκαλίτσα και τραγουδάκι
+              <InfoLine label="Το πρώτο σου δοντάκι">
+                Ήταν στους 3 μήνες, τα δύο πρώτα δοντάκια τα κάτω
+              </InfoLine>
+              <InfoLine label="Λάτρευες να σε νανουρίζουμε έτσι">
+                Αγκαλίτσα και να σου τραγουδάω «νάνι νάνι το μωράκι μου»
+              </InfoLine>
+              <InfoLine label="Η πρώτη φορά που μπουσούλησες">
+                Ήταν γύρω στους 7 μήνες, ξαφνικά
               </InfoLine>
             </div>
 
-            <Photo src="https://picsum.photos/seed/baby3/900/1200" />
+            <div style={stack}>
+              <PhotoSlot
+                src="/preview/smile.jpg"
+                title="Φωτογραφία χαμόγελου"
+                short
+              />
+              <PhotoSlot
+                src="/preview/crawl.jpg"
+                title="Φωτογραφία μπουσουλήματος"
+                short
+              />
+            </div>
           </div>
         </Section>
 
-        <Section title="Το παραμύθι σου">
-          <p style={text}>
-            Μια φορά κι έναν καιρό ήταν η μικρή Ελπίδα. Ένα κοριτσάκι με μάτια
-            που έλαμπαν σαν μικρά αστέρια.
-          </p>
+        <Section title="Τα πρώτα σου βήματα">
+          <div style={twoCols}>
+            <div>
+              <InfoLine label="Η πρώτη φορά που σηκώθηκες όρθια">
+                Με φόρα, σαν να ήξερες ήδη πού θες να πας
+              </InfoLine>
+              <InfoLine label="Η πρώτη σου τούμπα">
+                Μικρή και γλυκιά, με ένα ξαφνιασμένο βλέμμα και μετά γελάκια
+              </InfoLine>
+              <InfoLine label="Η πρώτη φορά που έτρεξες προς το μέρος μου">
+                Με τα χεράκια ανοιχτά και ένα τεράστιο χαμόγελο
+              </InfoLine>
+            </div>
 
-          <p style={text}>
-            «Μαμά, κοίτα!» είπε μια μέρα όταν είδε ένα ροζ μπαλόνι.
-          </p>
-
-          <p style={text}>
-            Το μπαλόνι ανέβηκε ψηλά… και έτσι ξεκίνησε η πρώτη της περιπέτεια.
-          </p>
-
-          <Photo src="https://picsum.photos/seed/story/900/600" />
+            <PhotoSlot
+              src="/preview/steps.jpg"
+              title="Φωτογραφία πρώτων βημάτων"
+            />
+          </div>
         </Section>
 
-        {/* CTA */}
+        <Section title="Οι μέρες που δεν ήταν εύκολες">
+          <InfoLine label="Μια μέρα που ένιωσα ότι δεν τα κατάφερνα">
+            Ήταν μια κουραστική μέρα χωρίς πολύ ύπνο, μα η αγκαλιά σου τα
+            γλύκαινε όλα
+          </InfoLine>
+          <InfoLine label="Μια στιγμή που λύγισα">
+            Όταν προσπαθούσα να μαντέψω τι χρειαζόσουν και ήθελα μόνο να είσαι
+            καλά
+          </InfoLine>
+          <InfoLine label="Κάτι που με δυσκόλεψε περισσότερο απ’ όσο περίμενα">
+            Το να σε βλέπω να προσαρμόζεσαι στον κόσμο βήμα βήμα
+          </InfoLine>
+          <InfoLine label="Και παρ’ όλα αυτά συνέχισα γιατί">
+            Γιατί η αγάπη για σένα ήταν πιο μεγάλη από κάθε δυσκολία
+          </InfoLine>
+        </Section>
+
+        <Section title="Οι στιγμές που με έκανες να νιώθω τα πάντα">
+          <div style={twoCols}>
+            <div>
+              <InfoLine label="Η στιγμή που ένιωσα περήφανη για σένα">
+                Όταν δοκίμασες κάτι καινούριο χωρίς φόβο
+              </InfoLine>
+              <InfoLine label="Κάτι μικρό που για μένα ήταν τεράστιο">
+                Ένα βλέμμα αναγνώρισης και ένα γέλιο μόνο για μένα
+              </InfoLine>
+              <InfoLine label="Μια αγκαλιά που δεν ήθελα να τελειώσει">
+                Μετά από μια μεγάλη μέρα, όταν ακούμπησες ήσυχα πάνω μου
+              </InfoLine>
+              <InfoLine label='Η στιγμή που σκέφτηκα "αυτό είναι η ευτυχία"'>
+                Όταν ήμασταν όλοι μαζί και γελούσες χωρίς σταματημό
+              </InfoLine>
+            </div>
+
+            <PhotoSlot
+              src="/preview/heart.jpg"
+              title="Τρυφερή φωτογραφία"
+            />
+          </div>
+        </Section>
+
+        <Section title="Για τα γενέθλιά σου">
+          <div style={twoCols}>
+            <div>
+              <InfoLine label="Σήμερα γίνεσαι">2 ετών</InfoLine>
+              <InfoLine label="Έσβησες την τούρτα σου με αυτούς τους αγαπημένους σου">
+                Με τη μαμά, τον μπαμπά, τους παππούδες, τη νονά και όλους όσους
+                σε αγαπούν
+              </InfoLine>
+              <InfoLine label="Κάτι που έμαθες">
+                Να εξερευνάς με χαρά και να ζητάς αγκαλιά όταν τη χρειάζεσαι
+              </InfoLine>
+              <InfoLine label="Μια στιγμή που δεν θα ξεχάσω από αυτή τη χρονιά">
+                Το πρώτο σου δυνατό γέλιο όταν σε χειροκροτούσαμε όλοι μαζί
+              </InfoLine>
+              <InfoLine label="Η ευχή μου για σένα">
+                Να μεγαλώνεις με υγεία, χαρά, θάρρος και αγάπη
+              </InfoLine>
+            </div>
+
+            <PhotoSlot
+              src="/preview/birthday.jpg"
+              title="Φωτογραφία γενεθλίων"
+            />
+          </div>
+        </Section>
+
+        <Section title="Τα πρώτα σου βήματα προς τον κόσμο">
+          <div style={twoCols}>
+            <div>
+              <InfoLine label="Η πρώτη φορά που έπαιξες με άλλα παιδάκια">
+                Με περιέργεια στην αρχή και μετά με ασταμάτητο ενθουσιασμό
+              </InfoLine>
+              <InfoLine label='Η πρώτη σου "φιλία" όπως την είδα εγώ'>
+                Ήταν ένα παιχνίδι δίπλα δίπλα και πολλά μικρά γελάκια
+              </InfoLine>
+              <InfoLine label="Κάτι που σε ενθουσίασε πολύ">
+                Τα χρώματα, τα μπαλόνια και οι καινούριοι ήχοι
+              </InfoLine>
+              <InfoLine label="Κάτι που σε φόβισε">
+                Οι πολύ δυνατοί ήχοι όταν ήταν ξαφνικοί
+              </InfoLine>
+              <InfoLine label="Η στιγμή που κατάλαβα ότι μεγαλώνεις">
+                Όταν κοίταζες γύρω σου με αυτοπεποίθηση, σαν μικρή εξερευνήτρια
+              </InfoLine>
+            </div>
+
+            <PhotoSlot
+              src="/preview/social.jpg"
+              title="Φωτογραφία παιχνιδιού"
+            />
+          </div>
+        </Section>
+
+        <Section title="Η πρώτη σου μέρα στο σχολείο">
+          <div style={twoCols}>
+            <div>
+              <InfoLine label="Σήμερα πήγες για πρώτη φορά σχολείο">
+                Με περιέργεια, λίγο δισταγμό και μια γλυκιά αγκαλιά πριν μπεις
+              </InfoLine>
+              <InfoLine label="Και εγώ ένιωσα">
+                Συγκίνηση, περηφάνια και λίγο σφίξιμο στην καρδιά
+              </InfoLine>
+              <InfoLine label="Εσύ έδειχνες">
+                Μικρή, γλυκιά, παρατηρητική και πιο θαρραλέα απ’ όσο νόμιζες
+              </InfoLine>
+              <InfoLine label="Η στιγμή που σε άφησα">
+                Ήταν ήσυχη, με ένα φιλί στο μέτωπο και ένα "θα έρθω μετά"
+              </InfoLine>
+              <InfoLine label="Η σκέψη που δεν έφυγε από το μυαλό μου">
+                Πόσο γρήγορα μεγαλώνεις
+              </InfoLine>
+              <InfoLine label="Όταν σε ξαναείδα">
+                Έτρεξες προς το μέρος μου και όλα ηρέμησαν
+              </InfoLine>
+            </div>
+
+            <PhotoSlot
+              src="/preview/school.jpg"
+              title="Φωτογραφία σχολείου"
+            />
+          </div>
+        </Section>
+
+        <Section title="Μια σκέψη για σένα">
+          <p style={longText}>
+            Να θυμάσαι πάντα πως ήσουν, είσαι και θα είσαι ένα παιδί πολύ
+            αγαπημένο. Από την πρώτη στιγμή που ήρθες κοντά μας, έφερες μαζί σου
+            φως, τρυφερότητα και μια καινούρια μορφή χαράς που δεν ξέραμε πως
+            υπάρχει.
+          </p>
+        </Section>
+
+        <Section title="Ένα γράμμα για εσένα">
+          <p style={longText}>
+            Μικρή μου Ελπίδα, εύχομαι να προχωράς στη ζωή σου με απαλότητα και
+            θάρρος. Να μη φοβηθείς ποτέ να αγαπήσεις, να ονειρευτείς, να
+            προσπαθήσεις ξανά. Κι όποτε χρειαστείς ένα μέρος να ξεκουραστείς,
+            να θυμάσαι πως η αγκαλιά μας θα είναι πάντα εκεί.
+          </p>
+        </Section>
+
+        <Section title="Το παραμύθι σου">
+          <div style={storybookIntro}>
+            <div style={storybookBadge}>Δείγμα από το ηλεκτρονικό παραμύθι σας</div>
+            <h3 style={storybookTitle}>Η Ελπίδα και το Μπαλόνι που Ήθελε τα Σύννεφα</h3>
+          </div>
+
+          <PhotoSlot
+            src="/preview/story-cover.jpg"
+            title="Εξώφυλλο παραμυθιού"
+          />
+
+          <div style={storyPage}>
+            <PhotoSlot
+              src="/preview/story-1.jpg"
+              title="Σελίδα 1"
+              short
+            />
+            <p style={storyText}>
+              Μια φορά κι έναν καιρό, ήταν ένα κοριτσάκι που το έλεγαν Ελπίδα.
+              Η Ελπίδα είχε μάτια που έλαμπαν σαν μικρές σταγόνες ήλιου και ένα
+              χαμόγελο που έκανε όλο το σπίτι να φωτίζεται. Από μωρό ακόμα,
+              αγαπούσε την αγκαλιά της μαμάς και το τραγούδι που την νανούριζε
+              τα βράδια.
+            </p>
+          </div>
+
+          <div style={storyPage}>
+            <PhotoSlot
+              src="/preview/story-2.jpg"
+              title="Σελίδα 2"
+              short
+            />
+            <p style={storyText}>
+              Ένα πρωί, η Ελπίδα είδε ένα ροζ μπαλόνι να χορεύει κοντά στο
+              παράθυρο. «Μαμά, κοίτα!» είπε με ενθουσιασμό. Το μπαλόνι όμως
+              ανέβηκε πιο ψηλά και στάθηκε εκεί σαν να την καλούσε σε μια μικρή
+              περιπέτεια. Ο μπαμπάς χαμογέλασε. «Νομίζω πως κάποιος ψάχνει μια
+              μικρή εξερευνήτρια», είπε.
+            </p>
+          </div>
+
+          <div style={storyPage}>
+            <PhotoSlot
+              src="/preview/story-3.jpg"
+              title="Σελίδα 3"
+              short
+            />
+            <p style={storyText}>
+              Η μαμά, ο μπαμπάς, η νονά Ανδριάνα, οι παππούδες και οι αγαπημένοι
+              φίλοι που είχαν γίνει οικογένεια μαζεύτηκαν γύρω της. «Θα το
+              βρούμε μαζί», της είπαν. Και πράγματι, με γέλια, μικρά βηματάκια
+              και πολλή αγάπη, η Ελπίδα έφτασε το μπαλόνι της.
+            </p>
+          </div>
+
+          <div style={storyPage}>
+            <PhotoSlot
+              src="/preview/story-4.jpg"
+              title="Σελίδα 4"
+              short
+            />
+            <p style={storyText}>
+              Εκείνο το βράδυ, η Ελπίδα αποκοιμήθηκε στην αγαπημένη της αγκαλιά,
+              ακούγοντας σιγανά το «νάνι νάνι το μωράκι μου». Και κάπως έτσι
+              κατάλαβε πως κάθε μεγάλη περιπέτεια ξεκινά από κάτι πολύ μικρό:
+              μια αγκαλιά, ένα χαμόγελο και την αγάπη όλων όσων είναι δίπλα σου.
+            </p>
+          </div>
+        </Section>
+
         <div style={ctaWrap}>
           <a href="/buy" style={cta}>
             Ξεκίνα τώρα
           </a>
         </div>
-
       </div>
     </main>
   );
 }
 
-/* COMPONENTS */
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
   return (
-    <div style={card}>
-      <h2 style={titleStyle}>{title}</h2>
+    <section style={card}>
+      <h2 style={sectionTitle}>{title}</h2>
       {children}
-    </div>
+    </section>
   );
 }
 
-function InfoLine({ label, children }: { label: string; children: ReactNode }) {
+function InfoLine({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
   return (
-    <p style={info}>
-      <b>{label}: </b>{children}
+    <p style={infoLine}>
+      <strong>{label}: </strong>
+      {children}
     </p>
   );
 }
 
-function Photo({ src }: { src: string }) {
+function PhotoSlot({
+  src,
+  title,
+  short = false,
+}: {
+  src: string;
+  title: string;
+  short?: boolean;
+}) {
   return (
-    <img
-      src={src}
-      style={{
-        width: "100%",
-        borderRadius: 12,
-        marginTop: 10
-      }}
-    />
+    <div style={{ ...imageWrap, height: short ? 180 : 320 }}>
+      <img
+        src={src}
+        alt={title}
+        style={imgStyle}
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+          const next = e.currentTarget.nextElementSibling as HTMLElement | null;
+          if (next) next.style.display = "flex";
+        }}
+      />
+      <div style={fallbackBox}>
+        <span style={fallbackText}>{title}</span>
+      </div>
+    </div>
   );
 }
 
-/* STYLES */
-
 const page: CSSProperties = {
-  background: "#f7efe9",
   minHeight: "100vh",
-  padding: 20
+  background: "#f7efe9",
+  padding: "20px",
+  color: "#5c4a43",
+  fontFamily: "Arial, sans-serif",
 };
 
 const container: CSSProperties = {
-  maxWidth: 900,
-  margin: "0 auto"
+  maxWidth: "900px",
+  margin: "0 auto",
 };
 
 const logoWrap: CSSProperties = {
   textAlign: "center",
-  marginBottom: 20
+  marginBottom: "18px",
+};
+
+const logoLink: CSSProperties = {
+  display: "inline-block",
 };
 
 const logo: CSSProperties = {
-  height: 120
+  height: "140px",
+  width: "auto",
+  objectFit: "contain",
 };
 
 const banner: CSSProperties = {
   background: "#e8d6cc",
-  padding: 16,
-  borderRadius: 14,
+  padding: "18px",
+  borderRadius: "18px",
   textAlign: "center",
-  marginBottom: 20,
-  fontWeight: 600
+  marginBottom: "20px",
+  fontWeight: 700,
+  fontSize: "20px",
+  lineHeight: 1.45,
+  color: "#5c4a43",
 };
 
 const card: CSSProperties = {
-  background: "#fff",
-  padding: 20,
-  borderRadius: 16,
-  marginBottom: 20
+  background: "#ffffff",
+  padding: "22px",
+  borderRadius: "20px",
+  marginBottom: "20px",
+  boxShadow: "0 8px 22px rgba(0,0,0,0.05)",
 };
 
-const titleStyle: CSSProperties = {
-  marginBottom: 10
+const sectionTitle: CSSProperties = {
+  marginTop: 0,
+  marginBottom: "16px",
+  fontSize: "28px",
+  color: "#6b564c",
 };
 
-const info: CSSProperties = {
-  fontSize: 16,
-  marginBottom: 8
+const infoLine: CSSProperties = {
+  fontSize: "21px",
+  lineHeight: 1.7,
+  margin: "0 0 10px",
+  color: "#5c4a43",
 };
 
 const twoCols: CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: 16
+  gridTemplateColumns: "1.1fr 0.9fr",
+  gap: "18px",
 };
 
-const text: CSSProperties = {
-  marginBottom: 10,
-  lineHeight: 1.6
+const stack: CSSProperties = {
+  display: "grid",
+  gap: "14px",
+};
+
+const imageWrap: CSSProperties = {
+  width: "100%",
+  borderRadius: "18px",
+  overflow: "hidden",
+  background: "#f3ebe6",
+  border: "1px solid #ead8cf",
+  position: "relative",
+};
+
+const imgStyle: CSSProperties = {
+  width: "100%",
+  height: "100%",
+  display: "block",
+  objectFit: "cover",
+};
+
+const fallbackBox: CSSProperties = {
+  display: "none",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "100%",
+  height: "100%",
+  minHeight: "180px",
+  background: "#f3ebe6",
+};
+
+const fallbackText: CSSProperties = {
+  fontSize: "18px",
+  color: "#7a655b",
+  fontWeight: 600,
+};
+
+const longText: CSSProperties = {
+  fontSize: "20px",
+  lineHeight: 1.85,
+  margin: 0,
+  color: "#5c4a43",
+};
+
+const storybookIntro: CSSProperties = {
+  marginBottom: "18px",
+};
+
+const storybookBadge: CSSProperties = {
+  display: "inline-block",
+  background: "#f1dfd4",
+  color: "#7a5e54",
+  padding: "8px 12px",
+  borderRadius: "999px",
+  fontSize: "14px",
+  fontWeight: 700,
+  marginBottom: "10px",
+};
+
+const storybookTitle: CSSProperties = {
+  fontSize: "30px",
+  margin: "0 0 8px",
+  color: "#6b564c",
+};
+
+const storyPage: CSSProperties = {
+  marginTop: "16px",
+};
+
+const storyText: CSSProperties = {
+  fontSize: "20px",
+  lineHeight: 1.85,
+  marginTop: "12px",
+  marginBottom: 0,
+  color: "#5c4a43",
 };
 
 const ctaWrap: CSSProperties = {
   textAlign: "center",
-  marginTop: 30
+  marginTop: "28px",
+  marginBottom: "10px",
 };
 
 const cta: CSSProperties = {
   background: "#d9b8a7",
   padding: "16px 30px",
-  borderRadius: 14,
+  borderRadius: "14px",
   textDecoration: "none",
   fontWeight: 700,
   color: "#5c4a43",
-  display: "inline-block"
+  display: "inline-block",
+  fontSize: "20px",
 };
