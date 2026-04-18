@@ -36,11 +36,9 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/baby-girl-newborn/900/1200"
               title="Νεογέννητο μωρό"
-              subtitle="Πρώτες μέρες στο σπίτι"
-              icon="👶"
-              variant="newborn"
               height={320}
             />
           </div>
@@ -62,18 +60,14 @@ export default function PreviewPage() {
             </div>
 
             <div style={stack}>
-              <ThemedImage
-                title="Μαμά & μπαμπάς"
-                subtitle="Η μικρή σου οικογένεια"
-                icon="👨‍👩‍👧"
-                variant="family"
+              <PhotoImage
+                src="https://picsum.photos/seed/baby-girl-family/1200/700"
+                title="Μαμά και μπαμπάς"
                 height={150}
               />
-              <ThemedImage
+              <PhotoImage
+                src="https://picsum.photos/seed/baby-girl-grandparents/1200/700"
                 title="Παππούδες"
-                subtitle="Οι πιο τρυφερές αγκαλιές"
-                icon="💞"
-                variant="grandparents"
                 height={150}
               />
             </div>
@@ -95,18 +89,14 @@ export default function PreviewPage() {
             </div>
 
             <div style={stack}>
-              <ThemedImage
+              <PhotoImage
+                src="https://picsum.photos/seed/baby-girl-smile/1200/700"
                 title="Πρώτο χαμόγελο"
-                subtitle="Μια στιγμή που δεν ξεχνιέται"
-                icon="😊"
-                variant="smile"
                 height={150}
               />
-              <ThemedImage
+              <PhotoImage
+                src="https://picsum.photos/seed/baby-girl-crawl/1200/700"
                 title="Μπουσούλημα"
-                subtitle="Η πρώτη μικρή αποστολή"
-                icon="🧸"
-                variant="crawl"
                 height={150}
               />
             </div>
@@ -127,11 +117,9 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/baby-girl-steps/900/1200"
               title="Πρώτα βήματα"
-              subtitle="Μικρά βηματάκια, μεγάλη συγκίνηση"
-              icon="👣"
-              variant="steps"
               height={320}
             />
           </div>
@@ -173,11 +161,9 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/baby-girl-hug/900/1200"
               title="Στιγμές καρδιάς"
-              subtitle="Αγκαλιές, γέλια και τρυφερότητα"
-              icon="💛"
-              variant="heart"
               height={320}
             />
           </div>
@@ -202,11 +188,9 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/baby-girl-birthday/900/1200"
               title="Γενέθλια"
-              subtitle="Κεράκια, χαρά και αγαπημένοι άνθρωποι"
-              icon="🎂"
-              variant="birthday"
               height={320}
             />
           </div>
@@ -232,11 +216,9 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/baby-girl-social/900/1200"
               title="Μικρές εξερευνήσεις"
-              subtitle="Παιχνίδι, φίλοι και καινούριος κόσμος"
-              icon="🌈"
-              variant="social"
               height={320}
             />
           </div>
@@ -265,11 +247,9 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/baby-girl-school/900/1200"
               title="Πρώτη μέρα στο σχολείο"
-              subtitle="Μικρό βήμα, μεγάλη στιγμή"
-              icon="🎒"
-              variant="school"
               height={320}
             />
           </div>
@@ -299,20 +279,16 @@ export default function PreviewPage() {
             <h3 style={storybookTitle}>Η Ελπίδα και το Μπαλόνι που Ήθελε τα Σύννεφα</h3>
           </div>
 
-          <ThemedImage
+          <PhotoImage
+            src="https://picsum.photos/seed/pixar-girl-cover/1200/900"
             title="Εξώφυλλο παραμυθιού"
-            subtitle="Pixar-inspired αισθητική"
-            icon="✨"
-            variant="storycover"
             height={320}
           />
 
           <div style={storyPage}>
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/pixar-girl-story1/1200/900"
               title="Σελίδα 1"
-              subtitle="Η μικρή εξερευνήτρια"
-              icon="🌤️"
-              variant="story1"
               height={250}
             />
             <p style={storyText}>
@@ -325,11 +301,9 @@ export default function PreviewPage() {
           </div>
 
           <div style={storyPage}>
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/pixar-girl-story2/1200/900"
               title="Σελίδα 2"
-              subtitle="Η πρώτη αποστολή"
-              icon="🎈"
-              variant="story2"
               height={250}
             />
             <p style={storyText}>
@@ -342,11 +316,9 @@ export default function PreviewPage() {
           </div>
 
           <div style={storyPage}>
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/pixar-girl-story3/1200/900"
               title="Σελίδα 3"
-              subtitle="Όλοι μαζί"
-              icon="💞"
-              variant="story3"
               height={250}
             />
             <p style={storyText}>
@@ -358,11 +330,9 @@ export default function PreviewPage() {
           </div>
 
           <div style={storyPage}>
-            <ThemedImage
+            <PhotoImage
+              src="https://picsum.photos/seed/pixar-girl-story4/1200/900"
               title="Σελίδα 4"
-              subtitle="Το πιο γλυκό τέλος"
-              icon="🌙"
-              variant="story4"
               height={250}
             />
             <p style={storyText}>
@@ -408,98 +378,20 @@ function InfoLine({
   );
 }
 
-function ThemedImage({
+function PhotoImage({
+  src,
   title,
-  subtitle,
-  icon,
-  variant,
   height,
 }: {
+  src: string;
   title: string;
-  subtitle: string;
-  icon: string;
-  variant: string;
   height: number;
 }) {
-  const src = makeIllustration({ title, subtitle, icon, variant, height });
   return (
     <div style={{ ...imageWrap, height }}>
       <img src={src} alt={title} style={imgStyle} />
     </div>
   );
-}
-
-function makeIllustration({
-  title,
-  subtitle,
-  icon,
-  variant,
-  height,
-}: {
-  title: string;
-  subtitle: string;
-  icon: string;
-  variant: string;
-  height: number;
-}) {
-  const palettes: Record<string, { bg1: string; bg2: string; accent: string }> = {
-    newborn: { bg1: "#F9EEE7", bg2: "#F2DCCF", accent: "#C89C8A" },
-    family: { bg1: "#F7EFE9", bg2: "#E8D8CF", accent: "#B98574" },
-    grandparents: { bg1: "#F9F2EA", bg2: "#EEDFD2", accent: "#BE9A7A" },
-    smile: { bg1: "#FFF2F4", bg2: "#F8D8DE", accent: "#D88A9D" },
-    crawl: { bg1: "#F6F1FF", bg2: "#E2D8FA", accent: "#9A85D8" },
-    steps: { bg1: "#EEF7F1", bg2: "#D7ECD9", accent: "#7EB38A" },
-    heart: { bg1: "#FFF3EC", bg2: "#F3D8C8", accent: "#D08F73" },
-    birthday: { bg1: "#FFF7EA", bg2: "#F8E1B8", accent: "#D6A24A" },
-    social: { bg1: "#EEF8FF", bg2: "#D8EBF8", accent: "#7CAECD" },
-    school: { bg1: "#F8F3EC", bg2: "#EADFCF", accent: "#B79A66" },
-    storycover: { bg1: "#FBEFEA", bg2: "#E7D4D1", accent: "#C9847B" },
-    story1: { bg1: "#FFF5EE", bg2: "#F3DDD3", accent: "#D29A7B" },
-    story2: { bg1: "#FFF2F7", bg2: "#F2D3E5", accent: "#D06BA1" },
-    story3: { bg1: "#F2F8F1", bg2: "#DDEDD9", accent: "#7FA46E" },
-    story4: { bg1: "#EEF0FF", bg2: "#D6D9F7", accent: "#7D82C8" },
-  };
-
-  const p = palettes[variant] || palettes.family;
-
-  const svg = `
-  <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="${height * 3}" viewBox="0 0 1200 ${height * 3}">
-    <defs>
-      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="${p.bg1}"/>
-        <stop offset="100%" stop-color="${p.bg2}"/>
-      </linearGradient>
-    </defs>
-    <rect width="1200" height="${height * 3}" rx="48" fill="url(#g)"/>
-    <circle cx="210" cy="180" r="90" fill="${p.accent}" opacity="0.18"/>
-    <circle cx="980" cy="${height * 3 - 140}" r="120" fill="${p.accent}" opacity="0.14"/>
-    <circle cx="920" cy="170" r="36" fill="#ffffff" opacity="0.55"/>
-    <circle cx="980" cy="170" r="28" fill="#ffffff" opacity="0.55"/>
-    <circle cx="1015" cy="170" r="22" fill="#ffffff" opacity="0.55"/>
-    <text x="600" y="200" text-anchor="middle" font-size="98">${icon}</text>
-    <text x="600" y="320" text-anchor="middle" font-size="58" font-family="Arial" fill="#6B564C" font-weight="700">${escapeXml(
-      title
-    )}</text>
-    <text x="600" y="395" text-anchor="middle" font-size="34" font-family="Arial" fill="#7F6A60">${escapeXml(
-      subtitle
-    )}</text>
-    <rect x="225" y="475" width="750" height="300" rx="34" fill="#ffffff" opacity="0.52"/>
-    <circle cx="420" cy="565" r="60" fill="${p.accent}" opacity="0.30"/>
-    <rect x="520" y="520" width="250" height="22" rx="11" fill="${p.accent}" opacity="0.25"/>
-    <rect x="520" y="565" width="180" height="18" rx="9" fill="${p.accent}" opacity="0.20"/>
-    <rect x="360" y="660" width="460" height="22" rx="11" fill="${p.accent}" opacity="0.18"/>
-  </svg>`;
-
-  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
-}
-
-function escapeXml(text: string) {
-  return text
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&apos;");
 }
 
 const page: CSSProperties = {
@@ -525,7 +417,7 @@ const logoLink: CSSProperties = {
 };
 
 const logo: CSSProperties = {
-  height: "110px",
+  height: "140px",
   width: "auto",
   objectFit: "contain",
 };
