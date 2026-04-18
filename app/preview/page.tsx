@@ -1,480 +1,164 @@
 import Image from "next/image";
-import Link from "next/link";
-import type { CSSProperties } from "react";
+import { CSSProperties } from "react";
 import { Playfair_Display } from "next/font/google";
 
-const elegantFont = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+const font = Playfair_Display({ subsets: ["latin"] });
 
-const pageWrap: CSSProperties = {
-  maxWidth: "1100px",
-  margin: "0 auto",
-  padding: "70px 24px",
-  minHeight: "100vh",
-};
-
-const card: CSSProperties = {
-  backgroundColor: "rgba(255, 248, 243, 0.88)",
-  borderRadius: "28px",
-  padding: "32px",
-  boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
-};
-
-const titleStyle: CSSProperties = {
-  fontSize: "36px",
-  color: "#7D6457",
-  marginBottom: "24px",
-};
-
-const labelStyle: CSSProperties = {
-  fontSize: "18px",
-  color: "#654F45",
-  marginBottom: "8px",
-};
-
-const textStyle: CSSProperties = {
-  fontSize: "20px",
-  lineHeight: "1.9",
-  color: "#77655B",
-};
-
-const mediaBox: CSSProperties = {
-  backgroundColor: "#EADFD5",
-  borderRadius: "28px",
-  minHeight: "260px",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  textAlign: "center",
-  color: "#9A7F71",
-  fontSize: "17px",
-  padding: "20px",
-  boxShadow: "0 8px 22px rgba(0,0,0,0.05)",
-};
-
-function DottedLines({
-  count = 2,
-  width = "100%",
-}: {
-  count?: number;
-  width?: string;
-}) {
-  return (
-    <div style={{ width }}>
-      {Array.from({ length: count }).map((_, i) => (
-        <div
-          key={i}
-          style={{
-            borderBottom: "2px dotted #A88E7F",
-            marginTop: "10px",
-            marginBottom: "18px",
-            width: "100%",
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-function InfoLabel({
-  label,
-  lines = 2,
-  width = "100%",
-}: {
-  label: string;
-  lines?: number;
-  width?: string;
-}) {
-  return (
-    <div style={{ marginBottom: "22px" }}>
-      <div style={labelStyle}>{label}</div>
-      <DottedLines count={lines} width={width} />
-    </div>
-  );
-}
+const babyImg = "https://images.unsplash.com/photo-1604917018610-3a3c5b3f0e0f";
+const babySmile = "https://images.unsplash.com/photo-1519689680058-324335c77eba";
+const babyWalk = "https://images.unsplash.com/photo-1522771930-78848d9293e8";
 
 export default function PreviewPage() {
   return (
-    <main
-      style={{
-        backgroundColor: "#F6EFE8",
-        color: "#5E4B42",
-      }}
-    >
-      <section
-        style={{
-          ...pageWrap,
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-        }}
-      >
-        <Link href="/" style={{ display: "inline-block" }}>
-          <Image
-            src="/logo.png"
-            alt="My Little Memory Box"
-            width={250}
-            height={250}
-            style={{
-              objectFit: "contain",
-              marginBottom: "18px",
-              cursor: "pointer",
-            }}
-            priority
-          />
-        </Link>
+    <main style={page}>
+      <div style={container}>
 
-        <h1
-          className={elegantFont.className}
-          style={{
-            fontSize: "46px",
-            lineHeight: "1.25",
-            color: "#8B6F5A",
-            marginBottom: "28px",
-            maxWidth: "900px",
-          }}
-        >
-          Δες πώς θα μοιάζει το δικό σου Memory Box
-        </h1>
-
-        <p
-          style={{
-            fontSize: "24px",
-            lineHeight: "1.95",
-            color: "#7A6A62",
-            maxWidth: "780px",
-            fontFamily: "serif",
-          }}
-        >
-          και χάρισε στο παιδί σου ένα προσωποποιημένο παραμύθι
-          <br />
-          με ήρωες εσένα και εκείνο.
-        </p>
-      </section>
-
-      <section style={{ ...pageWrap, display: "flex", alignItems: "center" }}>
-        <div
-          style={{
-            ...card,
-            width: "100%",
-            textAlign: "center",
-            padding: "60px 34px",
-          }}
-        >
-          <h2
-            className={elegantFont.className}
-            style={{
-              fontSize: "44px",
-              color: "#7D6457",
-              lineHeight: "1.35",
-              marginBottom: "28px",
-            }}
-          >
-            Για εσένα,
-            <br />
-            όταν μεγαλώσεις!
-          </h2>
-
-          <p
-            style={{
-              ...textStyle,
-              fontSize: "24px",
-              maxWidth: "760px",
-              margin: "0 auto",
-            }}
-          >
-            Αν διαβάζεις αυτό, σημαίνει ότι μεγάλωσες.
-            <br />
-            Και ίσως δεν θυμάσαι αυτές τις μικρές στιγμές...
-            <br />
-            Αλλά εγώ τις κράτησα για σένα.
-          </p>
-        </div>
-      </section>
-
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1.2fr 0.8fr",
-          gap: "32px",
-          alignItems: "start",
-        }}
-      >
-        <div style={card}>
-          <h2 className={elegantFont.className} style={titleStyle}>
-            Οι πρώτες σου στιγμές
-          </h2>
-
-          <InfoLabel label="Η πρώτη φορά που σε κράτησα:" lines={4} />
-          <InfoLabel label="Ήσουν μια σταλίτσα..." lines={1} width="260px" />
-          <InfoLabel label="Ζύγιζες μόνο:" lines={1} width="220px" />
-          <InfoLabel label="Είχες ύψος:" lines={1} width="220px" />
-          <InfoLabel label="Επιστρέψαμε από το μαιευτήριο:" lines={2} />
-          <InfoLabel label="Οι πρώτες στιγμές σου στο σπίτι μας ήταν:" lines={3} />
-          <InfoLabel label="Η πρώτη φορά που χαμογέλασες:" lines={2} />
+        {/* 🔝 BANNER */}
+        <div style={banner}>
+          Δείγμα από τις 17 ψηφιακές σελίδες του Memory Box & του παραμυθιού σας
         </div>
 
-        <div style={{ display: "grid", gap: "24px" }}>
-          <div style={mediaBox}>Φωτογραφία από τις πρώτες μέρες</div>
-          <div style={mediaBox}>Φωτογραφία αγκαλιάς</div>
-          <div style={mediaBox}>Φωτογραφία από το σπίτι</div>
-        </div>
-      </section>
+        {/* 🧸 ΠΡΩΤΕΣ ΣΤΙΓΜΕΣ */}
+        <Section title="Οι πρώτες σου στιγμές">
+          <p>Όνομα: Γιώργος</p>
+          <p>Γεννήθηκες ένα ζεστό πρωινό Ιουνίου...</p>
+          <Image src={babyImg} alt="" width={400} height={260} style={img}/>
+        </Section>
 
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "1.15fr 0.85fr",
-          gap: "32px",
-          alignItems: "start",
-        }}
-      >
-        <div style={card}>
-          <h2 className={elegantFont.className} style={titleStyle}>
-            Οι πρώτες σου ανακαλύψεις
-          </h2>
+        {/* 🌍 Ο ΚΟΣΜΟΣ ΣΟΥ */}
+        <Section title="Ο κόσμος σου">
+          <p>Οι γονείς σου ήταν πάντα δίπλα σου.</p>
+          <p>Οι παππούδες σε καμάρωναν κάθε μέρα.</p>
+        </Section>
 
-          <InfoLabel
-            label="Το πρώτο σου δοντάκι (και το πρώτο μου ξενύχτι):"
-            lines={2}
-          />
-          <InfoLabel label="Λάτρευες να σε νανουρίζω έτσι:" lines={3} />
-          <InfoLabel label="Η πρώτη φορά που μπουσούλησες:" lines={2} />
-        </div>
+        {/* 👣 ΠΡΩΤΑ ΒΗΜΑΤΑ */}
+        <Section title="Τα πρώτα σου βήματα">
+          <p>Η πρώτη φορά που περπάτησες ήταν μια μικρή γιορτή.</p>
+          <Image src={babyWalk} alt="" width={400} height={260} style={img}/>
+        </Section>
 
-        <div style={{ display: "grid", gap: "24px" }}>
-          <div style={mediaBox}>Κάδρο φωτογραφίας</div>
-          <div style={{ ...mediaBox, minHeight: "280px" }}>
-            Βίντεο από τις πρώτες ανακαλύψεις
-          </div>
-        </div>
-      </section>
+        {/* 🎂 ΓΕΝΕΘΛΙΑ */}
+        <Section title="Για τα γενέθλιά σου">
+          <p>Σήμερα γίνεσαι 2 ετών.</p>
+          <p>Έσβησες την τούρτα σου με όλους γύρω σου.</p>
+        </Section>
 
-      <section style={{ ...pageWrap, display: "flex", alignItems: "center" }}>
-        <div
-          style={{
-            ...card,
-            width: "100%",
-            textAlign: "center",
-            padding: "60px 34px",
-          }}
-        >
-          <h2
-            className={elegantFont.className}
-            style={{
-              fontSize: "42px",
-              color: "#7D6457",
-              lineHeight: "1.35",
-              marginBottom: "28px",
-            }}
-          >
-            Μεγαλώνεις τόσο γρήγορα...
-          </h2>
-
-          <p
-            style={{
-              ...textStyle,
-              fontSize: "25px",
-              maxWidth: "780px",
-              margin: "0 auto",
-            }}
-          >
-            και εγώ προσπαθώ να κρατήσω
-            <br />
-            λίγο από κάθε “πρώτη φορά”.
-            <br />
-            <br />
-            (και λίγο από την ψυχραιμία μου 😅)
-          </p>
-        </div>
-      </section>
-
-      <section
-        style={{
-          ...pageWrap,
-          display: "grid",
-          gridTemplateColumns: "0.9fr 1.1fr",
-          gap: "32px",
-          alignItems: "stretch",
-        }}
-      >
-        <div style={mediaBox}>
-          Προεπισκόπηση
-          <br />
-          του προσωποποιημένου
-          <br />
-          παραμυθιού
+        {/* 🎨 ΨΗΦΙΑΚΟ ΕΞΩΦΥΛΛΟ */}
+        <div style={cover}>
+          <h2 className={font.className}>Το παραμύθι σου</h2>
+          <Image src={babySmile} alt="" width={250} height={250} style={{borderRadius:20}}/>
+          <p>Γιώργος ο μικρός εξερευνητής</p>
         </div>
 
-        <div style={card}>
-          <h2
-            className={elegantFont.className}
-            style={{
-              fontSize: "38px",
-              color: "#86695C",
-              marginBottom: "20px",
-            }}
-          >
-            Το παραμύθι σας
-          </h2>
+        {/* 📖 ΠΑΡΑΜΥΘΙ */}
+        <div style={story}>
+          <h2 className={font.className}>Το παραμύθι σου</h2>
 
-          <p style={textStyle}>
-            Μέσα από τις δικές σου αναμνήσεις, τις λέξεις σου, τα μικρά
-            περιστατικά, τις τρυφερές στιγμές και τις φωτογραφίες που θα
-            επιλέξεις, θα δημιουργηθεί ένα προσωποποιημένο παραμύθι
-            με ήρωες εσένα και το παιδί σου.
+          <p>
+            Μια φορά κι έναν καιρό, ήταν ένα μικρό αγόρι που το έλεγαν Γιώργο.
+            Ο Γιώργος αγαπούσε να εξερευνά τον κόσμο γύρω του.
           </p>
 
-          <p style={{ ...textStyle, marginTop: "18px" }}>
-            Δεν θα είναι ένα γενικό παραμύθι.
-            Θα είναι η δική σας ιστορία,
-            γραμμένη με τρυφερότητα και ύφος κατάλληλο
-            για μικρό παιδί.
-          </p>
-        </div>
-      </section>
-
-      <section style={pageWrap}>
-        <div style={card}>
-          <h2
-            className={elegantFont.className}
-            style={{
-              fontSize: "40px",
-              color: "#86695C",
-              marginBottom: "24px",
-              textAlign: "center",
-            }}
-          >
-            Τι θα περιλαμβάνει το Memory Box σου
-          </h2>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))",
-              gap: "18px",
-              marginTop: "20px",
-            }}
-          >
-            <div style={smallCard}>
-              <div style={emojiStyle}>📖</div>
-              <div style={smallTitle}>Προσωποποιημένο παραμύθι</div>
-              <div style={smallText}>
-                Δημιουργημένο από τις δικές σου στιγμές και απαντήσεις.
-              </div>
-            </div>
-
-            <div style={smallCard}>
-              <div style={emojiStyle}>📸</div>
-              <div style={smallTitle}>Σελίδες με φωτογραφίες</div>
-              <div style={smallText}>
-                Τοποθετημένες στα σωστά σημεία της ιστορίας σας.
-              </div>
-            </div>
-
-            <div style={smallCard}>
-              <div style={emojiStyle}>🎥</div>
-              <div style={smallTitle}>Μικρά βίντεο αναμνήσεων</div>
-              <div style={smallText}>
-                Για να μένουν ζωντανές οι πιο αληθινές στιγμές.
-              </div>
-            </div>
-
-            <div style={smallCard}>
-              <div style={emojiStyle}>💛</div>
-              <div style={smallTitle}>Ένα δώρο για πάντα</div>
-              <div style={smallText}>
-                Μια εμπειρία που θα μπορεί να μείνει στο παιδί σου.
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        style={{
-          minHeight: "70vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          padding: "40px 24px 100px",
-        }}
-      >
-        <div style={{ textAlign: "center", maxWidth: "820px" }}>
-          <h2
-            className={elegantFont.className}
-            style={{
-              fontSize: "44px",
-              color: "#8B6F5A",
-              marginBottom: "24px",
-            }}
-          >
-            Τώρα ξέρεις πώς θα μοιάζει
-          </h2>
-
-          <p
-            style={{
-              fontSize: "24px",
-              lineHeight: "1.85",
-              color: "#7A6A62",
-              marginBottom: "36px",
-            }}
-          >
-            Κάθε σελίδα θα γεμίσει με τις δικές σας στιγμές,
-            τις φωτογραφίες σας, τις λέξεις σου
-            και όλα όσα θέλεις μια μέρα να θυμάται το παιδί σου.
+          <p>
+            Ένα πρωί, είδε ένα κόκκινο μπαλόνι να πετά ψηλά.
+            «Μαμά, θέλω να το πιάσω!» είπε.
           </p>
 
-          <Link
-            href="/checkout"
-            style={{
-              display: "inline-block",
-              padding: "18px 40px",
-              borderRadius: "30px",
-              border: "none",
-              backgroundColor: "#EAD7CF",
-              color: "#5C4A42",
-              fontSize: "18px",
-              cursor: "pointer",
-              fontWeight: "600",
-              textDecoration: "none",
-            }}
-          >
-            Αγόρασέ το
-          </Link>
+          <p>
+            «Πάμε μαζί», του απάντησε εκείνη χαμογελώντας.
+          </p>
+
+          <p>
+            Ο μπαμπάς ήρθε κι αυτός, και όλοι μαζί ξεκίνησαν μια μικρή περιπέτεια.
+          </p>
+
+          <p>
+            Το μπαλόνι ανέβηκε σε ένα δέντρο.
+            Ο Γιώργος το κοίταξε και είπε:
+            «Μπορώ!»
+          </p>
+
+          <p>
+            Με τη βοήθεια της οικογένειάς του, το κατέβασε.
+          </p>
+
+          <p>
+            «Τα κατάφερες!» είπαν όλοι μαζί.
+          </p>
+
+          <p>
+            Και εκείνη τη στιγμή, ο Γιώργος κατάλαβε πως
+            δεν ήταν μόνος του σε καμία περιπέτεια.
+          </p>
+
+          <p>
+            Γιατί πάντα θα είχε κοντά του αυτούς που τον αγαπούν.
+          </p>
+
+          <p>
+            Και έτσι, η μικρή αυτή περιπέτεια έγινε μια μεγάλη ανάμνηση.
+          </p>
         </div>
-      </section>
+
+      </div>
     </main>
   );
 }
 
-const smallCard: CSSProperties = {
-  backgroundColor: "#F7ECE3",
-  borderRadius: "20px",
-  padding: "22px",
+/* ================= STYLE ================= */
+
+function Section({ title, children }: any) {
+  return (
+    <div style={card}>
+      <h2 style={{marginBottom:10}}>{title}</h2>
+      {children}
+    </div>
+  );
+}
+
+const page: CSSProperties = {
+  background: "#f6eee8",
+  minHeight: "100vh",
+  padding: 20,
+};
+
+const container: CSSProperties = {
+  maxWidth: 800,
+  margin: "0 auto",
+};
+
+const banner: CSSProperties = {
+  background: "#e9d7cd",
+  padding: 12,
+  borderRadius: 12,
   textAlign: "center",
+  marginBottom: 20,
+  fontWeight: 600,
 };
 
-const emojiStyle: CSSProperties = {
-  fontSize: "30px",
-  marginBottom: "12px",
+const card: CSSProperties = {
+  background: "white",
+  padding: 20,
+  borderRadius: 16,
+  marginBottom: 16,
 };
 
-const smallTitle: CSSProperties = {
-  fontSize: "20px",
-  color: "#7A5F53",
-  marginBottom: "10px",
-  fontWeight: "600",
+const img: CSSProperties = {
+  borderRadius: 12,
+  marginTop: 10,
 };
 
-const smallText: CSSProperties = {
-  fontSize: "16px",
-  color: "#7D6E67",
-  lineHeight: "1.7",
+const cover: CSSProperties = {
+  textAlign: "center",
+  background: "white",
+  padding: 20,
+  borderRadius: 16,
+  marginBottom: 20,
+};
+
+const story: CSSProperties = {
+  background: "white",
+  padding: 20,
+  borderRadius: 16,
+  lineHeight: 1.8,
 };
