@@ -1,179 +1,660 @@
-import Image from "next/image";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
+import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
 
-const font = Playfair_Display({ subsets: ["latin"] });
+const font = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function PreviewPage() {
   return (
     <main style={page}>
       <div style={container}>
-
-        {/* 🔝 BANNER */}
-        <div style={banner}>
-          Δείγμα από τις 17 ψηφιακές σελίδες του Memory Box & του παραμυθιού σας
+        <div style={topBar}>
+          <Link href="/" style={backLink}>
+            ← Επιστροφή
+          </Link>
         </div>
 
-        {/* 🧸 ΠΡΩΤΕΣ ΣΤΙΓΜΕΣ */}
-        <Section title="Οι πρώτες σου στιγμές">
-          <p><strong>Όνομα:</strong> Γιώργος</p>
-          <p><strong>Η πρώτη φορά που σε κράτησα:</strong> 2 Ιουνίου 2025</p>
-          <p><strong>Ζύγιζες μόνο:</strong> 3,550 γρ</p>
-          <p><strong>Είχες ύψος:</strong> 51 πόντους</p>
-          <p><strong>Επιστρέψαμε από το μαιευτήριο:</strong> Πέντε μέρες μετά την γέννησή σου</p>
-          <p><strong>Οι πρώτες σου στιγμές στο σπίτι ήταν:</strong> Ήρεμες, είχες ανάγκη την αγκαλιά της μαμάς μέχρι να προσαρμοστείς</p>
-          <p><strong>Η πρώτη φορά που χαμογέλασες:</strong> Ήταν στους 2 μήνες (ξετρελαθήκαμε)</p>
-
-          <Image
-            src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80"
-            alt=""
-            width={400}
-            height={250}
-            style={img}
-          />
-        </Section>
-
-        {/* 🌍 Ο ΚΟΣΜΟΣ ΣΟΥ */}
-        <Section title="Ο κόσμος σου">
-          <p><strong>Οι γονείς σου:</strong> Μαριάννα και Γιάννης</p>
-          <p><strong>Οι παππούδες:</strong> Από τον μπαμπά γιαγιά Ρίτσα και παππούς Μάκης, από τη μαμά γιαγιά Μαρία και παππούς Χάρης</p>
-          <p><strong>Η νονά σου:</strong> Ανδριάνα</p>
-          <p><strong>Οι φίλοι που έγιναν οικογένεια:</strong> Χριστίνα, Γεωργία, Σπύρος και Ορέστης</p>
-
-          <Image
-            src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1200&q=80"
-            alt=""
-            width={400}
-            height={250}
-            style={img}
-          />
-        </Section>
-
-        {/* 👶 ΑΝΑΚΑΛΥΨΕΙΣ */}
-        <Section title="Οι πρώτες σου ανακαλύψεις">
-          <p><strong>Το πρώτο σου δοντάκι:</strong> Στους 3 μήνες, τα δύο κάτω</p>
-          <p><strong>Λάτρευες να σε νανουρίζουμε έτσι:</strong> Αγκαλίτσα και «νάνι νάνι το μωράκι μου»</p>
-          <p><strong>Η πρώτη φορά που μπουσούλησες:</strong> Στους 7 μήνες</p>
-
-          <Image
-            src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&w=1200&q=80"
-            alt=""
-            width={400}
-            height={250}
-            style={img}
-          />
-        </Section>
-
-        {/* 👣 ΒΗΜΑΤΑ */}
-        <Section title="Τα πρώτα σου βήματα">
-          <p>Η πρώτη φορά που περπάτησες ήταν μια μικρή γιορτή.</p>
-
-          <Image
-            src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"
-            alt=""
-            width={400}
-            height={250}
-            style={img}
-          />
-        </Section>
-
-        {/* 🎂 ΓΕΝΕΘΛΙΑ */}
-        <Section title="Για τα γενέθλιά σου">
-          <p>Σήμερα γίνεσαι 2 ετών.</p>
-          <p>Έσβησες την τούρτα σου με όλους γύρω σου.</p>
-
-          <Image
-            src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=1200&q=80"
-            alt=""
-            width={400}
-            height={250}
-            style={img}
-          />
-        </Section>
-
-        {/* 🎨 ΨΗΦΙΑΚΟ ΕΞΩΦΥΛΛΟ */}
-        <div style={cover}>
-          <h2 className={font.className}>Το παραμύθι σου</h2>
-
-          <Image
-            src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80"
-            alt=""
-            width={250}
-            height={250}
-            style={{ borderRadius: 20 }}
-          />
-
-          <p>Ο Γιώργος και το Μπαλόνι που ήθελε τα σύννεφα</p>
+        <div style={heroCard}>
+          <div style={heroBadge}>Preview Δείγμα</div>
+          <h1 className={font.className} style={heroTitle}>
+            Δείγμα από τις 17 ψηφιακές σελίδες του Memory Box & του παραμυθιού σας
+          </h1>
+          <p style={heroText}>
+            Το preview που βλέπετε είναι ένα ολοκληρωμένο ψηφιακό δείγμα με
+            συμπληρωμένες σελίδες, δείγματα φωτογραφιών και εικονογραφημένο
+            παραμύθι, ώστε να δείτε πώς θα μοιάζει το τελικό σας αρχείο.
+          </p>
         </div>
 
-        {/* 📖 ΠΑΡΑΜΥΘΙ */}
-        <div style={story}>
-          <h2 className={font.className}>Το παραμύθι σου</h2>
+        <SectionTitle
+          eyebrow="1. Δείγμα από τις σελίδες του Memory Box"
+          title="Οι αναμνήσεις ενός ίδιου μωρού, σε ένα ενιαίο δείγμα"
+        />
 
-          <p>
-            Μια φορά κι έναν καιρό, ήταν ένα μικρό αγόρι που το έλεγαν Γιώργο.
-            Από την πρώτη στιγμή που ήρθε στον κόσμο, γέμισε τα πάντα γύρω του με φως.
+        <div style={gridTwo}>
+          <PreviewCard title="Οι πρώτες σου στιγμές">
+            <div style={twoColContent}>
+              <div>
+                <InfoLine label="Όνομα">Γιώργος</InfoLine>
+                <InfoLine label="Η πρώτη φορά που σε κράτησα">
+                  2 Ιουνίου 2025
+                </InfoLine>
+                <InfoLine label="Ζύγιζες μόνο">3,550 γρ</InfoLine>
+                <InfoLine label="Είχες ύψος">51 πόντους</InfoLine>
+                <InfoLine label="Επιστρέψαμε από το μαιευτήριο">
+                  Πέντε μέρες μετά την γέννησή σου
+                </InfoLine>
+                <InfoLine label="Οι πρώτες σου στιγμές στο σπίτι ήταν">
+                  Ήρεμες, είχες ανάγκη την αγκαλιά της μαμάς μέχρι να
+                  προσαρμοστείς
+                </InfoLine>
+                <InfoLine label="Η πρώτη φορά που χαμογέλασες">
+                  Ήταν στους 2 μήνες (ξετρελαθήκαμε)
+                </InfoLine>
+              </div>
+
+              <div style={imageStack}>
+                <RemoteImage
+                  src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80"
+                  alt="Νεογέννητο μωρό"
+                  height={250}
+                />
+              </div>
+            </div>
+          </PreviewCard>
+
+          <PreviewCard title="Ο κόσμος σου">
+            <div style={infoBlock}>
+              <InfoLine label="Οι γονείς σου">Μαριάννα και Γιάννης</InfoLine>
+
+              <InfoLine label="Οι παππούδες σου">
+                Από τον μπαμπά, γιαγιά Ρίτσα και παππούς Μάκης. Από τη μαμά,
+                γιαγιά Μαρία και παππούς Χάρης.
+              </InfoLine>
+
+              <InfoLine label="Η νονά σου">Ανδριάνα</InfoLine>
+
+              <InfoLine label="Οι φίλοι που έγιναν οικογένεια">
+                Χριστίνα, Γεωργία, Σπύρος και Ορέστης.
+              </InfoLine>
+            </div>
+
+            <div style={photoGrid3}>
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1200&q=80"
+                alt="Μωρό με γονείς"
+                height={180}
+              />
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+                alt="Μωρό με παππούδες"
+                height={180}
+              />
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80"
+                alt="Μωρό με φίλους οικογένειας"
+                height={180}
+              />
+            </div>
+          </PreviewCard>
+        </div>
+
+        <div style={gridTwo}>
+          <PreviewCard title="Οι πρώτες σου ανακαλύψεις">
+            <div style={infoBlock}>
+              <InfoLine label="Το πρώτο σου δοντάκι">
+                Ήταν στους τρεις μήνες, τα δύο πρώτα δοντάκια τα κάτω
+              </InfoLine>
+
+              <InfoLine label="Λάτρευες να σε νανουρίζουμε έτσι">
+                Αγκαλίτσα και να σου τραγουδάω «νάνι νάνι το μωράκι μου»
+              </InfoLine>
+
+              <InfoLine label="Η πρώτη φορά που μπουσούλησες">
+                Ήταν γύρω στους 7 μήνες, ξαφνικά
+              </InfoLine>
+            </div>
+
+            <div style={photoGrid2}>
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&w=1200&q=80"
+                alt="Το πρώτο χαμόγελο"
+                height={210}
+              />
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1200&q=80"
+                alt="Το πρώτο μπουσούλημα"
+                height={210}
+              />
+            </div>
+          </PreviewCard>
+
+          <PreviewCard title="Τα πρώτα σου βήματα & τα γενέθλιά σου">
+            <div style={infoBlock}>
+              <InfoLine label="Μια μικρή νίκη που θυμόμαστε">
+                Η πρώτη φορά που στάθηκες μόνος σου μάς φάνηκε σαν θαύμα.
+              </InfoLine>
+
+              <InfoLine label="Σήμερα γίνεσαι">2 ετών</InfoLine>
+
+              <InfoLine label="Η ευχή μας για σένα">
+                Να μεγαλώνεις με υγεία, χαρά, τρυφερότητα και φως.
+              </InfoLine>
+            </div>
+
+            <div style={photoGrid2}>
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"
+                alt="Πρώτα βήματα"
+                height={220}
+              />
+              <RemoteImage
+                src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=1200&q=80"
+                alt="Γενέθλια"
+                height={220}
+              />
+            </div>
+          </PreviewCard>
+        </div>
+
+        <SectionTitle
+          eyebrow="2. Δείγμα από το ηλεκτρονικό παραμύθι σας"
+          title="Εικονογραφημένο ψηφιακό παραμύθι με πρωταγωνιστή το παιδί"
+        />
+
+        <div style={digitalNote}>
+          Το παρακάτω είναι δείγμα από το τελικό ηλεκτρονικό παραμύθι. Δεν
+          πρόκειται για έντυπο βιβλίο, αλλά για ψηφιακό αρχείο με ολοκληρωμένες
+          σελίδες, εικονογράφηση και πλήρες κείμενο.
+        </div>
+
+        <div style={storyCoverCard}>
+          <div style={storyCoverText}>
+            <div style={storyTag}>Ψηφιακό εξώφυλλο παραμυθιού</div>
+            <h2 className={font.className} style={storyCoverTitle}>
+              Ο Γιώργος και το Μπαλόνι που Ήθελε τα Σύννεφα
+            </h2>
+            <p style={storyCoverParagraph}>
+              Ένα εικονογραφημένο ψηφιακό παραμύθι με πρωταγωνιστή τον μικρό
+              Γιώργο, βασισμένο στις πιο γλυκές αναμνήσεις του πρώτου του καιρού.
+            </p>
+          </div>
+
+          <div style={storyCoverImageWrap}>
+            <RemoteImage
+              src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1200&q=80"
+              alt="Ψηφιακό εξώφυλλο παραμυθιού"
+              height={420}
+            />
+          </div>
+        </div>
+
+        <div style={storyPage}>
+          <div style={storyPageImage}>
+            <RemoteImage
+              src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80"
+              alt="Πρώτη σελίδα παραμυθιού"
+              height={360}
+            />
+          </div>
+
+          <div style={storyPageText}>
+            <h3 className={font.className} style={storyPageTitle}>
+              Σελίδα 1
+            </h3>
+            <p style={storyParagraph}>
+              Ο Γιώργος ήταν ένα μικρό αγόρι με μεγάλα φωτεινά μάτια και μια
+              καρδιά γεμάτη απορίες. Από τότε που ήρθε στον κόσμο, στις 2 Ιουνίου
+              2025, όλοι έλεγαν πως έφερε μαζί του μια γλυκιά ησυχία.
+            </p>
+            <p style={storyParagraph}>
+              Στην αρχή, ο Γιώργος αγαπούσε πιο πολύ απ’ όλα την αγκαλιά της
+              μαμάς του. Εκεί ένιωθε ασφαλής. Εκεί άκουγε την αγαπημένη του
+              μελωδία.
+            </p>
+            <p style={storyParagraph}>
+              «Νάνι νάνι το μωράκι μου…» τραγουδούσε η μαμά, και ο Γιώργος
+              κουλουριαζόταν ήρεμα στην αγκαλιά της.
+            </p>
+            <p style={storyParagraph}>
+              Ο μπαμπάς, ο Γιάννης, χαμογελούσε και έλεγε:
+              «Νομίζω πως αυτό το τραγούδι είναι το μαγικό του κουμπί.»
+            </p>
+          </div>
+        </div>
+
+        <div style={storyPage}>
+          <div style={storyPageText}>
+            <h3 className={font.className} style={storyPageTitle}>
+              Σελίδα 2
+            </h3>
+            <p style={storyParagraph}>
+              Όταν ο Γιώργος ήταν δύο μηνών, χάρισε το πρώτο του χαμόγελο. Και
+              τότε έγινε κάτι παράξενο: όλο το σπίτι έμοιαζε να φωτίστηκε λίγο
+              περισσότερο.
+            </p>
+            <p style={storyParagraph}>
+              Η Μαριάννα χειροκρότησε.
+              «Το είδες; Χαμογέλασε!»
+            </p>
+            <p style={storyParagraph}>
+              «Το είδα!» είπε ο μπαμπάς και γέλασε τόσο δυνατά, που ο Γιώργος
+              χαμογέλασε ακόμα πιο πολύ.
+            </p>
+            <p style={storyParagraph}>
+              Από εκείνη τη μέρα, ο μικρός ήρωας του σπιτιού άρχισε να
+              ανακαλύπτει τον κόσμο του. Στους τρεις μήνες ήρθαν τα δύο πρώτα
+              δοντάκια. Στους επτά μήνες μπουσούλησε ξαφνικά, λες και κάποιος του
+              ψιθύρισε πως είχε έρθει η ώρα για την πρώτη του αποστολή.
+            </p>
+          </div>
+
+          <div style={storyPageImage}>
+            <RemoteImage
+              src="https://images.unsplash.com/photo-1515488764276-beab7607c1e6?auto=format&fit=crop&w=1200&q=80"
+              alt="Δεύτερη σελίδα παραμυθιού"
+              height={360}
+            />
+          </div>
+        </div>
+
+        <div style={storyPage}>
+          <div style={storyPageImage}>
+            <RemoteImage
+              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80"
+              alt="Τρίτη σελίδα παραμυθιού"
+              height={360}
+            />
+          </div>
+
+          <div style={storyPageText}>
+            <h3 className={font.className} style={storyPageTitle}>
+              Σελίδα 3
+            </h3>
+            <p style={storyParagraph}>
+              Ένα απόγευμα, ο Γιώργος βρήκε ένα κόκκινο μπαλόνι δεμένο δίπλα στο
+              παράθυρο. Το κοίταξε με θαυμασμό.
+            </p>
+            <p style={storyParagraph}>
+              «Μπα!» είπε και άπλωσε το χεράκι του.
+            </p>
+            <p style={storyParagraph}>
+              Το μπαλόνι κουνήθηκε παιχνιδιάρικα, σαν να του μιλούσε.
+            </p>
+            <p style={storyParagraph}>
+              Και έτσι άρχισε μια μικρή, χαρούμενη περιπέτεια. Η μαμά, ο μπαμπάς,
+              η νονά Ανδριάνα, οι παππούδες και οι αγαπημένοι φίλοι της
+              οικογένειας έγιναν όλοι κομμάτι της.
+            </p>
+            <p style={storyParagraph}>
+              Και στο τέλος, όταν ο Γιώργος έπιασε το μπαλόνι του, όλοι φώναξαν
+              μαζί:
+              «Μπράβο, μικρέ εξερευνητή!»
+            </p>
+          </div>
+        </div>
+
+        <div style={closingCard}>
+          <h3 className={font.className} style={closingTitle}>
+            Το παραμύθι συνεχίζεται…
+          </h3>
+          <p style={closingText}>
+            Αυτό είναι ένα μόνο δείγμα από τον τρόπο που το Memory Box και οι
+            προσωπικές σας αναμνήσεις μετατρέπονται σε ένα ολοκληρωμένο,
+            εικονογραφημένο ηλεκτρονικό παραμύθι.
           </p>
+        </div>
+      </div>
+    </main>
+  );
+}
 
-          <p>
-            Η μαμά του τον κρατούσε στην αγκαλιά και του τραγουδούσε:
-            «Νάνι νάνι το μωράκι μου…»
-          </p>
+function SectionTitle({
+  eyebrow,
+  title,
+}: {
+  eyebrow: string;
+  title: string;
+}) {
+  return (
+    <div style={sectionTitleWrap}>
+      <div style={eyebrowStyle}>{eyebrow}</div>
+      <h2 className={font.className} style={sectionMainTitle}>
+        {title}
+      </h2>
+    </div>
+  );
+}
 
-          <p>
-            «Νομίζω πως αυτό είναι το αγαπημένο του τραγούδι», είπε ο μπαμπάς γελώντας.
-          </p>
+function PreviewCard({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
+  return (
+    <section style={card}>
+      <h3 className={font.className} style={cardTitle}>
+        {title}
+      </h3>
+      {children}
+    </section>
+  );
+}
 
-          <p>
-            Όσο περνούσε ο καιρός, ο Γιώργος άρχισε να ανακαλύπτει τον κόσμο.
-            Πρώτα ήρθε το χαμόγελο. Μετά τα δοντάκια. Και ύστερα…
-          </p>
+function InfoLine({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <p style={infoLine}>
+      <span style={infoLabel}>{label}: </span>
+      <span>{children}</span>
+    </p>
+  );
+}
 
-          <p>
-            «Κοίτα! Μπουσουλάει!» φώναξε η μαμά.
-          </p>
+function RemoteImage({
+  src,
+  alt,
+  height,
+}: {
+  src: string;
+  alt: string;
+  height: number;
+}) {
+  return (
+    <div style={{ ...imageFrame, height }}>
+      <img
+        src={src}
+        alt={alt}
+        style={rawImage}
+      />
+    </div>
+  );
+}
 
-          <p>
-            Και πράγματι. Ο Γιώργος ξεκίνησε το πρώτο του ταξίδι.
-          </p>
+const page: CSSProperties = {
+  minHeight: "100vh",
+  background: "linear-gradient(180deg, #FCF6F1 0%, #F7EEE7 46%, #F5ECE4 100%)",
+  padding: "32px 16px 80px",
+  color: "#5E4B42",
+};
 
-          <p>
-            Μια μέρα, είδε ένα κόκκινο μπαλόνι.
-          </p>
+const container: CSSProperties = {
+  maxWidth: "1180px",
+  margin: "0 auto",
+};
 
-          <p>
-            «Μαμά… θέλω αυτό!» είπε.
-          </p>
+const topBar: CSSProperties = {
+  display: "flex",
+  justifyContent: "flex-start",
+  marginBottom: "18px",
+};
 
-          <p>
-            Το μπαλόνι πέταξε ψηλά και κόλλησε σε ένα δέντρο.
-          </p>
+const backLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#7A6257",
+  fontWeight: 600,
+  backgroundColor: "rgba(255,255,255,0.85)",
+  padding: "10px 14px",
+  borderRadius: "12px",
+  border: "1px solid rgba(216,197,185,0.35)",
+};
 
-          <p>
-            «Θα το φτάσουμε μαζί», είπε ο μπαμπάς.
-          </p>
+const heroCard: CSSProperties = {
+  backgroundColor: "#EFE0D7",
+  borderRadius: "28px",
+  padding: "26px",
+  boxShadow: "0 12px 34px rgba(0,0,0,0.05)",
+  border: "1px solid rgba(216,197,185,0.35)",
+  marginBottom: "26px",
+  textAlign: "center",
+};
 
-          <p>
-            Όλοι μαζεύτηκαν γύρω του. Οι γονείς, οι φίλοι, η οικογένεια.
-          </p>
+const heroBadge: CSSProperties = {
+  display: "inline-block",
+  padding: "8px 14px",
+  borderRadius: "999px",
+  backgroundColor: "#E5D0C4",
+  color: "#7B5F52",
+  fontSize: "13px",
+  fontWeight: 700,
+  marginBottom: "12px",
+};
 
-          <p>
-            Με λίγη προσπάθεια, το μπαλόνι κατέβηκε ξανά στα χεράκια του.
-          </p>
+const heroTitle: CSSProperties = {
+  fontSize: "40px",
+  lineHeight: 1.15,
+  color: "#6F5A50",
+  margin: "0 0 12px",
+};
 
-          <p>
-            «Τα κατάφερες!» είπαν όλοι μαζί.
-          </p>
+const heroText: CSSProperties = {
+  maxWidth: "860px",
+  margin: "0 auto",
+  fontSize: "17px",
+  lineHeight: "1.75",
+  color: "#6B5A53",
+};
 
-          <p>
-            Και εκείνη τη στιγμή, ο Γιώργος κατάλαβε κάτι πολύ σημαντικό:
-          </p>
+const sectionTitleWrap: CSSProperties = {
+  margin: "28px 0 18px",
+};
 
-          <p>
-            ότι κάθε περιπέτεια γίνεται πιο όμορφη όταν έχεις δίπλα σου αυτούς που σε αγαπούν.
-          </p>
+const eyebrowStyle: CSSProperties = {
+  color: "#8E6E60",
+  fontSize: "14px",
+  fontWeight: 700,
+  marginBottom: "8px",
+};
 
-          <p>
+const sectionMainTitle: CSSProperties = {
+  fontSize: "30px",
+  lineHeight: 1.2,
+  color: "#6F5A50",
+  margin: 0,
+};
+
+const gridTwo: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+  gap: "18px",
+  marginBottom: "18px",
+};
+
+const card: CSSProperties = {
+  backgroundColor: "#FFFDFB",
+  borderRadius: "26px",
+  padding: "22px",
+  boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
+  border: "1px solid rgba(216,197,185,0.35)",
+  color: "#5E4B42",
+};
+
+const cardTitle: CSSProperties = {
+  fontSize: "28px",
+  color: "#7D6457",
+  margin: "0 0 16px",
+};
+
+const twoColContent: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "1.15fr 0.85fr",
+  gap: "16px",
+};
+
+const imageStack: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "12px",
+};
+
+const infoBlock: CSSProperties = {
+  marginBottom: "14px",
+};
+
+const infoLine: CSSProperties = {
+  fontSize: "16px",
+  lineHeight: "1.7",
+  margin: "0 0 10px",
+  color: "#645148",
+};
+
+const infoLabel: CSSProperties = {
+  fontWeight: 700,
+  color: "#7B5E52",
+};
+
+const photoGrid3: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "repeat(3, 1fr)",
+  gap: "12px",
+};
+
+const photoGrid2: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "repeat(2, 1fr)",
+  gap: "12px",
+};
+
+const imageFrame: CSSProperties = {
+  width: "100%",
+  overflow: "hidden",
+  borderRadius: "18px",
+  border: "1px solid rgba(216,197,185,0.35)",
+  boxShadow: "0 8px 22px rgba(0,0,0,0.06)",
+  backgroundColor: "#fff",
+};
+
+const rawImage: CSSProperties = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  display: "block",
+};
+
+const digitalNote: CSSProperties = {
+  backgroundColor: "#FFF8F4",
+  border: "1px dashed #D8C5B9",
+  borderRadius: "18px",
+  padding: "16px 18px",
+  marginBottom: "18px",
+  lineHeight: "1.7",
+  color: "#6E5A51",
+};
+
+const storyCoverCard: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "1fr 0.95fr",
+  gap: "20px",
+  backgroundColor: "#FFFDFB",
+  borderRadius: "26px",
+  padding: "22px",
+  boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
+  border: "1px solid rgba(216,197,185,0.35)",
+  marginBottom: "18px",
+  alignItems: "center",
+};
+
+const storyCoverText: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px",
+};
+
+const storyTag: CSSProperties = {
+  display: "inline-block",
+  width: "fit-content",
+  padding: "7px 12px",
+  borderRadius: "999px",
+  backgroundColor: "#F3E2D7",
+  color: "#8B6F5A",
+  fontSize: "13px",
+  fontWeight: 700,
+};
+
+const storyCoverTitle: CSSProperties = {
+  margin: 0,
+  fontSize: "34px",
+  lineHeight: 1.15,
+  color: "#6F5A50",
+};
+
+const storyCoverParagraph: CSSProperties = {
+  margin: 0,
+  fontSize: "17px",
+  lineHeight: "1.8",
+  color: "#76665F",
+};
+
+const storyCoverImageWrap: CSSProperties = {
+  width: "100%",
+};
+
+const storyPage: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "0.9fr 1.1fr",
+  gap: "20px",
+  backgroundColor: "#FFFDFB",
+  borderRadius: "26px",
+  padding: "22px",
+  boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
+  border: "1px solid rgba(216,197,185,0.35)",
+  marginBottom: "18px",
+  alignItems: "start",
+  color: "#5E4B42",
+};
+
+const storyPageImage: CSSProperties = {
+  width: "100%",
+};
+
+const storyPageText: CSSProperties = {
+  width: "100%",
+};
+
+const storyPageTitle: CSSProperties = {
+  margin: "0 0 14px",
+  fontSize: "26px",
+  color: "#7B6256",
+};
+
+const storyParagraph: CSSProperties = {
+  margin: "0 0 12px",
+  fontSize: "17px",
+  lineHeight: "1.85",
+  color: "#5F4D45",
+};
+
+const closingCard: CSSProperties = {
+  backgroundColor: "#FFFDFB",
+  borderRadius: "26px",
+  padding: "24px",
+  boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
+  border: "1px solid rgba(216,197,185,0.35)",
+  textAlign: "center",
+};
+
+const closingTitle: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: "28px",
+  color: "#7D6457",
+};
+
+const closingText: CSSProperties = {
+  margin: 0,
+  fontSize: "17px",
+  lineHeight: "1.8",
+  color: "#74645D",
+};
             Και έτσι, το μικρό αγόρι συνέχισε το ταξίδι του…
             γεμάτο χαμόγελα, αγκαλιές και αγάπη.
           </p>
