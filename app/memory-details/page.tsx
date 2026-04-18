@@ -20,6 +20,8 @@ const WEBHOOK =
   "https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55";
 
 type FormValues = {
+  childName: string;
+
   firstHold: string;
   weight: string;
   height: string;
@@ -89,6 +91,8 @@ type FileGroups = {
 };
 
 const initialValues: FormValues = {
+  childName: "",
+
   firstHold: "",
   weight: "",
   height: "",
@@ -293,6 +297,15 @@ export default function MemoryDetailsPage() {
         </div>
 
         <form onSubmit={submit}>
+          <div style={nameBox}>
+            <label style={nameLabel}>🧸 Το όνομα του παιδιού</label>
+            <input
+              style={nameInput}
+              value={values.childName}
+              onChange={onChange("childName")}
+            />
+          </div>
+
           <Section emoji="🤍" badge="Αρχή της ιστορίας" title="Οι πρώτες σου στιγμές">
             <Field label="Η πρώτη φορά που σε κράτησα">
               <textarea
@@ -880,6 +893,34 @@ const subtitle: CSSProperties = {
   lineHeight: "1.7",
   maxWidth: "760px",
   margin: "0 auto",
+};
+
+const nameBox: CSSProperties = {
+  backgroundColor: "rgba(255,248,243,0.96)",
+  borderRadius: "24px",
+  padding: "20px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+  border: "1px solid rgba(216,197,185,0.35)",
+  marginBottom: "16px",
+};
+
+const nameLabel: CSSProperties = {
+  fontSize: "15px",
+  fontWeight: 600,
+  color: "#6B564C",
+  display: "block",
+  marginBottom: "8px",
+};
+
+const nameInput: CSSProperties = {
+  width: "100%",
+  padding: "14px 16px",
+  borderRadius: "14px",
+  border: "1px solid #D8C5B9",
+  fontSize: "16px",
+  backgroundColor: "#fff",
+  color: "#5E4B42",
+  boxSizing: "border-box",
 };
 
 const sectionCard: CSSProperties = {
