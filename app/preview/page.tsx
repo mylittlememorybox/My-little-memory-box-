@@ -37,7 +37,7 @@ export default function PreviewPage() {
             </div>
 
             <PhotoSlot
-              src="/preview/newborn.jpg"
+              src="/preview/newborn.jpg.JPG"
               title="Φωτογραφία νεογέννητου"
             />
           </div>
@@ -60,12 +60,12 @@ export default function PreviewPage() {
 
             <div style={stack}>
               <PhotoSlot
-                src="/preview/family.jpg"
+                src="/preview/family.jpg.JPG"
                 title="Φωτογραφία με γονείς"
                 short
               />
               <PhotoSlot
-                src="/preview/grandparents.jpg"
+                src="/preview/grandparents.jpg.JPG"
                 title="Φωτογραφία με παππούδες"
                 short
               />
@@ -87,18 +87,10 @@ export default function PreviewPage() {
               </InfoLine>
             </div>
 
-            <div style={stack}>
-              <PhotoSlot
-                src="/preview/smile.jpg"
-                title="Φωτογραφία χαμόγελου"
-                short
-              />
-              <PhotoSlot
-                src="/preview/crawl.jpg"
-                title="Φωτογραφία μπουσουλήματος"
-                short
-              />
-            </div>
+            <PhotoSlot
+              src="/preview/smile.jpg.JPG"
+              title="Φωτογραφία χαμόγελου"
+            />
           </div>
         </Section>
 
@@ -117,7 +109,7 @@ export default function PreviewPage() {
             </div>
 
             <PhotoSlot
-              src="/preview/steps.jpg"
+              src="/preview/steps.jpg.JPG"
               title="Φωτογραφία πρώτων βημάτων"
             />
           </div>
@@ -158,8 +150,8 @@ export default function PreviewPage() {
             </div>
 
             <PhotoSlot
-              src="/preview/heart.jpg"
-              title="Τρυφερή φωτογραφία"
+              src="/preview/happy moment.jpg.JPG"
+              title="Στιγμές απόλυτης ευτυχίας"
             />
           </div>
         </Section>
@@ -184,7 +176,7 @@ export default function PreviewPage() {
             </div>
 
             <PhotoSlot
-              src="/preview/birthday.jpg"
+              src="/preview/birthday.jpg.JPG"
               title="Φωτογραφία γενεθλίων"
             />
           </div>
@@ -211,7 +203,7 @@ export default function PreviewPage() {
             </div>
 
             <PhotoSlot
-              src="/preview/social.jpg"
+              src="/preview/social.jpg.JPG"
               title="Φωτογραφία παιχνιδιού"
             />
           </div>
@@ -241,7 +233,7 @@ export default function PreviewPage() {
             </div>
 
             <PhotoSlot
-              src="/preview/school.jpg"
+              src="/preview/school.jpg.JPG"
               title="Φωτογραφία σχολείου"
             />
           </div>
@@ -268,17 +260,17 @@ export default function PreviewPage() {
         <Section title="Το παραμύθι σου">
           <div style={storybookIntro}>
             <div style={storybookBadge}>Δείγμα από το ηλεκτρονικό παραμύθι σας</div>
-            <h3 style={storybookTitle}>Η Ελπίδα και το Μπαλόνι που Ήθελε τα Σύννεφα</h3>
+            <h3 style={storybookTitle}>Η Ελπίδα και το κόκκινο μπαλόνι</h3>
           </div>
 
           <PhotoSlot
-            src="/preview/story-cover.jpg"
+            src="/preview/crown.jpg.JPG"
             title="Εξώφυλλο παραμυθιού"
           />
 
           <div style={storyPage}>
             <PhotoSlot
-              src="/preview/story-1.jpg"
+              src="/preview/story1.jpg.PNG"
               title="Σελίδα 1"
               short
             />
@@ -293,7 +285,7 @@ export default function PreviewPage() {
 
           <div style={storyPage}>
             <PhotoSlot
-              src="/preview/story-2.jpg"
+              src="/preview/story2.jpg.PNG"
               title="Σελίδα 2"
               short
             />
@@ -308,7 +300,7 @@ export default function PreviewPage() {
 
           <div style={storyPage}>
             <PhotoSlot
-              src="/preview/story-3.jpg"
+              src="/preview/story3.jpg.PNG"
               title="Σελίδα 3"
               short
             />
@@ -322,7 +314,7 @@ export default function PreviewPage() {
 
           <div style={storyPage}>
             <PhotoSlot
-              src="/preview/story-4.jpg"
+              src="/preview/story4.jpg.PNG"
               title="Σελίδα 4"
               short
             />
@@ -331,6 +323,21 @@ export default function PreviewPage() {
               ακούγοντας σιγανά το «νάνι νάνι το μωράκι μου». Και κάπως έτσι
               κατάλαβε πως κάθε μεγάλη περιπέτεια ξεκινά από κάτι πολύ μικρό:
               μια αγκαλιά, ένα χαμόγελο και την αγάπη όλων όσων είναι δίπλα σου.
+            </p>
+          </div>
+
+          <div style={storyPage}>
+            <PhotoSlot
+              src="/preview/story5.jpg.PNG"
+              title="Σελίδα 5"
+              short
+            />
+            <p style={storyText}>
+              Και έτσι, η μικρή Ελπίδα κατάλαβε πως οι πιο όμορφες στιγμές δεν
+              είναι αυτές που φτάνουν μακριά, αλλά αυτές που ζεις με όσους
+              αγαπάς. Και το κόκκινο μπαλόνι, εκεί ψηλά, έμοιαζε πια σαν μια
+              μικρή υπόσχεση πως η αγάπη θα βρίσκει πάντα τον δρόμο της πίσω
+              στην καρδιά.
             </p>
           </div>
         </Section>
