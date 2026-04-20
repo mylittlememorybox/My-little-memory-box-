@@ -36,7 +36,9 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={<Photo src="/preview/newborn.jpg.JPG?v=5" alt="Νεογέννητο" height={320} />}
+            right={
+              <Photo src="/preview/newborn.jpg.JPG?v=4" alt="Νεογέννητο" height={320} />
+            }
           />
         </Section>
 
@@ -54,8 +56,8 @@ export default function PreviewPage() {
             }
             right={
               <Stack>
-                <Photo src="/preview/smile.jpg.JPG?v=5" alt="Χαμόγελο" height={150} />
-                <Photo src="/preview/crown.jpg.JPG?v=5" alt="Μπουσούλημα" height={150} />
+                <Photo src="/preview/smile.jpg.JPG?v=4" alt="Χαμόγελο" height={150} />
+                <Photo src="/preview/crown.jpg.JPG?v=4" alt="Μπουσούλημα" height={150} />
               </Stack>
             }
           />
@@ -71,7 +73,7 @@ export default function PreviewPage() {
               </>
             }
             right={
-              <Photo src="/preview/social.jpg.jpg?v=5" alt="Παιχνίδι με παιδάκια" height={320} />
+              <Photo src="/preview/social.jpg.jpg?v=4" alt="Παιχνίδι με παιδάκια" height={320} />
             }
           />
         </Section>
@@ -87,11 +89,11 @@ export default function PreviewPage() {
           </div>
 
           <StoryBlock
-            src="/preview/story1.jpg.PNG?v=5"
+            src="/preview/story1.jpg.PNG?v=4"
             text="Μια φορά κι έναν καιρό..."
           />
           <StoryBlock
-            src="/preview/story2.jpg.PNG?v=5"
+            src="/preview/story2.jpg.PNG?v=4"
             text="Ένα πρωί..."
           />
         </Section>
