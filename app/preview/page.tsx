@@ -79,7 +79,7 @@ export default function PreviewPage() {
             right={
               <Stack>
                 <Photo src="/preview/smile.jpg.JPG?v=3" alt="Χαμόγελο" height={150} />
-                <Photo src="/preview/crowl.jpg.jpg?v=3" alt="Μπουσούλημα" height={150} />
+                <Photo src="/preview/crown.jpg.jpg?v=3" alt="Μπουσούλημα" height={150} />
               </Stack>
             }
           />
