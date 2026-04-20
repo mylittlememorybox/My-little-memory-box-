@@ -20,9 +20,7 @@ export default function PreviewPage() {
             left={
               <>
                 <InfoLine label="Όνομα">Ελπίδα</InfoLine>
-                <InfoLine label="Η πρώτη φορά που σε κράτησα">
-                  2 Ιουνίου 2025
-                </InfoLine>
+                <InfoLine label="Η πρώτη φορά που σε κράτησα">2 Ιουνίου 2025</InfoLine>
                 <InfoLine label="Ζύγιζες μόνο">3,550 γρ</InfoLine>
                 <InfoLine label="Είχες ύψος">51 πόντους</InfoLine>
                 <InfoLine label="Επιστρέψαμε από το μαιευτήριο">
@@ -36,13 +34,7 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={
-              <Photo
-                src="/preview/newborn.jpg.JPG?v=2"
-                alt="Νεογέννητο"
-                height={320}
-              />
-            }
+            right={<Photo src="/preview/newborn.jpg.JPG?v=3" alt="Νεογέννητο" height={320} />}
           />
         </Section>
 
@@ -52,28 +44,18 @@ export default function PreviewPage() {
               <>
                 <InfoLine label="Οι γονείς σου">Μαριάννα και Γιάννης</InfoLine>
                 <InfoLine label="Οι παππούδες σου">
-                  Από τον μπαμπά γιαγιά Ρίτσα και παππούς Μάκης, ενώ από τη μαμά
-                  γιαγιά Μαρία και παππούς Χάρης
+                  Από τον μπαμπά γιαγιά Ρίτσα και παππούς Μάκης, ενώ από τη μαμά γιαγιά Μαρία και παππούς Χάρης
                 </InfoLine>
                 <InfoLine label="Η νονά σου">Ανδριάνα</InfoLine>
                 <InfoLine label="Οι φίλοι που έγιναν οικογένεια">
-                  Χριστίνα φίλη μαμάς, Γεωργία φίλη μαμάς, Σπύρος φίλος μπαμπά και
-                  Ορέστης φίλος μπαμπά
+                  Χριστίνα φίλη μαμάς, Γεωργία φίλη μαμάς, Σπύρος φίλος μπαμπά και Ορέστης φίλος μπαμπά
                 </InfoLine>
               </>
             }
             right={
               <Stack>
-                <Photo
-                  src="/preview/family.jpg.JPG?v=2"
-                  alt="Οικογένεια"
-                  height={150}
-                />
-                <Photo
-                  src="/preview/grandparents.jpg.JPG?v=2"
-                  alt="Παππούδες"
-                  height={150}
-                />
+                <Photo src="/preview/family.jpg.JPG?v=3" alt="Οικογένεια" height={150} />
+                <Photo src="/preview/grandparents.jpg.JPG?v=3" alt="Παππούδες" height={150} />
               </Stack>
             }
           />
@@ -96,16 +78,8 @@ export default function PreviewPage() {
             }
             right={
               <Stack>
-                <Photo
-                  src="/preview/smile.jpg.JPG?v=2"
-                  alt="Χαμόγελο"
-                  height={150}
-                />
-                <Photo
-                  src="/preview/crawl.jpg.JPG?v=2"
-                  alt="Μπουσούλημα"
-                  height={150}
-                />
+                <Photo src="/preview/smile.jpg.JPG?v=3" alt="Χαμόγελο" height={150} />
+                <Photo src="/preview/crawl.jpg.JPG?v=3" alt="Μπουσούλημα" height={150} />
               </Stack>
             }
           />
@@ -126,13 +100,7 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={
-              <Photo
-                src="/preview/steps.jpg.JPG?v=2"
-                alt="Πρώτα βήματα"
-                height={320}
-              />
-            }
+            right={<Photo src="/preview/steps.jpg.JPG?v=3" alt="Πρώτα βήματα" height={320} />}
           />
         </Section>
 
@@ -169,13 +137,7 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={
-              <Photo
-                src="/preview/happy moment.jpg.JPG?v=2"
-                alt="Στιγμές ευτυχίας"
-                height={320}
-              />
-            }
+            right={<Photo src="/preview/happy%20moment.jpg.JPG?v=3" alt="Στιγμές ευτυχίας" height={320} />}
           />
         </Section>
 
@@ -185,8 +147,7 @@ export default function PreviewPage() {
               <>
                 <InfoLine label="Σήμερα γίνεσαι">2 ετών</InfoLine>
                 <InfoLine label="Έσβησες την τούρτα σου με αυτούς τους αγαπημένους σου">
-                  Με τη μαμά, τον μπαμπά, τους παππούδες, τη νονά και όλους όσους
-                  σε αγαπούν
+                  Με τη μαμά, τον μπαμπά, τους παππούδες, τη νονά και όλους όσους σε αγαπούν
                 </InfoLine>
                 <InfoLine label="Κάτι που έμαθες">
                   Να εξερευνάς με χαρά και να ζητάς αγκαλιά όταν τη χρειάζεσαι
@@ -199,13 +160,7 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={
-              <Photo
-                src="/preview/birthday.jpg.JPG?v=2"
-                alt="Γενέθλια"
-                height={320}
-              />
-            }
+            right={<Photo src="/preview/birthday.jpg.JPG?v=3" alt="Γενέθλια" height={320} />}
           />
         </Section>
 
@@ -230,13 +185,7 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={
-              <Photo
-                src="/preview/social.jpg.JPG?v=2"
-                alt="Κοινωνικές στιγμές"
-                height={320}
-              />
-            }
+            right={<Photo src="/preview/social.jpg.JPG?v=3" alt="Κοινωνικές στιγμές" height={320} />}
           />
         </Section>
 
@@ -264,30 +213,24 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
-            right={
-              <Photo
-                src="/preview/school.jpg.JPG?v=2"
-                alt="Πρώτη μέρα σχολείου"
-                height={320}
-              />
-            }
+            right={<Photo src="/preview/school.jpg.JPG?v=3" alt="Πρώτη μέρα σχολείου" height={320} />}
           />
         </Section>
 
         <Section title="Μια σκέψη για σένα">
           <p style={longText}>
             Να θυμάσαι πάντα πως ήσουν, είσαι και θα είσαι ένα παιδί πολύ αγαπημένο.
-            Από την πρώτη στιγμή που ήρθες κοντά μας, έφερες μαζί σου φως,
-            τρυφερότητα και μια καινούρια μορφή χαράς που δεν ξέραμε πως υπάρχει.
+            Από την πρώτη στιγμή που ήρθες κοντά μας, έφερες μαζί σου φως, τρυφερότητα
+            και μια καινούρια μορφή χαράς που δεν ξέραμε πως υπάρχει.
           </p>
         </Section>
 
         <Section title="Ένα γράμμα για εσένα">
           <p style={longText}>
-            Μικρή μου Ελπίδα, εύχομαι να προχωράς στη ζωή σου με απαλότητα και
-            θάρρος. Να μη φοβηθείς ποτέ να αγαπήσεις, να ονειρευτείς, να προσπαθήσεις
-            ξανά. Κι όποτε χρειαστείς ένα μέρος να ξεκουραστείς, να θυμάσαι πως η
-            αγκαλιά μας θα είναι πάντα εκεί.
+            Μικρή μου Ελπίδα, εύχομαι να προχωράς στη ζωή σου με απαλότητα και θάρρος.
+            Να μη φοβηθείς ποτέ να αγαπήσεις, να ονειρευτείς, να προσπαθήσεις ξανά.
+            Κι όποτε χρειαστείς ένα μέρος να ξεκουραστείς, να θυμάσαι πως η αγκαλιά μας
+            θα είναι πάντα εκεί.
           </p>
         </Section>
 
@@ -297,34 +240,26 @@ export default function PreviewPage() {
             <h3 style={storybookTitle}>Η Ελπίδα και το κόκκινο μπαλόνι</h3>
           </div>
 
-          <Photo
-            src="/preview/crown.jpg.JPG?v=2"
-            alt="Εξώφυλλο παραμυθιού"
-            height={320}
-          />
+          <Photo src="/preview/crown.jpg.JPG?v=3" alt="Εξώφυλλο παραμυθιού" height={320} />
 
           <StoryBlock
-            src="/preview/story1.jpg.PNG?v=2"
+            src="/preview/story1.jpg.PNG?v=3"
             text="Μια φορά κι έναν καιρό, ήταν ένα κοριτσάκι που το έλεγαν Ελπίδα. Η Ελπίδα είχε μάτια που έλαμπαν σαν μικρές σταγόνες ήλιου και ένα χαμόγελο που έκανε όλο το σπίτι να φωτίζεται. Από μωρό ακόμα, αγαπούσε την αγκαλιά της μαμάς και το τραγούδι που την νανούριζε τα βράδια."
           />
-
           <StoryBlock
-            src="/preview/story2.jpg.PNG?v=2"
+            src="/preview/story2.jpg.PNG?v=3"
             text='Ένα πρωί, η Ελπίδα είδε ένα ροζ μπαλόνι να χορεύει κοντά στο παράθυρο. «Μαμά, κοίτα!» είπε με ενθουσιασμό. Το μπαλόνι όμως ανέβηκε πιο ψηλά και στάθηκε εκεί σαν να την καλούσε σε μια μικρή περιπέτεια. Ο μπαμπάς χαμογέλασε. «Νομίζω πως κάποιος ψάχνει μια μικρή εξερευνήτρια», είπε.'
           />
-
           <StoryBlock
-            src="/preview/story3.jpg.PNG?v=2"
+            src="/preview/story3.jpg.PNG?v=3"
             text="Η μαμά, ο μπαμπάς, η νονά Ανδριάνα, οι παππούδες και οι αγαπημένοι φίλοι που είχαν γίνει οικογένεια μαζεύτηκαν γύρω της. «Θα το βρούμε μαζί», της είπαν. Και πράγματι, με γέλια, μικρά βηματάκια και πολλή αγάπη, η Ελπίδα έφτασε το μπαλόνι της."
           />
-
           <StoryBlock
-            src="/preview/story4.jpg.PNG?v=2"
+            src="/preview/story4.jpg.PNG?v=3"
             text="Εκείνο το βράδυ, η Ελπίδα αποκοιμήθηκε στην αγαπημένη της αγκαλιά, ακούγοντας σιγανά το «νάνι νάνι το μωράκι μου». Και κάπως έτσι κατάλαβε πως κάθε μεγάλη περιπέτεια ξεκινά από κάτι πολύ μικρό: μια αγκαλιά, ένα χαμόγελο και την αγάπη όλων όσων είναι δίπλα σου."
           />
-
           <StoryBlock
-            src="/preview/story5.jpg.PNG?v=2"
+            src="/preview/story5.jpg.PNG?v=3"
             text="Και έτσι, η μικρή Ελπίδα κατάλαβε πως οι πιο όμορφες στιγμές δεν είναι αυτές που φτάνουν μακριά, αλλά αυτές που ζεις με όσους αγαπάς. Και το κόκκινο μπαλόνι, εκεί ψηλά, έμοιαζε πια σαν μια μικρή υπόσχεση πως η αγάπη θα βρίσκει πάντα τον δρόμο της πίσω στην καρδιά."
           />
         </Section>
@@ -339,13 +274,7 @@ export default function PreviewPage() {
   );
 }
 
-function Section({
-  title,
-  children,
-}: {
-  title: string;
-  children: ReactNode;
-}) {
+function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
     <section style={card}>
       <h2 style={sectionTitle}>{title}</h2>
@@ -354,13 +283,7 @@ function Section({
   );
 }
 
-function InfoLine({
-  label,
-  children,
-}: {
-  label: string;
-  children: ReactNode;
-}) {
+function InfoLine({ label, children }: { label: string; children: ReactNode }) {
   return (
     <p style={infoLine}>
       <strong>{label}: </strong>
@@ -369,13 +292,7 @@ function InfoLine({
   );
 }
 
-function TwoCols({
-  left,
-  right,
-}: {
-  left: ReactNode;
-  right: ReactNode;
-}) {
+function TwoCols({ left, right }: { left: ReactNode; right: ReactNode }) {
   return <div style={twoCols}><div>{left}</div><div>{right}</div></div>;
 }
 
@@ -383,13 +300,7 @@ function Stack({ children }: { children: ReactNode }) {
   return <div style={stack}>{children}</div>;
 }
 
-function StoryBlock({
-  src,
-  text,
-}: {
-  src: string;
-  text: string;
-}) {
+function StoryBlock({ src, text }: { src: string; text: string }) {
   return (
     <div style={storyPage}>
       <Photo src={src} alt="Σελίδα παραμυθιού" height={220} />
@@ -398,30 +309,10 @@ function StoryBlock({
   );
 }
 
-function Photo({
-  src,
-  alt,
-  height,
-}: {
-  src: string;
-  alt: string;
-  height: number;
-}) {
+function Photo({ src, alt, height }: { src: string; alt: string; height: number }) {
   return (
     <div style={{ ...imageWrap, height }}>
-      <img
-        src={src}
-        alt={alt}
-        style={imgStyle}
-        onError={(e) => {
-          e.currentTarget.style.display = "none";
-          const next = e.currentTarget.nextElementSibling as HTMLElement | null;
-          if (next) next.style.display = "flex";
-        }}
-      />
-      <div style={fallbackBox}>
-        <span style={fallbackText}>{alt}</span>
-      </div>
+      <img src={src} alt={alt} style={imgStyle} />
     </div>
   );
 }
@@ -505,7 +396,6 @@ const imageWrap: CSSProperties = {
   overflow: "hidden",
   background: "#f3ebe6",
   border: "1px solid #ead8cf",
-  position: "relative",
 };
 
 const imgStyle: CSSProperties = {
@@ -513,22 +403,6 @@ const imgStyle: CSSProperties = {
   height: "100%",
   display: "block",
   objectFit: "cover",
-};
-
-const fallbackBox: CSSProperties = {
-  display: "none",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "100%",
-  height: "100%",
-  minHeight: "180px",
-  background: "#f3ebe6",
-};
-
-const fallbackText: CSSProperties = {
-  fontSize: "18px",
-  color: "#7a655b",
-  fontWeight: 600,
 };
 
 const longText: CSSProperties = {
