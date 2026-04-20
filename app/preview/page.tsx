@@ -231,7 +231,7 @@ export default function PreviewPage() {
               </>
             }
             right={
-              <Photo src="/preview/social.jpg.JPG?v=4" alt="Παιχνίδι με παιδάκια" height={320} />
+              <Photo src="/preview/social.jpg.JPG?v=99" alt="Παιχνίδι με παιδάκια" height={320} />
             }
           />
         </Section>
