@@ -79,7 +79,7 @@ export default function PreviewPage() {
             right={
               <Stack>
                 <Photo src="/preview/smile.jpg.JPG?v=3" alt="Χαμόγελο" height={150} />
-                <Photo src="/preview/crawl.jpg.JPG?v=3" alt="Μπουσούλημα" height={150} />
+                <Photo src="/preview/crown.jpg.JPG?v=3"alt="Μπουσούλημα" height={150} />
               </Stack>
             }
           />
@@ -185,6 +185,13 @@ export default function PreviewPage() {
                 </InfoLine>
               </>
             }
+            right={
+  <Photo
+    src="/preview/social.jpg.jpg?v=3"
+    alt="Πρώτο παιχνίδι με παιδάκια"
+    height={320}
+  />
+}
             right={<Photo src="/preview/social.jpg.JPG?v=3" alt="Κοινωνικές στιγμές" height={320} />}
           />
         </Section>
@@ -240,7 +247,7 @@ export default function PreviewPage() {
             <h3 style={storybookTitle}>Η Ελπίδα και το κόκκινο μπαλόνι</h3>
           </div>
 
-          <Photo src="/preview/crown.jpg.JPG?v=3" alt="Εξώφυλλο παραμυθιού" height={320} />
+  
 
           <StoryBlock
             src="/preview/story1.jpg.PNG?v=3"
