@@ -21,7 +21,7 @@ export default function PreviewPage() {
               <>
                 <InfoLine label="Όνομα">Ελπίδα</InfoLine>
                 <InfoLine label="Η πρώτη φορά που σε κράτησα">
-                  2 Ιουνίου 2025
+                  2 Ιουνίου 2025 στις 8.38
                 </InfoLine>
                 <InfoLine label="Ζύγιζες μόνο">3,550 γρ</InfoLine>
                 <InfoLine label="Είχες ύψος">51 πόντους</InfoLine>
@@ -102,7 +102,7 @@ export default function PreviewPage() {
                   height={150}
                 />
                 <Photo
-                  src="/preview/crown.jpg.jpg?v=4"
+                  src="/preview/crown.jpg.JPG?v=4"
                   alt="Μπουσούλημα"
                   height={150}
                 />
