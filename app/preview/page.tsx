@@ -38,7 +38,7 @@ export default function PreviewPage() {
             }
             right={
               <Photo
-                src="/preview/newborn.jpg.JPG"
+                src="/preview/newborn.jpg.JPG?v=2"
                 alt="Νεογέννητο"
                 height={320}
               />
@@ -65,12 +65,12 @@ export default function PreviewPage() {
             right={
               <Stack>
                 <Photo
-                  src="/preview/family.jpg.JPG"
+                  src="/preview/family.jpg.JPG?v=2"
                   alt="Οικογένεια"
                   height={150}
                 />
                 <Photo
-                  src="/preview/grandparents.jpg.JPG"
+                  src="/preview/grandparents.jpg.JPG?v=2"
                   alt="Παππούδες"
                   height={150}
                 />
@@ -97,12 +97,12 @@ export default function PreviewPage() {
             right={
               <Stack>
                 <Photo
-                  src="/preview/smile.jpg.JPG"
+                  src="/preview/smile.jpg.JPG?v=2"
                   alt="Χαμόγελο"
                   height={150}
                 />
                 <Photo
-                  src="/preview/crawl.jpg.JPG"
+                  src="/preview/crawl.jpg.JPG?v=2"
                   alt="Μπουσούλημα"
                   height={150}
                 />
@@ -128,7 +128,7 @@ export default function PreviewPage() {
             }
             right={
               <Photo
-                src="/preview/steps.jpg.JPG"
+                src="/preview/steps.jpg.JPG?v=2"
                 alt="Πρώτα βήματα"
                 height={320}
               />
@@ -171,7 +171,7 @@ export default function PreviewPage() {
             }
             right={
               <Photo
-                src="/preview/happy moment.jpg.JPG"
+                src="/preview/happy moment.jpg.JPG?v=2"
                 alt="Στιγμές ευτυχίας"
                 height={320}
               />
@@ -201,7 +201,7 @@ export default function PreviewPage() {
             }
             right={
               <Photo
-                src="/preview/birthday.jpg.JPG"
+                src="/preview/birthday.jpg.JPG?v=2"
                 alt="Γενέθλια"
                 height={320}
               />
@@ -232,7 +232,7 @@ export default function PreviewPage() {
             }
             right={
               <Photo
-                src="/preview/social.jpg.JPG"
+                src="/preview/social.jpg.JPG?v=2"
                 alt="Κοινωνικές στιγμές"
                 height={320}
               />
@@ -266,7 +266,7 @@ export default function PreviewPage() {
             }
             right={
               <Photo
-                src="/preview/school.jpg.JPG"
+                src="/preview/school.jpg.JPG?v=2"
                 alt="Πρώτη μέρα σχολείου"
                 height={320}
               />
@@ -298,40 +298,40 @@ export default function PreviewPage() {
           </div>
 
           <Photo
-            src="/preview/crown.jpg.JPG"
+            src="/preview/crown.jpg.JPG?v=2"
             alt="Εξώφυλλο παραμυθιού"
             height={320}
           />
 
           <StoryBlock
-            src="/preview/story1.jpg.PNG"
+            src="/preview/story1.jpg.PNG?v=2"
             text="Μια φορά κι έναν καιρό, ήταν ένα κοριτσάκι που το έλεγαν Ελπίδα. Η Ελπίδα είχε μάτια που έλαμπαν σαν μικρές σταγόνες ήλιου και ένα χαμόγελο που έκανε όλο το σπίτι να φωτίζεται. Από μωρό ακόμα, αγαπούσε την αγκαλιά της μαμάς και το τραγούδι που την νανούριζε τα βράδια."
           />
 
           <StoryBlock
-            src="/preview/story2.jpg.PNG"
+            src="/preview/story2.jpg.PNG?v=2"
             text='Ένα πρωί, η Ελπίδα είδε ένα ροζ μπαλόνι να χορεύει κοντά στο παράθυρο. «Μαμά, κοίτα!» είπε με ενθουσιασμό. Το μπαλόνι όμως ανέβηκε πιο ψηλά και στάθηκε εκεί σαν να την καλούσε σε μια μικρή περιπέτεια. Ο μπαμπάς χαμογέλασε. «Νομίζω πως κάποιος ψάχνει μια μικρή εξερευνήτρια», είπε.'
           />
 
           <StoryBlock
-            src="/preview/story3.jpg.PNG"
+            src="/preview/story3.jpg.PNG?v=2"
             text="Η μαμά, ο μπαμπάς, η νονά Ανδριάνα, οι παππούδες και οι αγαπημένοι φίλοι που είχαν γίνει οικογένεια μαζεύτηκαν γύρω της. «Θα το βρούμε μαζί», της είπαν. Και πράγματι, με γέλια, μικρά βηματάκια και πολλή αγάπη, η Ελπίδα έφτασε το μπαλόνι της."
           />
 
           <StoryBlock
-            src="/preview/story4.jpg.PNG"
+            src="/preview/story4.jpg.PNG?v=2"
             text="Εκείνο το βράδυ, η Ελπίδα αποκοιμήθηκε στην αγαπημένη της αγκαλιά, ακούγοντας σιγανά το «νάνι νάνι το μωράκι μου». Και κάπως έτσι κατάλαβε πως κάθε μεγάλη περιπέτεια ξεκινά από κάτι πολύ μικρό: μια αγκαλιά, ένα χαμόγελο και την αγάπη όλων όσων είναι δίπλα σου."
           />
 
           <StoryBlock
-            src="/preview/story5.jpg.PNG"
+            src="/preview/story5.jpg.PNG?v=2"
             text="Και έτσι, η μικρή Ελπίδα κατάλαβε πως οι πιο όμορφες στιγμές δεν είναι αυτές που φτάνουν μακριά, αλλά αυτές που ζεις με όσους αγαπάς. Και το κόκκινο μπαλόνι, εκεί ψηλά, έμοιαζε πια σαν μια μικρή υπόσχεση πως η αγάπη θα βρίσκει πάντα τον δρόμο της πίσω στην καρδιά."
           />
         </Section>
 
         <div style={ctaWrap}>
           <a href="/buy" style={cta}>
-            Ξεκίνα τώρα
+            Δημιούργησε το δικό σου Memory Box
           </a>
         </div>
       </div>
