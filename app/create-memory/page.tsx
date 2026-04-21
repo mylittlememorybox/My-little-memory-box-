@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 import { Playfair_Display } from "next/font/google";
 
 const elegantFont = Playfair_Display({
