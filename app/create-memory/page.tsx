@@ -246,7 +246,7 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
               style={inputStyle}
               placeholder="Το όνομα του παιδιού"
             />
-<button
+<<button
   type="button"
   disabled={!consent1 || !consent2 || !consent3 || !consent4}
   onClick={() => {
