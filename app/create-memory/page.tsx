@@ -326,8 +326,7 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
         ? "pointer"
         : "not-allowed",
     opacity:
-      consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
-  }}
+  consent1 && consent2 && consent3 && consent4 ? 1 : 0.7
 >
   Δημιουργία Λογαριάσμου
 </button>
