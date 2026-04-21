@@ -246,12 +246,14 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
               style={inputStyle}
               placeholder="Το όνομα του παιδιού"
             />
-
-          
-            <button
-            type=button
+<button
+  type="button"
   disabled={!consent1 || !consent2 || !consent3 || !consent4}
-  onClick={() => window.location.href = "/memory-details"}
+  onClick={() => {
+    if (consent1 && consent2 && consent3 && consent4) {
+      window.location.href = "/memory-details";
+    }
+  }}
   style={{
     padding: "16px 28px",
     borderRadius: "999px",
@@ -268,10 +270,13 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
         ? "pointer"
         : "not-allowed",
     opacity:
-  consent1 && consent2 && consent3 && consent4 ? 1 : 0.7
+      consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
+  }}
 >
-  Δημιουργία Λογαριάσμου
+  Δημιουργία λογαριασμού
 </button>
+          
+            
 
           
 
