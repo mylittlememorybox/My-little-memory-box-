@@ -126,24 +126,7 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
             προσωποποιημένου Memory Box και του παραμυθιού σας.
           </p>
 
-          <div style={grid}>
-            <div style={sectionCard}>
-              <h2
-                style={{
-                  fontSize: "24px",
-                  color: "#7B6256",
-                  marginBottom: "14px",
-                }}
-              >
-                <div
-  style={{
-    backgroundColor: "#FBF4EE",
-    borderRadius: "18px",
-    padding: "22px",
-    marginTop: "20px",
-    marginBottom: "28px",
-  }}
->
+        
   <h2 style={{ fontSize: "22px", marginBottom: "10px", color: "#6E5A50" }}>
     Πριν συνεχίσεις
   </h2>
