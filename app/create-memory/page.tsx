@@ -279,6 +279,30 @@ export default function CreateMemoryPage() {
                 </label>
               </div>
             </div>
+            <button
+  disabled={!consent1 || !consent2 || !consent3 || !consent4}
+  onClick={() => window.location.href = "/memory-details"}
+  style={{
+    padding: "16px 28px",
+    borderRadius: "999px",
+    border: "none",
+    backgroundColor:
+      consent1 && consent2 && consent3 && consent4
+        ? "#DCC4B8"
+        : "#E9DED8",
+    color: "#4F4039",
+    fontSize: "18px",
+    fontWeight: 700,
+    cursor:
+      consent1 && consent2 && consent3 && consent4
+        ? "pointer"
+        : "not-allowed",
+    opacity:
+      consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
+  }}
+>
+  Συνέχεια
+</button>
 
             <Link
               href="/memory-details"
