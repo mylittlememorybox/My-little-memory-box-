@@ -247,66 +247,7 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
               placeholder="Το όνομα του παιδιού"
             />
 
-            <div
-              style={{
-                backgroundColor: "#FBF4EE",
-                borderRadius: "18px",
-                padding: "20px",
-                marginTop: "10px",
-                marginBottom: "28px",
-              }}
-            >
-              <div style={checkboxRow}>
-                <input
-                  id="consent1"
-                  type="checkbox"
-                  style={{ marginTop: "4px" }}
-                />
-                <label htmlFor="consent1" style={{ cursor: "pointer" }}>
-                  Συμφωνώ με τη δημιουργία λογαριασμού για τη διαχείριση της
-                  παραγγελίας μου και της προσωποποιημένης εμπειρίας μου.
-                </label>
-              </div>
-
-              <div style={checkboxRow}>
-                <input
-                  id="consent2"
-                  type="checkbox"
-                  style={{ marginTop: "4px" }}
-                />
-                <label htmlFor="consent2" style={{ cursor: "pointer" }}>
-                  Συμφωνώ με την επεξεργασία των προσωπικών δεδομένων που
-                  υποβάλλω για τη δημιουργία του προσωποποιημένου Memory Box και
-                  του παραμυθιού μου.
-                </label>
-              </div>
-
-              <div style={checkboxRow}>
-                <input
-                  id="consent3"
-                  type="checkbox"
-                  style={{ marginTop: "4px" }}
-                />
-                <label htmlFor="consent3" style={{ cursor: "pointer" }}>
-                  Κατανοώ ότι η προσωπική μου σελίδα θα παραμείνει διαθέσιμη για
-                  30 ημέρες μετά την ολοκλήρωση του παραμυθιού, ώστε να μπορώ να
-                  κάνω export ή download του υλικού μου.
-                </label>
-              </div>
-
-              <div style={checkboxRow}>
-                <input
-                  id="consent4"
-                  type="checkbox"
-                  style={{ marginTop: "4px" }}
-                />
-                <label htmlFor="consent4" style={{ cursor: "pointer" }}>
-                  Δηλώνω ότι έχω το δικαίωμα να υποβάλω το περιεχόμενο που
-                  ανεβάζω και ότι κατανοώ πως η χρήση του γίνεται αποκλειστικά
-                  για τη δημιουργία της παραγγελίας μου.
-                </label>
-              </div>
-            </div>
+          
             <button
   disabled={!consent1 || !consent2 || !consent3 || !consent4}
   onClick={() => window.location.href = "/memory-details"}
