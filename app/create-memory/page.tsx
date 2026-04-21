@@ -265,12 +265,10 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
     color: "#4F4039",
     fontSize: "18px",
     fontWeight: 700,
-    cursor:
-      consent1 && consent2 && consent3 && consent4
+    cursor:consent1 && consent2 && consent3 && consent4
         ? "pointer"
         : "not-allowed",
-    opacity:
-      consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
+    opacity:consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
   }}
 >
   Δημιουργία λογαριασμού
