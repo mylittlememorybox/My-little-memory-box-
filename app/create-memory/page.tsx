@@ -73,6 +73,12 @@ const checkboxRow: CSSProperties = {
 };
 
 export default function CreateMemoryPage() {
+ const [consent1, setConsent1] = useState(false)
+const [consent2, setConsent2] = useState(false)
+const [consent3, setConsent3] = useState(false)
+const [consent4, setConsent4] = useState(false)
+
+const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
   return (
     <main style={wrap}>
       <div style={inner}>
