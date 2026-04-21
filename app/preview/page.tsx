@@ -318,7 +318,7 @@ export default function PreviewPage() {
         </Section>
 
         <div style={ctaWrap}>
-          <a href="/buy" style={cta}>
+          <a href="/checkout" style={cta}>
             Δημιούργησε το δικό σου Memory Box
           </a>
         </div>
