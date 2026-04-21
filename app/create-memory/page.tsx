@@ -329,29 +329,10 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
       consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
   }}
 >
-  Συνέχεια
+  Δημιουργία Λογαριάσμου
 </button>
 
-            <Link
-              href="/memory-details"
-              style={{
-                width: "100%",
-                display: "block",
-                textAlign: "center",
-                padding: "16px 24px",
-                borderRadius: "20px",
-                border: "none",
-                backgroundColor: "#EAD7CF",
-                color: "#5C4A42",
-                fontSize: "18px",
-                fontWeight: "600",
-                cursor: "pointer",
-                textDecoration: "none",
-                boxSizing: "border-box",
-              }}
-            >
-              Δημιουργία λογαριασμού
-            </Link>
+          
 
             <div
               style={{
