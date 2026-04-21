@@ -135,60 +135,98 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
                   marginBottom: "14px",
                 }}
               >
-                Πώς θα λειτουργεί ο λογαριασμός σου
-              </h2>
+                <div
+  style={{
+    backgroundColor: "#FBF4EE",
+    borderRadius: "18px",
+    padding: "22px",
+    marginTop: "20px",
+    marginBottom: "28px",
+  }}
+>
+  <h2 style={{ fontSize: "22px", marginBottom: "10px", color: "#6E5A50" }}>
+    Πριν συνεχίσεις
+  </h2>
 
-              <p style={{ marginBottom: "12px" }}>
-                Μέσα από τον λογαριασμό σου θα μπορείς να συμπληρώσεις τις
-                πληροφορίες που χρειάζονται για το παραμύθι, να οργανώσεις τις
-                αναμνήσεις σου και να προχωρήσεις στα επόμενα βήματα της
-                παραγγελίας.
-              </p>
+  <p style={{ fontSize: "15px", color: "#7B6A61", marginBottom: "18px" }}>
+    Για να ολοκληρωθεί σωστά η δημιουργία του προσωπικού σου Memory Box και του
+    παραμυθιού σου, χρειάζεται να επιβεβαιώσεις τα παρακάτω:
+  </p>
 
-              <p style={{ marginBottom: "12px" }}>
-                Η προσωπική σου σελίδα θα παραμένει ενεργή για{" "}
-                <strong>30 ημέρες</strong> μετά την ολοκλήρωση του παραμυθιού,
-                ώστε να μπορείς να κάνεις export ή να κατεβάσεις το τελικό σου
-                υλικό.
-              </p>
+  {/* CHECKBOX 1 */}
+  <div style={checkboxRow}>
+    <input
+      id="consent1"
+      type="checkbox"
+      checked={consent1}
+      onChange={(e) => setConsent1(e.target.checked)}
+      style={{ marginTop: "4px" }}
+    />
+    <label htmlFor="consent1" style={{ cursor: "pointer" }}>
+      Δηλώνω ότι είμαι ο νόμιμος κηδεμόνας του παιδιού και έχω το δικαίωμα να
+      υποβάλω τα στοιχεία, τις φωτογραφίες και τα βίντεο που το αφορούν.
+    </label>
+  </div>
 
-              <p>
-                Μετά το πέρας των 30 ημερών, η σελίδα μπορεί να απενεργοποιηθεί
-                ή να διαγραφεί στο πλαίσιο ασφαλούς και περιορισμένης φύλαξης
-                προσωπικών δεδομένων.
-              </p>
-            </div>
+  {/* CHECKBOX 2 */}
+  <div style={checkboxRow}>
+    <input
+      id="consent2"
+      type="checkbox"
+      checked={consent2}
+      onChange={(e) => setConsent2(e.target.checked)}
+      style={{ marginTop: "4px" }}
+    />
+    <label htmlFor="consent2" style={{ cursor: "pointer" }}>
+      Συναινώ στη χρήση των φωτογραφιών, των βίντεο και των στοιχείων που
+      υποβάλλω αποκλειστικά για τη δημιουργία του προσωποποιημένου παραμυθιού
+      και του Memory Box.
+    </label>
+  </div>
 
-            <div style={sectionCard}>
-              <h2
-                style={{
-                  fontSize: "24px",
-                  color: "#7B6256",
-                  marginBottom: "14px",
-                }}
-              >
-                Ασφάλεια και συγκατάθεση
-              </h2>
+  {/* CHECKBOX 3 */}
+  <div style={checkboxRow}>
+    <input
+      id="consent3"
+      type="checkbox"
+      checked={consent3}
+      onChange={(e) => setConsent3(e.target.checked)}
+      style={{ marginTop: "4px" }}
+    />
+    <label htmlFor="consent3" style={{ cursor: "pointer" }}>
+      Κατανοώ ότι τα στοιχεία μου θα διατηρούνται για 30 ημέρες μετά την
+      ολοκλήρωση του παραμυθιού.
+    </label>
+  </div>
 
-              <p style={{ marginBottom: "12px" }}>
-                Τα στοιχεία που υποβάλλεις χρησιμοποιούνται αποκλειστικά για τη
-                δημιουργία, διαχείριση και παράδοση του προσωποποιημένου Memory
-                Box και του παραμυθιού σου.
-              </p>
+  {/* CHECKBOX 4 */}
+  <div style={checkboxRow}>
+    <input
+      id="consent4"
+      type="checkbox"
+      checked={consent4}
+      onChange={(e) => setConsent4(e.target.checked)}
+      style={{ marginTop: "4px" }}
+    />
+    <label htmlFor="consent4" style={{ cursor: "pointer" }}>
+      Κατανοώ ότι μπορώ να ζητήσω διαγραφή των στοιχείων μου οποιαδήποτε στιγμή
+      στο info@mylittlememorybox.com.
+    </label>
+  </div>
 
-              <p style={{ marginBottom: "12px" }}>
-                Το περιεχόμενο που θα ανεβάσεις, όπως φωτογραφίες, βίντεο και
-                κείμενα, θα χρησιμοποιείται μόνο για τον σκοπό της παραγγελίας
-                σου και δεν θα χρησιμοποιείται για άλλον σκοπό χωρίς τη ρητή
-                συγκατάθεσή σου.
-              </p>
-
-              <p>
-                Πριν προχωρήσεις, χρειάζεται να αποδεχθείς τους βασικούς όρους
-                ασφαλείας και επεξεργασίας δεδομένων.
-              </p>
-            </div>
-          </div>
+  {/* INFO BOX */}
+  <div
+    style={{
+      marginTop: "18px",
+      fontSize: "13px",
+      color: "#8B6F63",
+      lineHeight: 1.6,
+    }}
+  >
+    Το υλικό σου παραμένει διαθέσιμο για 30 ημέρες ώστε να μπορείς να το
+    κατεβάσεις ή να το αποθηκεύσεις.
+  </div>
+</div>
 
           <div style={{ maxWidth: "760px", margin: "34px auto 0" }}>
             <label style={labelStyle}>Ονοματεπώνυμο</label>
