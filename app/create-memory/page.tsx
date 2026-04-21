@@ -249,6 +249,7 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
 
           
             <button
+            type=button
   disabled={!consent1 || !consent2 || !consent3 || !consent4}
   onClick={() => window.location.href = "/memory-details"}
   style={{
