@@ -126,8 +126,7 @@ export default function OrderTermsPage() {
             </p>
             <p>
               Έχεις τη δυνατότητα να ζητήσεις διαγραφή των στοιχείων σου
-              οποιαδήποτε στιγμή με αίτημα στο{" "}
-              <strong>info@mylittlememorybox.com</strong>.
+              οποιαδήποτε στιγμή με αίτημα στο <strong>info@mylittlememorybox.com</strong>.
             </p>
           </div>
 
