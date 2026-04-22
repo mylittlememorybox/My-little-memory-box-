@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { useState, type CSSProperties } from "react";
@@ -17,30 +18,15 @@ const wrap: CSSProperties = {
 };
 
 const inner: CSSProperties = {
-  maxWidth: "1050px",
+  maxWidth: "900px",
   margin: "0 auto",
 };
 
 const card: CSSProperties = {
   backgroundColor: "rgba(255, 248, 243, 0.95)",
   borderRadius: "30px",
-  padding: "40px",
+  padding: "40px 24px",
   boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
-};
-
-const grid: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "32px",
-  marginTop: "20px",
-};
-
-const sectionCard: CSSProperties = {
-  backgroundColor: "#FBF4EE",
-  borderRadius: "22px",
-  padding: "22px",
-  lineHeight: "1.8",
-  color: "#705E55",
 };
 
 const inputStyle: CSSProperties = {
@@ -69,17 +55,19 @@ const checkboxRow: CSSProperties = {
   gap: "12px",
   marginBottom: "18px",
   fontSize: "15px",
-  lineHeight: "1.7",
+  lineHeight: "1.8",
   color: "#6F5E55",
 };
 
 export default function CreateMemoryPage() {
- const [consent1, setConsent1] = useState(false)
-const [consent2, setConsent2] = useState(false)
-const [consent3, setConsent3] = useState(false)
-const [consent4, setConsent4] = useState(false)
+  const [consent1, setConsent1] = useState(false);
+  const [consent2, setConsent2] = useState(false);
+  const [consent3, setConsent3] = useState(false);
+  const [consent4, setConsent4] = useState(false);
 
-const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
+  const allConsentsAccepted =
+    consent1 && consent2 && consent3 && consent4;
+
   return (
     <main style={wrap}>
       <div style={inner}>
@@ -88,8 +76,8 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
             <Image
               src="/logo.png"
               alt="My Little Memory Box"
-              width={260}
-              height={260}
+              width={220}
+              height={220}
               style={{
                 objectFit: "contain",
                 cursor: "pointer",
@@ -122,96 +110,112 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
               margin: "0 auto 34px",
             }}
           >
-            Δημιούργησε τον λογαριασμό σου για να ξεκινήσει η εμπειρία του
-            προσωποποιημένου Memory Box και του παραμυθιού σας.
+            Δημιούργησε τον λογαριασμό σου και χάρισε στο παιδί σου το δικό του
+            προσωπικό Memory Box και ένα μοναδικό, προσωποποιημένο παραμύθι.
           </p>
 
-        
-  <h2 style={{ fontSize: "22px", marginBottom: "10px", color: "#6E5A50" }}>
-    Πριν συνεχίσεις
-  </h2>
+          <div
+            style={{
+              backgroundColor: "#FBF4EE",
+              borderRadius: "22px",
+              padding: "24px",
+              marginBottom: "30px",
+            }}
+          >
+            <h2
+              style={{
+                fontSize: "24px",
+                color: "#7B6256",
+                marginBottom: "12px",
+              }}
+            >
+              Πριν συνεχίσεις
+            </h2>
 
-  <p style={{ fontSize: "15px", color: "#7B6A61", marginBottom: "18px" }}>
-    Για να ολοκληρωθεί σωστά η δημιουργία του προσωπικού σου Memory Box και του
-    παραμυθιού σου, χρειάζεται να επιβεβαιώσεις τα παρακάτω:
-  </p>
+            <p
+              style={{
+                fontSize: "15px",
+                color: "#7B6A61",
+                marginBottom: "20px",
+                lineHeight: "1.7",
+              }}
+            >
+              Για να ολοκληρωθεί σωστά η δημιουργία του παραμυθιού και του
+              προσωπικού σου Memory Box, χρειάζεται να επιβεβαιώσεις τα παρακάτω:
+            </p>
 
-  {/* CHECKBOX 1 */}
-  <div style={checkboxRow}>
-    <input
-      id="consent1"
-      type="checkbox"
-      checked={consent1}
-      onChange={(e) => setConsent1(e.target.checked)}
-      style={{ marginTop: "4px" }}
-    />
-    <label htmlFor="consent1" style={{ cursor: "pointer" }}>
-      Δηλώνω ότι είμαι ο νόμιμος κηδεμόνας του παιδιού και έχω το δικαίωμα να
-      υποβάλω τα στοιχεία, τις φωτογραφίες και τα βίντεο που το αφορούν.
-    </label>
-  </div>
+            <div style={checkboxRow}>
+              <input
+                id="consent1"
+                type="checkbox"
+                checked={consent1}
+                onChange={(e) => setConsent1(e.target.checked)}
+                style={{ marginTop: "4px", width: "18px", height: "18px" }}
+              />
+              <label htmlFor="consent1" style={{ cursor: "pointer" }}>
+                Δηλώνω ότι είμαι ο νόμιμος κηδεμόνας του παιδιού και έχω το
+                δικαίωμα να υποβάλω τα στοιχεία, τις φωτογραφίες και τα βίντεο
+                που το αφορούν.
+              </label>
+            </div>
 
-  {/* CHECKBOX 2 */}
-  <div style={checkboxRow}>
-    <input
-      id="consent2"
-      type="checkbox"
-      checked={consent2}
-      onChange={(e) => setConsent2(e.target.checked)}
-      style={{ marginTop: "4px" }}
-    />
-    <label htmlFor="consent2" style={{ cursor: "pointer" }}>
-      Συναινώ στη χρήση των φωτογραφιών, των βίντεο και των στοιχείων που
-      υποβάλλω αποκλειστικά για τη δημιουργία του προσωποποιημένου παραμυθιού
-      και του Memory Box.
-    </label>
-  </div>
+            <div style={checkboxRow}>
+              <input
+                id="consent2"
+                type="checkbox"
+                checked={consent2}
+                onChange={(e) => setConsent2(e.target.checked)}
+                style={{ marginTop: "4px", width: "18px", height: "18px" }}
+              />
+              <label htmlFor="consent2" style={{ cursor: "pointer" }}>
+                Συναινώ στη χρήση των φωτογραφιών, των βίντεο και των στοιχείων
+                που υποβάλλω αποκλειστικά για τη δημιουργία του προσωποποιημένου
+                παραμυθιού και του Memory Box.
+              </label>
+            </div>
 
-  {/* CHECKBOX 3 */}
-  <div style={checkboxRow}>
-    <input
-      id="consent3"
-      type="checkbox"
-      checked={consent3}
-      onChange={(e) => setConsent3(e.target.checked)}
-      style={{ marginTop: "4px" }}
-    />
-    <label htmlFor="consent3" style={{ cursor: "pointer" }}>
-      Κατανοώ ότι τα στοιχεία μου θα διατηρούνται για 30 ημέρες μετά την
-      ολοκλήρωση του παραμυθιού.
-    </label>
-  </div>
+            <div style={checkboxRow}>
+              <input
+                id="consent3"
+                type="checkbox"
+                checked={consent3}
+                onChange={(e) => setConsent3(e.target.checked)}
+                style={{ marginTop: "4px", width: "18px", height: "18px" }}
+              />
+              <label htmlFor="consent3" style={{ cursor: "pointer" }}>
+                Κατανοώ ότι οι φωτογραφίες, τα βίντεο και τα υπόλοιπα στοιχεία
+                θα διατηρούνται για 30 ημέρες από την ολοκλήρωση του
+                προσωποποιημένου παραμυθιού.
+              </label>
+            </div>
 
-  {/* CHECKBOX 4 */}
-  <div style={checkboxRow}>
-    <input
-      id="consent4"
-      type="checkbox"
-      checked={consent4}
-      onChange={(e) => setConsent4(e.target.checked)}
-      style={{ marginTop: "4px" }}
-    />
-    <label htmlFor="consent4" style={{ cursor: "pointer" }}>
-      Κατανοώ ότι μπορώ να ζητήσω διαγραφή των στοιχείων μου οποιαδήποτε στιγμή
-      στο info@mylittlememorybox.com.
-    </label>
-  </div>
+            <div style={checkboxRow}>
+              <input
+                id="consent4"
+                type="checkbox"
+                checked={consent4}
+                onChange={(e) => setConsent4(e.target.checked)}
+                style={{ marginTop: "4px", width: "18px", height: "18px" }}
+              />
+              <label htmlFor="consent4" style={{ cursor: "pointer" }}>
+                Δηλώνω ότι έχω το δικαίωμα να ανεβάζω το περιεχόμενο και ότι
+                κατανοώ τους{" "}
+                <Link
+                  href="/order-terms"
+                  style={{
+                    color: "#A06F58",
+                    textDecoration: "underline",
+                    fontWeight: 600,
+                  }}
+                >
+                  όρους για τη δημιουργία της παραγγελίας
+                </Link>
+                .
+              </label>
+            </div>
+          </div>
 
-  {/* INFO BOX */}
-  <div
-    style={{
-      marginTop: "18px",
-      fontSize: "13px",
-      color: "#8B6F63",
-      lineHeight: 1.6,
-    }}
-  >
-    Το υλικό σου παραμένει διαθέσιμο για 30 ημέρες ώστε να μπορείς να το
-    κατεβάσεις ή να το αποθηκεύσεις.
-  </div>
-</div>
-
-          <div style={{ maxWidth: "760px", margin: "34px auto 0" }}>
+          <div style={{ maxWidth: "760px", margin: "0 auto" }}>
             <label style={labelStyle}>Ονοματεπώνυμο</label>
             <input
               type="text"
@@ -246,38 +250,45 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
               style={inputStyle}
               placeholder="Το όνομα του παιδιού"
             />
-<button
-  type="button"
-  disabled={!consent1 || !consent2 || !consent3 || !consent4}
-  onClick={() => {
-    if (consent1 && consent2 && consent3 && consent4) {
-      window.location.href = "/memory-details";
-    }
-  }}
-  style={{
-    padding: "16px 28px",
-    borderRadius: "999px",
-    border: "none",
-    backgroundColor:
-      consent1 && consent2 && consent3 && consent4 ? "#DCC4B8" : "#E9DED8",
-    color: "#4F4039",
-    fontSize: "18px",
-    fontWeight: 700,
-    cursor:
-      consent1 && consent2 && consent3 && consent4
-        ? "pointer"
-        : "not-allowed",
-    opacity: consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
-  }}
->
-  Δημιουργία λογαριασμού
-</button>
-  
-  Δημιουργία λογαριασμού
-</button>
-            
 
-          
+            <button
+              type="button"
+              disabled={!allConsentsAccepted}
+              onClick={() => {
+                if (allConsentsAccepted) {
+                  window.location.href = "/memory-details";
+                }
+              }}
+              style={{
+                width: "100%",
+                padding: "16px 28px",
+                borderRadius: "999px",
+                border: "none",
+                backgroundColor: allConsentsAccepted ? "#DCC4B8" : "#E9DED8",
+                color: "#4F4039",
+                fontSize: "18px",
+                fontWeight: 700,
+                cursor: allConsentsAccepted ? "pointer" : "not-allowed",
+                opacity: allConsentsAccepted ? 1 : 0.7,
+                boxSizing: "border-box",
+                marginTop: "10px",
+              }}
+            >
+              Δημιουργία λογαριασμού
+            </button>
+
+            {!allConsentsAccepted && (
+              <p
+                style={{
+                  marginTop: "12px",
+                  textAlign: "center",
+                  fontSize: "14px",
+                  color: "#8B6F63",
+                }}
+              >
+                Για να συνεχίσεις, χρειάζεται να αποδεχτείς όλα τα παραπάνω.
+              </p>
+            )}
 
             <div
               style={{
