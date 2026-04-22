@@ -246,7 +246,7 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
               style={inputStyle}
               placeholder="Το όνομα του παιδιού"
             />
-
+<button
   type="button"
   disabled={!consent1 || !consent2 || !consent3 || !consent4}
   onClick={() => {
@@ -259,18 +259,20 @@ const allConsentsAccepted = consent1 && consent2 && consent3 && consent4
     borderRadius: "999px",
     border: "none",
     backgroundColor:
-      consent1 && consent2 && consent3 && consent4
-        ? "#DCC4B8"
-        : "#E9DED8",
+      consent1 && consent2 && consent3 && consent4 ? "#DCC4B8" : "#E9DED8",
     color: "#4F4039",
     fontSize: "18px",
     fontWeight: 700,
-    cursor:consent1 && consent2 && consent3 && consent4
+    cursor:
+      consent1 && consent2 && consent3 && consent4
         ? "pointer"
         : "not-allowed",
-    opacity:consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
+    opacity: consent1 && consent2 && consent3 && consent4 ? 1 : 0.7,
   }}
 >
+  Δημιουργία λογαριασμού
+</button>
+  
   Δημιουργία λογαριασμού
 </button>
             
