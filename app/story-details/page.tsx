@@ -45,37 +45,88 @@ export default function StoryDetailsPage() {
     }
   };
 
+  const inputStyle = {
+    width: "100%",
+    padding: "14px",
+    borderRadius: "12px",
+    border: "1px solid #E0D5CF",
+    marginBottom: "16px",
+    fontSize: "15px",
+  };
+
   return (
-    <main style={{ padding: "20px", maxWidth: "600px", margin: "0 auto" }}>
-      <h1 style={{ marginBottom: "20px" }}>
-        Συμπλήρωσε τα παρακάτω και χάρισε ένα πολύτιμο memory box στο παιδί σου
-      </h1>
+    <main
+      style={{
+        minHeight: "100vh",
+        backgroundColor: "#F6EFE8",
+        padding: "40px 20px",
+        color: "#5E4B42",
+      }}
+    >
+      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+        <h1 style={{ marginBottom: "30px", lineHeight: "1.4" }}>
+          Συμπλήρωσε τα παρακάτω και χάρισε ένα πολύτιμο memory box στο παιδί σου
+        </h1>
 
-      <input placeholder="Όνομα παιδιού" value={childName} onChange={(e) => setChildName(e.target.value)} />
-      <input placeholder="Ηλικία" value={age} onChange={(e) => setAge(e.target.value)} />
-      <input placeholder="Χρώμα μαλλιών" value={hairColor} onChange={(e) => setHairColor(e.target.value)} />
-      <input placeholder="Χρώμα ματιών" value={eyeColor} onChange={(e) => setEyeColor(e.target.value)} />
-      <input placeholder="Αγαπημένο ζωάκι" value={favoriteAnimal} onChange={(e) => setFavoriteAnimal(e.target.value)} />
-      <input placeholder="Αγαπημένο χρώμα" value={favoriteColor} onChange={(e) => setFavoriteColor(e.target.value)} />
-      <input placeholder="Αγαπημένα πράγματα" value={favoriteThings} onChange={(e) => setFavoriteThings(e.target.value)} />
+        {/* GRID */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: "16px",
+          }}
+        >
+          <input style={inputStyle} placeholder="Όνομα παιδιού" value={childName} onChange={(e) => setChildName(e.target.value)} />
+          <input style={inputStyle} placeholder="Ηλικία" value={age} onChange={(e) => setAge(e.target.value)} />
 
-      <textarea placeholder="Μια όμορφη ανάμνηση" value={memory} onChange={(e) => setMemory(e.target.value)} />
-      <textarea placeholder="Μήνυμα από τη μαμά" value={momMessage} onChange={(e) => setMomMessage(e.target.value)} />
+          <input style={inputStyle} placeholder="Χρώμα μαλλιών" value={hairColor} onChange={(e) => setHairColor(e.target.value)} />
+          <input style={inputStyle} placeholder="Χρώμα ματιών" value={eyeColor} onChange={(e) => setEyeColor(e.target.value)} />
 
-      <button
-        onClick={handleSubmit}
-        disabled={loading}
-        style={{
-          marginTop: "20px",
-          padding: "12px 20px",
-          backgroundColor: "#DCC4B8",
-          border: "none",
-          borderRadius: "10px",
-          cursor: "pointer",
-        }}
-      >
-        {loading ? "Φόρτωση..." : "Συνέχεια"}
-      </button>
+          <input style={inputStyle} placeholder="Αγαπημένο ζωάκι" value={favoriteAnimal} onChange={(e) => setFavoriteAnimal(e.target.value)} />
+          <input style={inputStyle} placeholder="Αγαπημένο χρώμα" value={favoriteColor} onChange={(e) => setFavoriteColor(e.target.value)} />
+        </div>
+
+        <input
+          style={inputStyle}
+          placeholder="Αγαπημένα πράγματα"
+          value={favoriteThings}
+          onChange={(e) => setFavoriteThings(e.target.value)}
+        />
+
+        <textarea
+          style={{ ...inputStyle, minHeight: "100px" }}
+          placeholder="Μια όμορφη ανάμνηση"
+          value={memory}
+          onChange={(e) => setMemory(e.target.value)}
+        />
+
+        <textarea
+          style={{ ...inputStyle, minHeight: "100px" }}
+          placeholder="Μήνυμα από τη μαμά"
+          value={momMessage}
+          onChange={(e) => setMomMessage(e.target.value)}
+        />
+
+        <button
+          onClick={handleSubmit}
+          disabled={loading}
+          style={{
+            marginTop: "20px",
+            width: "100%",
+            padding: "16px",
+            borderRadius: "999px",
+            border: "none",
+            backgroundColor: "#DCC4B8",
+            color: "#4F4039",
+            fontSize: "18px",
+            fontWeight: "600",
+            cursor: "pointer",
+            opacity: loading ? 0.6 : 1,
+          }}
+        >
+          {loading ? "Φόρτωση..." : "Συνέχεια"}
+        </button>
+      </div>
     </main>
   );
 }
