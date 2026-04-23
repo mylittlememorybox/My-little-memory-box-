@@ -288,11 +288,10 @@ export default function MemoryDetailsPage() {
         <div style={heroWrap}>
           <div style={heroBadge}>Η ιστορία σας ξεκινά εδώ</div>
           <h1 className={font.className} style={title}>
-            Χτίζουμε μαζί το παραμύθι σας
+        Δημιουργία memory box με τα πρώτα χρόνια ζωής 
           </h1>
           <p style={subtitle}>
-            Συμπλήρωσε τις στιγμές, τους ανθρώπους, τις σκέψεις και τις
-            αναμνήσεις που θέλεις να γίνουν το δικό σας παραμύθι.
+        Συμπλήρωσε τα παρακάτω και χάρισε ένα πολύτιμο Memory Box στο παιδί σου
           </p>
         </div>
 
