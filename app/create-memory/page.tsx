@@ -256,7 +256,7 @@ export default function CreateMemoryPage() {
               disabled={!allConsentsAccepted}
               onClick={() => {
                 if (allConsentsAccepted) {
-                  window.location.href = "/memory-details";
+                  window.location.href = "/story-details";
                 }
               }}
               style={{
