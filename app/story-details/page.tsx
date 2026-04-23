@@ -43,6 +43,7 @@ localStorage.setItem("story", JSON.stringify(data));
 
 // redirect σε νέα σελίδα
 window.location.href = "/result";
+      } catch (error) {
       console.error(error);
       alert("Κάτι πήγε στραβά 😢");
     } finally {
