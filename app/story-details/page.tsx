@@ -72,7 +72,7 @@ export default function StoryDetailsPage() {
     setLoading(true);
 
     try {
-      await fetch("ΒΑΛΕ_ΕΔΩ_ΤΟ_MAKE_WEBHOOK_URL", {
+      await fetch("https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
