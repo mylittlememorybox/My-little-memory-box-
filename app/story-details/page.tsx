@@ -68,12 +68,12 @@ export default function StoryDetailsPage() {
   const [momMessage, setMomMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
     setLoading(true);
 
     try {
-      await fetch("https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55", {
-        method: "POST",
+      await fetch("https://hook.eu1.make.com/.....", {
+  method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
