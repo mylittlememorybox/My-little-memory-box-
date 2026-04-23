@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import type { CSSProperties } from "react";
+import { useState, type CSSProperties } from "react";
 import { Playfair_Display } from "next/font/google";
 
 const elegantFont = Playfair_Display({
@@ -55,14 +55,50 @@ const labelStyle: CSSProperties = {
   display: "block",
 };
 
-const sectionStyle: CSSProperties = {
-  backgroundColor: "#FBF4EE",
-  borderRadius: "22px",
-  padding: "22px",
-  marginBottom: "24px",
-};
-
 export default function StoryDetailsPage() {
+  const [childName, setChildName] = useState("");
+  const [age, setAge] = useState("");
+  const [hairColor, setHairColor] = useState("");
+  const [eyeColor, setEyeColor] = useState("");
+  const [favoriteAnimal, setFavoriteAnimal] = useState("");
+  const [favoriteColor, setFavoriteColor] = useState("");
+  const [favoriteThings, setFavoriteThings] = useState("");
+  const [memory, setMemory] = useState("");
+  const [theme, setTheme] = useState("");
+  const [momMessage, setMomMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async () => {
+    setLoading(true);
+
+    try {
+      await fetch("ΒΑΛΕ_ΕΔΩ_ΤΟ_MAKE_WEBHOOK_URL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          childName,
+          age,
+          hairColor,
+          eyeColor,
+          favoriteAnimal,
+          favoriteColor,
+          favoriteThings,
+          memory,
+          theme,
+          momMessage,
+        }),
+      });
+
+      window.location.href = "/memory-details";
+    } catch (error) {
+      alert("Κάτι πήγε στραβά. Προσπάθησε ξανά.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main style={wrap}>
       <div style={inner}>
@@ -89,7 +125,7 @@ export default function StoryDetailsPage() {
               marginBottom: "14px",
             }}
           >
-            Ας γνωρίσουμε τον μικρό ήρωα του παραμυθιού
+            Ας γνωρίσουμε τον μικρό ήρωα του Memory Box
           </h1>
 
           <p
@@ -102,86 +138,43 @@ export default function StoryDetailsPage() {
               margin: "0 auto 32px",
             }}
           >
-            Συμπλήρωσε λίγα όμορφα στοιχεία για το παιδάκι σου, ώστε να
-            δημιουργήσουμε ένα πιο προσωπικό Memory Box και ένα μοναδικό,
-            προσωποποιημένο παραμύθι.
+            Συμπλήρωσε τα παρακάτω και χάρισε ένα πολύτιμο Memory Box στο παιδί σου.
           </p>
 
-          <div style={sectionStyle}>
-            <label style={labelStyle}>Όνομα παιδιού</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. Ανδριάνα"
-            />
+          <label style={labelStyle}>Όνομα παιδιού</label>
+          <input value={childName} onChange={(e) => setChildName(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Ηλικία</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. 2 ετών"
-            />
+          <label style={labelStyle}>Ηλικία</label>
+          <input value={age} onChange={(e) => setAge(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Χρώμα μαλλιών</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. καστανά"
-            />
+          <label style={labelStyle}>Χρώμα μαλλιών</label>
+          <input value={hairColor} onChange={(e) => setHairColor(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Χρώμα ματιών</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. μελί"
-            />
+          <label style={labelStyle}>Χρώμα ματιών</label>
+          <input value={eyeColor} onChange={(e) => setEyeColor(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Αγαπημένο ζωάκι</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. λαγουδάκι"
-            />
+          <label style={labelStyle}>Αγαπημένο ζωάκι</label>
+          <input value={favoriteAnimal} onChange={(e) => setFavoriteAnimal(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Αγαπημένο χρώμα</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. ροζ"
-            />
+          <label style={labelStyle}>Αγαπημένο χρώμα</label>
+          <input value={favoriteColor} onChange={(e) => setFavoriteColor(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Τι αγαπάει περισσότερο;</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. μπαλόνια, θάλασσα, αγκαλιές, τραγούδια"
-            />
+          <label style={labelStyle}>Τι αγαπάει περισσότερο;</label>
+          <input value={favoriteThings} onChange={(e) => setFavoriteThings(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Μια όμορφη ανάμνηση μαζί του</label>
-            <textarea
-              style={textareaStyle}
-              placeholder="Γράψε μια γλυκιά ανάμνηση που θα θέλατε να υπάρχει μέσα στο παραμύθι."
-            />
+          <label style={labelStyle}>Μια όμορφη ανάμνηση</label>
+          <textarea value={memory} onChange={(e) => setMemory(e.target.value)} style={textareaStyle} />
 
-            <label style={labelStyle}>Θέμα παραμυθιού</label>
-            <input
-              type="text"
-              style={inputStyle}
-              placeholder="Π.χ. σύννεφα, μπαλόνι, θάλασσα, ζωάκια, αστέρια"
-            />
+          <label style={labelStyle}>Θέμα</label>
+          <input value={theme} onChange={(e) => setTheme(e.target.value)} type="text" style={inputStyle} />
 
-            <label style={labelStyle}>Μήνυμα από τη μαμά</label>
-            <textarea
-              style={textareaStyle}
-              placeholder="Γράψε ένα μικρό μήνυμα αγάπης που θα μας βοηθήσει να κάνουμε το παραμύθι ακόμα πιο προσωπικό."
-            />
-          </div>
+          <label style={labelStyle}>Μήνυμα από τη μαμά</label>
+          <textarea value={momMessage} onChange={(e) => setMomMessage(e.target.value)} style={textareaStyle} />
 
           <button
             type="button"
-            onClick={() => {
-              window.location.href = "/memory-details";
-            }}
+            onClick={handleSubmit}
+            disabled={loading}
             style={{
               width: "100%",
               padding: "16px 28px",
@@ -191,25 +184,12 @@ export default function StoryDetailsPage() {
               color: "#4F4039",
               fontSize: "18px",
               fontWeight: 700,
-              cursor: "pointer",
-              boxSizing: "border-box",
+              cursor: loading ? "not-allowed" : "pointer",
+              opacity: loading ? 0.7 : 1,
             }}
           >
-            Συνέχεια
+            {loading ? "Αποστολή..." : "Συνέχεια"}
           </button>
-
-          <div
-            style={{
-              marginTop: "22px",
-              textAlign: "center",
-              fontSize: "14px",
-              color: "#7A6A62",
-            }}
-          >
-            <Link href="/create-memory" style={{ color: "#7D6457" }}>
-              Επιστροφή
-            </Link>
-          </div>
         </div>
       </div>
     </main>
