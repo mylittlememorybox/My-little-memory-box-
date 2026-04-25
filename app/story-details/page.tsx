@@ -36,12 +36,10 @@ export default function StoryDetailsPage() {
   }),
 });
 
-const data = await result.json();
+const storyText = await result.text();
 
-// αποθήκευση στο browser
-localStorage.setItem("story", JSON.stringify(data));
+localStorage.setItem("story", storyText);
 
-// redirect σε νέα σελίδα
 window.location.href = "/result";
       } catch (error) {
       console.error(error);
