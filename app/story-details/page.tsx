@@ -18,32 +18,36 @@ export default function StoryDetailsPage() {
     setLoading(true);
 
     try {
-      const result = await fetch("https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    childName,
-    age,
-    hairColor,
-    eyeColor,
-    favoriteAnimal,
-    favoriteColor,
-    favoriteThings,
-    memory,
-    momMessage,
-  }),
-});
+  const result = await fetch("https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      childName,
+      age,
+      hairColor,
+      eyeColor,
+      favoriteAnimal,
+      favoriteColor,
+      favoriteThings,
+      memory,
+      momMessage,
+    }),
+  });
 
-const storyText = await result.text();
+  const storyText = await result.text();
 
-localStorage.setItem("story", storyText);
+  // 🔥 ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΡΙΣΙΜΟ
+  localStorage.setItem("story", storyText);
 
-window.location.href = "/result";
-      } catch (error) {
-      console.error(error);
-      alert("Κάτι πήγε στραβά 😢");
+  // redirect
+  window.location.href = "/result";
+
+} catch (error) {
+  console.error(error);
+  alert("Κάτι πήγε στραβά 😢");
+
     } finally {
       setLoading(false);
     }
