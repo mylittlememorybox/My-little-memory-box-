@@ -18,6 +18,7 @@ export default function StoryDetailsPage() {
   setLoading(true);
 
   try {
+    alert("Καλώ το API τώρα");
     const result = await fetch("/api/generate-story", {
       method: "POST",
       headers: {
