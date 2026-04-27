@@ -35,7 +35,10 @@ const handleSubmit = async () => {
       }),
     });
 
-    const storyText = await result.text();
+    const data = await result.json();
+
+localStorage.setItem("story", data.story || "");
+localStorage.setItem("image", data.image || "");
 
     if (!storyText || storyText.trim() === "") {
       alert("Το Make δεν επέστρεψε παραμύθι. Έλεγξε το Webhook Response.");
