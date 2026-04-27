@@ -101,6 +101,19 @@ const [image, setImage] = useState("");
             fontSize: "17px",
           }}
         >
+          {image && (
+  <img
+    src={image}
+    alt="Εικονογράφηση παραμυθιού"
+    style={{
+      width: "100%",
+      maxWidth: "500px",
+      display: "block",
+      margin: "0 auto 20px",
+      borderRadius: "20px",
+    }}
+  />
+)}
           {story || "Δεν υπάρχει ακόμη παραμύθι για εμφάνιση."}
         </div>
 
