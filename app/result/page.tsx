@@ -4,42 +4,27 @@ import { useEffect, useState } from "react";
 
 export default function ResultPage() {
   const [story, setStory] = useState("");
-const [image, setImage] = useState("");
+  const [image, setImage] = useState("");
+
   useEffect(() => {
-  const savedStory = localStorage.getItem("story");
-  const savedImage = localStorage.getItem("image");
+    const savedStory = localStorage.getItem("story");
+    const savedImage = localStorage.getItem("image");
 
-  if (savedStory && savedStory.trim() !== "") {
-    setStory(savedStory);
-  }
-
-  if (savedImage && savedImage.trim() !== "") {
-    setImage(savedImage);
-  }
-}, []);
+    if (savedStory && savedStory.trim() !== "") setStory(savedStory);
+    if (savedImage && savedImage.trim() !== "") setImage(savedImage);
+  }, []);
 
   const downloadFile = (type: "story" | "box" | "both") => {
     let content = "";
 
-    if (type === "story") {
-      content = story;
-    }
+    if (type === "story") content = story;
+    if (type === "box") content = "Memory Box";
+    if (type === "both") content = `${story}\n\nMemory Box`;
 
-    if (type === "box") {
-      content = "Memory Box";
-    }
-
-    if (type === "both") {
-      content = `${story}\n\nMemory Box`;
-    }
-
-    const blob = new Blob([content], {
-      type: "text/plain;charset=utf-8",
-    });
-
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
 
+    const a = document.createElement("a");
     a.href = url;
     a.download = "my-little-memory-box.txt";
     a.click();
@@ -89,6 +74,20 @@ const [image, setImage] = useState("");
           κατεβάσεις.
         </p>
 
+        {image && (
+          <img
+            src={image}
+            alt="Εικονογράφηση παραμυθιού"
+            style={{
+              width: "100%",
+              maxWidth: "520px",
+              display: "block",
+              margin: "0 auto 24px",
+              borderRadius: "24px",
+            }}
+          />
+        )}
+
         <div
           style={{
             backgroundColor: "#FFF",
@@ -101,19 +100,6 @@ const [image, setImage] = useState("");
             fontSize: "17px",
           }}
         >
-          {image && (
-  <img
-    src={image}
-    alt="Εικονογράφηση παραμυθιού"
-    style={{
-      width: "100%",
-      maxWidth: "500px",
-      display: "block",
-      margin: "0 auto 20px",
-      borderRadius: "20px",
-    }}
-  />
-)}
           {story || "Δεν υπάρχει ακόμη παραμύθι για εμφάνιση."}
         </div>
 
