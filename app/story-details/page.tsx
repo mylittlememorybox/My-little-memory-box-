@@ -15,42 +15,43 @@ export default function StoryDetailsPage() {
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
-    setLoading(true);
+  setLoading(true);
 
-    try {
-  const result = await fetch("/api/generate-story", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    childName,
-    age,
-    hairColor,
-    eyeColor,
-    favoriteAnimal,
-    favoriteColor,
-    favoriteThings,
-    memory,
-    momMessage,
-  }),
-});
-  const storyText = await result.text();
+  try {
+    const result = await fetch("/api/generate-story", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        childName,
+        age,
+        hairColor,
+        eyeColor,
+        favoriteAnimal,
+        favoriteColor,
+        favoriteThings,
+        memory,
+        momMessage,
+      }),
+    });
 
-  // 🔥 ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΡΙΣΙΜΟ
-  localStorage.setItem("story", storyText);
-
-  // redirect
-  window.location.href = "/result";
-
-} catch (error) {
-  console.error(error);
-  alert("Κάτι πήγε στραβά 😢");
-
-    } finally {
-      setLoading(false);
+    if (!result.ok) {
+      throw new Error("Failed to generate story");
     }
-  };
+
+    const storyText = await result.text();
+
+    localStorage.setItem("story", storyText);
+
+    window.location.href = "/result";
+  } catch (error) {
+    console.error(error);
+    alert("Κάτι πήγε στραβά 😢");
+  } finally {
+    setLoading(false);
+  }
+};
 
   const inputStyle = {
     width: "100%",
