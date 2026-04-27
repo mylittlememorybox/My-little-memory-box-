@@ -41,7 +41,7 @@ export default function StoryDetailsPage() {
     }
 
     const storyText = await result.text();
-
+alert("STORY: " + storyText);
     localStorage.setItem("story", storyText);
 
     window.location.href = "/result";
