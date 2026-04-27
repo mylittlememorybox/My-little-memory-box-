@@ -37,12 +37,16 @@ const handleSubmit = async () => {
 
     const data = await result.json();
 
+if (!data.story || data.story.trim() === "") {
+  alert("Το Make δεν επέστρεψε παραμύθι. Έλεγξε το Webhook Response.");
+  return;
+}
+
 localStorage.setItem("story", data.story || "");
 localStorage.setItem("image", data.image || "");
 
-    if (!storyText || storyText.trim() === "") {
-      alert("Το Make δεν επέστρεψε παραμύθι. Έλεγξε το Webhook Response.");
-      return;
+window.location.href = "/result";
+}
     }
 
     localStorage.setItem("story", storyText);
