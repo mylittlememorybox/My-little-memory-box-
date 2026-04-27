@@ -46,17 +46,13 @@ try {
   console.error("JSON parse error:", text);
   alert("Το API δεν επέστρεψε σωστό JSON");
   return;
-}
-
-localStorage.setItem("story", data.story || "");
+}localStorage.setItem("story", data.story || "");
 localStorage.setItem("image", data.image || "");
 
 window.location.href = "/result";
-    }
 
-    localStorage.setItem("story", storyText);
 
-    window.location.href = "/result";
+
   } catch (error) {
     console.error(error);
     alert("Κάτι πήγε στραβά 😢");
