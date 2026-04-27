@@ -13,12 +13,10 @@ export default function StoryDetailsPage() {
   const [memory, setMemory] = useState("");
   const [momMessage, setMomMessage] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async () => {
+const handleSubmit = async () => {
   setLoading(true);
 
   try {
-    alert("Καλώ το API τώρα");
     const result = await fetch("/api/generate-story", {
       method: "POST",
       headers: {
@@ -37,12 +35,13 @@ export default function StoryDetailsPage() {
       }),
     });
 
-    if (!result.ok) {
-      throw new Error("Failed to generate story");
+    const storyText = await result.text();
+
+    if (!storyText || storyText.trim() === "") {
+      alert("Το Make δεν επέστρεψε παραμύθι. Έλεγξε το Webhook Response.");
+      return;
     }
 
-    const storyText = await result.text();
-alert("STORY: " + storyText);
     localStorage.setItem("story", storyText);
 
     window.location.href = "/result";
@@ -53,6 +52,8 @@ alert("STORY: " + storyText);
     setLoading(false);
   }
 };
+  
+
 
   const inputStyle = {
     width: "100%",
