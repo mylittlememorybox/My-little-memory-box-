@@ -36,17 +36,17 @@ export default function StoryDetailsPage() {
         }),
       });
 
-      const text = await result.text();
+      const storyText = await result.text();
 
-      let data;
+if (!storyText || storyText.trim() === "") {
+  alert("Το Make δεν επέστρεψε παραμύθι.");
+  return;
+}
 
-      try {
-        data = JSON.parse(text);
-      } catch (e) {
-        console.error("JSON parse error:", text);
-        alert("Η απάντηση δεν ήταν σωστή 😢");
-        return;
-      }
+localStorage.setItem("story", storyText);
+localStorage.setItem("image", "");
+
+window.location.href = "/result";   }
 
       if (!data.story || data.story.trim() === "") {
         alert("Το Make δεν επέστρεψε παραμύθι.");
