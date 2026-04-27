@@ -3,7 +3,7 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const response = await fetch(
-      "https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55",
+      "https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293q55",
       {
         method: "POST",
         headers: {
@@ -13,22 +13,22 @@ export async function POST(request: Request) {
       }
     );
 
-    const story = await response.text();
+    const data = await response.json();
 
-    return new Response(story, {
-      status: 200,
-      headers: {
-        "Content-Type": "text/plain; charset=utf-8",
-      },
+    return Response.json({
+      story: data.story || "",
+      image: data.image || "",
     });
   } catch (error) {
     console.error(error);
 
-    return new Response("Κάτι πήγε στραβά στη δημιουργία του παραμυθιού.", {
-      status: 500,
-      headers: {
-        "Content-Type": "text/plain; charset=utf-8",
+    return Response.json(
+      {
+        story: "",
+        image: "",
+        error: "Κάτι πήγε στραβά στη δημιουργία.",
       },
-    });
+      { status: 500 }
+    );
   }
 }
