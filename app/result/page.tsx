@@ -4,14 +4,19 @@ import { useEffect, useState } from "react";
 
 export default function ResultPage() {
   const [story, setStory] = useState("");
-
+const [image, setImage] = useState("");
   useEffect(() => {
-    const savedStory = localStorage.getItem("story");
+  const savedStory = localStorage.getItem("story");
+  const savedImage = localStorage.getItem("image");
 
-    if (savedStory && savedStory.trim() !== "") {
-      setStory(savedStory);
-    }
-  }, []);
+  if (savedStory && savedStory.trim() !== "") {
+    setStory(savedStory);
+  }
+
+  if (savedImage && savedImage.trim() !== "") {
+    setImage(savedImage);
+  }
+}, []);
 
   const downloadFile = (type: "story" | "box" | "both") => {
     let content = "";
