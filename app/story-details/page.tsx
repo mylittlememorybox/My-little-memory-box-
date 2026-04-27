@@ -17,28 +17,34 @@ const handleSubmit = async () => {
   setLoading(true);
 
   try {
-    const result = await fetch("/api/generate-story", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        childName,
-        age,
-        hairColor,
-        eyeColor,
-        favoriteAnimal,
-        favoriteColor,
-        favoriteThings,
-        memory,
-        momMessage,
-      }),
-    });
+    
+}const result = await fetch("/api/generate-story", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    childName,
+    age,
+    hairColor,
+    eyeColor,
+    favoriteAnimal,
+    favoriteColor,
+    favoriteThings,
+    memory,
+    momMessage,
+  }),
+});
 
-    const data = await result.json();
+const text = await result.text();
 
-if (!data.story || data.story.trim() === "") {
-  alert("Το Make δεν επέστρεψε παραμύθι. Έλεγξε το Webhook Response.");
+let data;
+
+try {
+  data = JSON.parse(text);
+} catch (e) {
+  console.error("JSON parse error:", text);
+  alert("Το API δεν επέστρεψε σωστό JSON");
   return;
 }
 
@@ -46,7 +52,6 @@ localStorage.setItem("story", data.story || "");
 localStorage.setItem("image", data.image || "");
 
 window.location.href = "/result";
-}
     }
 
     localStorage.setItem("story", storyText);
