@@ -95,6 +95,18 @@ export default function StoryDetailsPage() {
           boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
         }}
       >
+        <a href="/" style={{ display: "block", textAlign: "center", marginBottom: "24px" }}>
+  <img
+    src="/logo.png"
+    alt="My Little Memory Box"
+    style={{
+      width: "150px",
+      height: "auto",
+      objectFit: "contain",
+      cursor: "pointer",
+    }}
+  />
+</a>
         <h1
           style={{
             fontSize: "30px",
