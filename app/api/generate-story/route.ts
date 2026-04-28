@@ -13,9 +13,9 @@ export async function POST(request: Request) {
       }
     );
 
-    const text = await response.text();
+    const data = await response.json();
 
-    return new Response(text, {
+return Response.json(data);
       status: 200,
       headers: {
         "Content-Type": "application/json",
