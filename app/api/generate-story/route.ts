@@ -3,7 +3,7 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const response = await fetch(
-      "ΤΟ_WEBHOOK_LINK_ΣΟΥ",
+      "https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55",
       {
         method: "POST",
         headers: {
