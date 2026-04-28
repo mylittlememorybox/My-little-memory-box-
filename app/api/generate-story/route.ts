@@ -14,12 +14,8 @@ export async function POST(request: Request) {
     );
 
     const data = await response.json();
-
 return Response.json(data);
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
+
     });
   } catch (error) {
     console.error(error);
