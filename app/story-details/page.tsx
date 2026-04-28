@@ -46,17 +46,9 @@ if (!storyText || storyText.trim() === "") {
 localStorage.setItem("story", storyText);
 localStorage.setItem("image", "");
 
-window.location.href = "/result";   }
+window.location.href = "/result";   
 
-      if (!data.story || data.story.trim() === "") {
-        alert("Το Make δεν επέστρεψε παραμύθι.");
-        return;
-      }
-
-      localStorage.setItem("story", data.story || "");
-      localStorage.setItem("image", data.image || "");
-
-      window.location.href = "/result";
+      
     } catch (error) {
       console.error(error);
       alert("Κάτι πήγε στραβά 😢");
