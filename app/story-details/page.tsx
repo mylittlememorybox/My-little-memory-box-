@@ -35,18 +35,18 @@ export default function StoryDetailsPage() {
           momMessage,
         }),
       });
+const data = await result.json();
 
-      const storyText = await result.text();
-
-if (!storyText || storyText.trim() === "") {
+if (!data.story || data.story.trim() === "") {
   alert("Το Make δεν επέστρεψε παραμύθι.");
   return;
 }
 
-localStorage.setItem("story", storyText);
-localStorage.setItem("image", "");
+localStorage.setItem("story", data.story || "");
+localStorage.setItem("image", data.image || "");
 
-window.location.href = "/result";   
+window.location.href = "/result";
+         
 
       
     } catch (error) {
