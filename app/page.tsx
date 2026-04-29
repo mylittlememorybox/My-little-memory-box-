@@ -22,7 +22,23 @@ export default function Home() {
     top: "20px",
     right: "20px",
     zIndex: 50,
-    backgroundColor: "rgba(255, 248, 243, 0.96)",
+   <nav
+  style={{
+    position: "fixed",
+    top: "20px",
+    right: "20px",
+    zIndex: 50,
+    backgroundColor: "rgba(255, 248, 243, 0.6)",
+    backdropFilter: "blur(6px)",
+    borderRadius: "999px",
+    padding: "10px 16px",
+    boxShadow: "0 8px 22px rgba(0,0,0,0.05)",
+    display: "flex",
+    gap: "16px",
+    alignItems: "center",
+  }}
+>
+
     borderRadius: "999px",
     padding: "10px 16px",
     boxShadow: "0 8px 22px rgba(0,0,0,0.08)",
