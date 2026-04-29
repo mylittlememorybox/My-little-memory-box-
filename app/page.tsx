@@ -15,14 +15,7 @@ export default function Home() {
         backgroundColor: "#FFF8F5",
         color: "#6E5A50",
       }}
-    >
-      <nav
-  style={{
-    position: "fixed",
-    top: "20px",
-    right: "20px",
-    zIndex: 50,
-   <nav
+<nav
   style={{
     position: "fixed",
     top: "20px",
@@ -38,39 +31,15 @@ export default function Home() {
     alignItems: "center",
   }}
 >
-
-    borderRadius: "999px",
-    padding: "10px 16px",
-    boxShadow: "0 8px 22px rgba(0,0,0,0.08)",
-    display: "flex",
-    gap: "16px",
-    alignItems: "center",
-  }}
->
-  <a
-    href="/"
-    style={{
-      color: "#6B564C",
-      textDecoration: "none",
-      fontWeight: 600,
-      fontSize: "15px",
-    }}
-  >
+  <a href="/" style={{ color: "#6B564C", textDecoration: "none", fontWeight: 600 }}>
     Αρχική
   </a>
 
-  <a
-    href="/login"
-    style={{
-      color: "#6B564C",
-      textDecoration: "none",
-      fontWeight: 600,
-      fontSize: "15px",
-    }}
-  >
+  <a href="/login" style={{ color: "#6B564C", textDecoration: "none", fontWeight: 600 }}>
     Λογαριασμός μου
   </a>
 </nav>
+   
 
       <section
         style={{
