@@ -32,7 +32,7 @@ export default function AccountPage() {
         </Link>
 
         <nav style={{ display: "grid", gap: "14px" }}>
-          <Link href="/memory-box" style={linkStyle}>
+          <Link href="/memory-details" style={linkStyle}>
             My Memory Box
           </Link>
 
