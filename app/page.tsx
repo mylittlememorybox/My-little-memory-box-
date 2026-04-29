@@ -9,28 +9,29 @@ const elegantFont = Playfair_Display({
 
 export default function Home() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        backgroundColor: "#FFF8F5",
-        color: "#6E5A50",
-      }}
-<nav
+   <main
   style={{
-    position: "fixed",
-    top: "20px",
-    right: "20px",
-    zIndex: 50,
-    backgroundColor: "rgba(255, 248, 243, 0.6)",
-    backdropFilter: "blur(6px)",
-    borderRadius: "999px",
-    padding: "10px 16px",
-    boxShadow: "0 8px 22px rgba(0,0,0,0.05)",
-    display: "flex",
-    gap: "16px",
-    alignItems: "center",
+    minHeight: "100vh",
+    backgroundColor: "#FFF8F5",
+    color: "#6E5A50",
   }}
 >
+  <nav
+    style={{
+      position: "fixed",
+      top: "20px",
+      right: "20px",
+      zIndex: 50,
+      backgroundColor: "transparent",
+      backdropFilter: "blur(6px)",
+      borderRadius: "999px",
+      padding: "10px 16px",
+      boxShadow: "none",
+      display: "flex",
+      gap: "16px",
+      alignItems: "center",
+    }}
+  >
   <a href="/" style={{ color: "#6B564C", textDecoration: "none", fontWeight: 600 }}>
     Αρχική
   </a>
