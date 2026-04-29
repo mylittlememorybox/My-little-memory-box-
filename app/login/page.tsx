@@ -96,7 +96,7 @@ export default function LoginPage() {
           }}
         >
           Δεν έχεις λογαριασμό;{" "}
-          <Link href="app/checkout" style={{ color: "#7D6457" }}>
+          <Link href="/checkout" style={{ color: "#7D6457" }}>
             Δημιούργησε έναν
           </Link>
         </p>
