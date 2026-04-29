@@ -65,8 +65,8 @@ export default function AccountPage() {
           </h1>
 
           <p style={{ fontSize: "18px", lineHeight: "1.8", color: "#7A6A62" }}>
-            Από εδώ μπορείς να συνεχίσεις το Memory Box σου ή να δημιουργήσεις
-            το προσωποποιημένο παραμύθι.
+            Από εδώ μπορείς να συνεχίσεις το Memory Box σου και μετά να δημιουργήσεις
+            το προσωποποιημένο παραμύθι σου.
           </p>
         </div>
       </section>
