@@ -16,6 +16,46 @@ export default function Home() {
         color: "#6E5A50",
       }}
     >
+      <nav
+  style={{
+    position: "fixed",
+    top: "20px",
+    right: "20px",
+    zIndex: 50,
+    backgroundColor: "rgba(255, 248, 243, 0.96)",
+    borderRadius: "999px",
+    padding: "10px 16px",
+    boxShadow: "0 8px 22px rgba(0,0,0,0.08)",
+    display: "flex",
+    gap: "16px",
+    alignItems: "center",
+  }}
+>
+  <a
+    href="/"
+    style={{
+      color: "#6B564C",
+      textDecoration: "none",
+      fontWeight: 600,
+      fontSize: "15px",
+    }}
+  >
+    Αρχική
+  </a>
+
+  <a
+    href="/login"
+    style={{
+      color: "#6B564C",
+      textDecoration: "none",
+      fontWeight: 600,
+      fontSize: "15px",
+    }}
+  >
+    Λογαριασμός μου
+  </a>
+</nav>
+
       <section
         style={{
           maxWidth: "1100px",
