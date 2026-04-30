@@ -167,6 +167,12 @@ function names(files: File[]) {
 
 export default function MemoryDetailsPage() {
   const [values, setValues] = useState<FormValues>(initialValues);
+  useEffect(() => {
+  const saved = localStorage.getItem("memoryData");
+  if (saved) {
+    setValues(JSON.parse(saved));
+  }
+}, []);
   const [files, setFiles] = useState<FileGroups>(initialFiles);
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
     "idle"
