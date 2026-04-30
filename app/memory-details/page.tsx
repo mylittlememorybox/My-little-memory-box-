@@ -557,7 +557,7 @@ export default function MemoryDetailsPage() {
             />
           </Section>
 
-          <Section emoji="🎂" badge="Γιορτή" title="Για τα γενέθλιά σου">
+          <Section emoji="🎂" badge="Γιορτή" title="Tα γενέθλιά σου">
             <Field label="Σήμερα γίνεσαι ... ετών">
               <input
                 style={input}
