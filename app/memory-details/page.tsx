@@ -327,7 +327,7 @@ export default function MemoryDetailsPage() {
             />
           </Link>
         </div>
-      </main>    
+      
 
         <div style={heroWrap}>
           <div style={heroBadge}>Η ιστορία σας ξεκινά εδώ</div>
