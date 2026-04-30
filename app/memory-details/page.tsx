@@ -278,7 +278,7 @@ export default function MemoryDetailsPage() {
   }
 
   return (
-    <main style={page}>
+    <main style={page, display: "flex" }}>
        <aside
         style={{
           width: "260px",
