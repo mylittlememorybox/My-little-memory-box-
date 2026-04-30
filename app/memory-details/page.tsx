@@ -187,6 +187,8 @@ export default function MemoryDetailsPage() {
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+      localStorage.setItem("memoryData", JSON.stringify(formData));
+    
 
     try {
       setStatus("sending");
