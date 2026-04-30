@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import type {
@@ -187,7 +187,7 @@ export default function MemoryDetailsPage() {
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-      localStorage.setItem("memoryData", JSON.stringify(formData));
+      localStorage.setItem("memoryData", JSON.stringify(values));
     
 
     try {
