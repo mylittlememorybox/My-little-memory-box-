@@ -239,7 +239,7 @@ export default function MemoryDetailsPage() {
   if (status === "success") {
     return (
       <main style={page}>
-        <div style={container}>
+         <div style={container}>
           <div style={centerTop}>
             <Link href="/" style={{ display: "inline-block" }}>
               <Image
@@ -279,8 +279,43 @@ export default function MemoryDetailsPage() {
 
   return (
     <main style={page}>
+       <aside
+        style={{
+          width: "260px",
+          backgroundColor: "#FFF8F3",
+          padding: "28px 20px",
+          boxShadow: "4px 0 18px rgba(0,0,0,0.04)",
+        }}
+      >
+        <Link href="/">
+          <img
+            src="/logo.png"
+            alt="My Little Memory Box"
+            style={{
+              width: "190px",
+              display: "block",
+              margin: "0 auto 34px",
+            }}
+          />
+        </Link>
+
+        <nav style={{ display: "grid", gap: "14px" }}>
+          <Link href="/memory-details" style={linkStyle}>
+            My Memory Box
+          </Link>
+
+          <Link href="/story-details" style={linkStyle}>
+            Προσωποποιημένο παραμύθι
+          </Link>
+
+          <Link href="/" style={logoutStyle}>
+            Log out
+          </Link>
+        </nav>
+      </aside>
+  <div style={{ flex: 1 }}>
       <div style={container}>
-        <div style={centerTop}>
+       <div style={centerTop}>
           <Link href="/" style={{ display: "inline-block" }}>
             <Image
               src="/logo.png"
@@ -292,6 +327,7 @@ export default function MemoryDetailsPage() {
             />
           </Link>
         </div>
+      </main>    
 
         <div style={heroWrap}>
           <div style={heroBadge}>Η ιστορία σας ξεκινά εδώ</div>
