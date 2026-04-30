@@ -154,7 +154,7 @@ export default function CheckoutPage() {
                   marginBottom: "18px",
                 }}
               >
-                24.99€
+                29.99€
               </div>
 
               <p
