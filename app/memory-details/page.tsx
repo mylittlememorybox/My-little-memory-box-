@@ -750,14 +750,7 @@ export default function MemoryDetailsPage() {
               onChange={onChange("letterForYou")}
             />
           </Section>
-
-          <Section emoji="✨" badge="Το κλείσιμο" title="Το τελικό κλείσιμο της ιστορίας">
-            <textarea
-              style={{ ...textarea, minHeight: "160px" }}
-              value={values.finalClosing}
-              onChange={onChange("finalClosing")}
-            />
-          </Section>
+          
 
           <div style={submitCard}>
             <div style={submitTop}>
