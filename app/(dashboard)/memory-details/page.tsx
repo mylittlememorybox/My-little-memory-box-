@@ -277,6 +277,60 @@ export default function MemoryDetailsPage() {
   }
 
   return (
+  <div>
+
+    {/* LOGO */}
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        padding: "20px 0",
+      }}
+    >
+      <Link href="/">
+        <img
+          src="/logo.png"
+          alt="My Little Memory Box"
+          style={{
+            width: "180px",
+            cursor: "pointer",
+          }}
+        />
+      </Link>
+    </div>
+
+    {/* 📖 BOOK */}
+    <div
+      style={{
+        maxWidth: "900px",
+        margin: "0 auto",
+        backgroundColor: "#FFF8F3",
+        borderRadius: "20px",
+        padding: "30px",
+        boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+      }}
+    >
+
+      <main style={page}>
+        {/* ΟΛΟ το υπάρχον περιεχόμενο σου ΜΕΣΑ εδώ */}
+      </main>
+
+    </div>
+
+  </div>
+);
+  <Link href="/">
+    <img
+      src="/logo.png"
+      alt="My Little Memory Box"
+      style={{
+        width: "180px",
+        cursor: "pointer",
+      }}
+    />
+  </Link>
+</div>
     <main style={page}>
     <div style={container}>
        <div style={centerTop}>
@@ -770,6 +824,8 @@ export default function MemoryDetailsPage() {
       </div>
       </div> 
      </main>
+     </div>
+     </div>
   );
 }
 
