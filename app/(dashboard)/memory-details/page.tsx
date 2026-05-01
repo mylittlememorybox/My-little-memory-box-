@@ -238,7 +238,6 @@ export default function MemoryDetailsPage() {
 
   if (status === "success") {
     return (
-      <main style={page}>
          <div style={container}>
           <div style={centerTop}>
             <Link href="/" style={{ display: "inline-block" }}>
@@ -273,7 +272,6 @@ export default function MemoryDetailsPage() {
             </div>
           </div>
         </div>
-      </main>
     );
   }
 
@@ -392,7 +390,7 @@ export default function MemoryDetailsPage() {
               />
             </Field>
 
-            <Field label="Οι παππούδες και οι γιαγιάδες και οι νονοί/ες σου">
+            <Field label="Οι παππούδες και οι γιαγιάδες">
               <textarea
                 style={textarea}
                 value={values.grandparentsGodparents}
@@ -400,7 +398,7 @@ export default function MemoryDetailsPage() {
               />
             </Field>
 
-            <Field label="Οι φίλοι που έγιναν οικογένεια">
+            <Field label="Οι νονοί/ες σου και οι φίλοι που έγιναν οικογένεια">
               <textarea
                 style={textarea}
                 value={values.chosenFamilyFriends}
