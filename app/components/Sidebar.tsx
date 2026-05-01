@@ -9,20 +9,33 @@ export default function Sidebar() {
         backgroundColor: "#FFF8F3",
         padding: "28px 20px",
         boxShadow: "4px 0 18px rgba(0,0,0,0.04)",
+        flexShrink: 0,
       }}
     >
       <Link href="/">
         <img
           src="/logo.png"
           alt="My Little Memory Box"
-          style={{ width: "190px", display: "block", margin: "0 auto 34px" }}
+          style={{
+            width: "190px",
+            display: "block",
+            margin: "0 auto 34px",
+          }}
         />
       </Link>
 
       <nav style={{ display: "grid", gap: "14px" }}>
-        <Link href="/memory-details" style={linkStyle}>My Memory Box</Link>
-        <Link href="/story-details" style={linkStyle}>Προσωποποιημένο παραμύθι</Link>
-        <Link href="/" style={logoutStyle}>Log out</Link>
+        <Link href="/memory-details" style={linkStyle}>
+          My Memory Box
+        </Link>
+
+        <Link href="/story-details" style={linkStyle}>
+          Προσωποποιημένο παραμύθι
+        </Link>
+
+        <Link href="/" style={logoutStyle}>
+          Log out
+        </Link>
       </nav>
     </aside>
   );
