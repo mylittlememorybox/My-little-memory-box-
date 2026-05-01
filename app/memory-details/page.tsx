@@ -279,8 +279,8 @@ export default function MemoryDetailsPage() {
 
   return (
     <main style={{...page, display: "flex" }}>
-       <aside
-        style={{
+    </aside>
+        <div style={{ flex: 1 }}>
           width: "260px",
           backgroundColor: "#FFF8F3",
           padding: "28px 20px",
@@ -804,7 +804,8 @@ export default function MemoryDetailsPage() {
           </div>
         </form>
       </div>
-    </main>
+      </div> 
+     </main>
   );
 }
 
