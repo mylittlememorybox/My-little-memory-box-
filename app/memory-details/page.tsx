@@ -282,7 +282,7 @@ export default function MemoryDetailsPage() {
     </aside>
         <div style={{ flex: 1 }}>
           width: "260px",
-          backgroundColor: "#FFF8F3",
+          backgroundColor: "#red",
           padding: "28px 20px",
           boxShadow: "4px 0 18px rgba(0,0,0,0.04)",
         }}
