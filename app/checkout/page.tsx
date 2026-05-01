@@ -188,7 +188,7 @@ export default function CheckoutPage() {
                   boxSizing: "border-box",
                 }}
               >
-                Πληρωμή 24.99€
+                Πληρωμή 29.99€
               </a>
 
               <p
