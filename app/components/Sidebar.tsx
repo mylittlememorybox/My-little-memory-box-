@@ -15,26 +15,14 @@ export default function Sidebar() {
         <img
           src="/logo.png"
           alt="My Little Memory Box"
-          style={{
-            width: "190px",
-            display: "block",
-            margin: "0 auto 34px",
-          }}
+          style={{ width: "190px", display: "block", margin: "0 auto 34px" }}
         />
       </Link>
 
       <nav style={{ display: "grid", gap: "14px" }}>
-        <Link href="/memory-details" style={linkStyle}>
-          My Memory Box
-        </Link>
-
-        <Link href="/story-details" style={linkStyle}>
-          Προσωποποιημένο παραμύθι
-        </Link>
-
-        <Link href="/" style={logoutStyle}>
-          Log out
-        </Link>
+        <Link href="/memory-details" style={linkStyle}>My Memory Box</Link>
+        <Link href="/story-details" style={linkStyle}>Προσωποποιημένο παραμύθι</Link>
+        <Link href="/" style={logoutStyle}>Log out</Link>
       </nav>
     </aside>
   );
