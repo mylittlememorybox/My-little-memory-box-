@@ -38,8 +38,8 @@ const memoryImages = {
   birthday: "/preview/birthday.jpg.JPG",
   social: "/preview/social.jpg.JPG",
   school: "/preview/school.jpg.JPG",
-  difficult: "/preview/difficult.JPG",
-  happy: "/preview/happy.JPG",
+  difficult: "/preview/difficult.JPEG",
+  happy: "/preview/happy.JPEG",
 };
 
 const storyImages = {
