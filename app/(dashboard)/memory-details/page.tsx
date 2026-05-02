@@ -660,7 +660,7 @@ export default function MemoryDetailsPage() {
       </form>
     </main>
   );
- }
+  }
 function BookLogo({ onClick }: { onClick: () => void }) {
   return (
     <button type="button" onClick={onClick} style={logoButtonStyle}>
