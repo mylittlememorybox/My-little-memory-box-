@@ -41,15 +41,15 @@ const memoryImages = {
 };
 
 const storyImages = {
-  cover: "/preview/storybook-cover.png.JPEG",
-  garden: "/preview/garden-play.png.JPEG",
-  balloonLost: "/preview/balloon-lost.png.JPEG",
-  forestAlone: "/preview/forest-alone.png.JPEG",
-  unicornMeet: "/preview/unicorn-meet.png.JPEG",
-  darkForest: "/preview/dark-forest.png.JPEG",
-  lightPower: "/preview/light-power.png.JPEG",
-  balloonCatch: "/preview/balloon-catch.png.JPEG",
-  dreamEnd: "/preview/dream-end.png.JPEG",
+  cover: "/preview/story-cover.png.JPEG",
+  garden: "/preview/story-garden-play.png.JPEG",
+  balloonLost: "/preview/story-balloon-lost.png.JPEG",
+  forestAlone: "/preview/story-forest-alone.png.JPEG",
+  unicornMeet: "/preview/story-unicorn-meet.png.JPEG",
+  darkForest: "/preview/story-dark-forest.png.JPEG",
+  lightPower: "/preview/story-light-power.png.JPEG",
+  balloonCatch: "/preview/story-balloon-catch.png.JPEG",
+  dreamEnd: "/preview/story-dream-end.png.JPEG",
 };
 
 const memoryPages: MemoryPage[] = [
