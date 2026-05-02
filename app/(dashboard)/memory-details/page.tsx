@@ -299,7 +299,8 @@ export default function MemoryDetailsPage() {
               </button>
 
               <h1 style={coverTitleStyle}>
-                memory box με τα πρώτα χρόνια της ζωής
+                My Little Memory box 
+                Tα πρώτα χρόνια της ζωής σου
               </h1>
 
               <input
