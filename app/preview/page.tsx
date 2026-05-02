@@ -38,6 +38,8 @@ const memoryImages = {
   birthday: "/preview/birthday.jpg.JPG",
   social: "/preview/social.jpg.JPG",
   school: "/preview/school.jpg.JPG",
+  difficult: "/preview/difficulttime.JPG",
+  happy: "preview/happytime.JPG",
 };
 
 const storyImages = {
@@ -177,7 +179,7 @@ const memoryPages: MemoryPage[] = [
   },
   {
     title: "Οι μέρες που δεν ήταν εύκολες",
-    images: [memoryImages.newborn],
+    images: [memoryImages.difficult],
     items: [
       {
         label: "Μια μέρα που ένιωσα ότι δεν τα κατάφερνα:",
@@ -198,7 +200,7 @@ const memoryPages: MemoryPage[] = [
   },
   {
     title: "Οι στιγμές που με έκανες να νιώσω τα πάντα",
-    images: [memoryImages.steps],
+    images: [memoryImages.happy],
     items: [
       {
         label: "Η στιγμή που ένιωσα περήφανη για σένα:",
