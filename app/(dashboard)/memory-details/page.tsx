@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Great_Vibes } from "next/font/google";
+
 import type { CSSProperties, ChangeEvent, FormEvent, ReactNode } from "react";
 
 const WEBHOOK = "https://hook.eu1.make.com/4vspo1e7o6bmqg3q8rha4vl5o293qz55";
