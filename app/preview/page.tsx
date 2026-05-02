@@ -4,18 +4,24 @@ import { useState } from "react";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 
+type Mode = "memory" | "story";
+
 export default function PreviewPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mode, setMode] = useState<Mode>("memory");
   const [page, setPage] = useState(0);
   const [flip, setFlip] = useState(false);
+  const [menu, setMenu] = useState(false);
 
-  const TOTAL = 7;
+  const TOTAL_MEMORY = 7;
+  const TOTAL_STORY = 5;
 
-  const go = (next: number) => {
-    if (next < 0 || next > TOTAL) return;
+  const total = mode === "memory" ? TOTAL_MEMORY : TOTAL_STORY;
+
+  const go = (n: number) => {
+    if (n < 0 || n > total) return;
     setFlip(true);
     setTimeout(() => {
-      setPage(next);
+      setPage(n);
       setFlip(false);
     }, 350);
   };
@@ -31,12 +37,21 @@ export default function PreviewPage() {
       `}</style>
 
       {/* ☰ MENU */}
-      <button style={hamburger} onClick={() => setMenuOpen(true)}>☰</button>
+      <button style={hamburger} onClick={() => setMenu(true)}>☰</button>
 
-      {menuOpen && (
-        <div style={overlay} onClick={() => setMenuOpen(false)}>
+      {menu && (
+        <div style={overlay} onClick={() => setMenu(false)}>
           <div style={drawer} onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setMenuOpen(false)}>✕</button>
+            <button onClick={() => setMenu(false)}>✕</button>
+
+            <button style={menuBtn} onClick={() => setMode("memory")}>
+              Preview MemoryBox
+            </button>
+
+            <button style={menuBtn} onClick={() => setMode("story")}>
+              Preview Παραμύθι
+            </button>
+
             <Link href="/">Αρχική</Link>
             <Link href="/signup">Εγγραφή</Link>
             <Link href="/login">Σύνδεση</Link>
@@ -44,76 +59,151 @@ export default function PreviewPage() {
         </div>
       )}
 
-      {/* BOOK */}
       <div style={bookWrap}>
         <div style={{
           ...pageBox,
           animation: flip ? "flip .35s ease" : "none"
         }}>
 
-          {/* COVER */}
-          {page === 0 && (
-            <div style={cover}>
-              <img src="/logo.png" style={logo} />
-
-              <h2 style={subtitle}>
-                preview «τα πρώτα σου χρόνια ζωής»
-              </h2>
-
-              <div style={nameBox}>
-                <span>όνομα παιδιού:</span>
-                <strong style={name}>ελπίδα</strong>
-              </div>
-            </div>
-          )}
-
-          {/* 1 */}
-          {page === 1 && (
-            <Row title="οι πρώτες στιγμές" img="/preview/newborn.jpg.JPG" />
-          )}
-
-          {/* 2 */}
-          {page === 2 && (
+          {/* MEMORY */}
+          {mode === "memory" && (
             <>
-              <Row title="πρώτο δόντι" img="/preview/smile.jpg.JPG" />
-              <Row title="μπουσούλημα" img="/preview/crown.jpg.JPG" />
+              {page === 0 && (
+                <div style={cover}>
+                  <img src="/logo.png" style={logo} />
+                  <h2 style={subtitle}>
+                    memory box με τα πρώτα χρόνια ζωής
+                  </h2>
+
+                  <div style={nameBox}>
+                    όνομα παιδιού:
+                    <strong style={name}>ελπίδα</strong>
+                  </div>
+                </div>
+              )}
+
+              {page === 1 && (
+                <Row
+                  title="οι πρώτες στιγμές"
+                  text="η πρώτη αγκαλιά, η πρώτη μέρα στο σπίτι και οι πρώτες αναμνήσεις σας μαζί"
+                  img="/preview/newborn.jpg.JPG"
+                />
+              )}
+
+              {page === 2 && (
+                <>
+                  <Row
+                    title="πρώτο δόντι"
+                    text="το πρώτο χαμόγελο με το πρώτο μικρό δοντάκι"
+                    img="/preview/smile.jpg.JPG"
+                  />
+                  <Row
+                    title="μπουσούλημα"
+                    text="η πρώτη προσπάθεια να εξερευνήσει τον κόσμο"
+                    img="/preview/crown.jpg.JPG"
+                  />
+                </>
+              )}
+
+              {page === 3 && (
+                <Row
+                  title="πρώτα βήματα"
+                  text="τα πρώτα βήματα προς έναν ολόκληρο κόσμο"
+                  img="/preview/steps.jpg.JPG"
+                />
+              )}
+
+              {page === 4 && (
+                <>
+                  <Row
+                    title="οι γονείς"
+                    text="οι άνθρωποι που είναι πάντα δίπλα της"
+                    img="/preview/family.jpg.JPG"
+                  />
+                  <Row
+                    title="παππούς & γιαγιά"
+                    text="αγάπη χωρίς όρια"
+                    img="/preview/grandparents.jpg.JPG"
+                  />
+                </>
+              )}
+
+              {page === 5 && (
+                <Row
+                  title="τα γενέθλια σου"
+                  text="μια μέρα γεμάτη χαρά και αγάπη"
+                  img="/preview/birthday.jpg.JPG"
+                />
+              )}
+
+              {page === 6 && (
+                <Row
+                  title="τα πρώτα βήματα στον κόσμο"
+                  text="οι πρώτες εμπειρίες έξω στον κόσμο"
+                  img="/preview/social.jpg.JPG"
+                />
+              )}
+
+              {page === 7 && (
+                <Row
+                  title="η πρώτη μέρα στο σχολείο"
+                  text="ένα νέο ξεκίνημα"
+                  img="/preview/school.jpg.JPG"
+                />
+              )}
             </>
           )}
 
-          {/* 3 */}
-          {page === 3 && (
-            <Row title="πρώτα βήματα" img="/preview/steps.jpg.JPG" />
-          )}
-
-          {/* 4 */}
-          {page === 4 && (
+          {/* STORY */}
+          {mode === "story" && (
             <>
-              <Row title="οι γονείς" img="/preview/family.jpg.JPG" />
-              <Row title="παππούς & γιαγιά" img="/preview/grandparents.jpg.JPG" />
+              {page === 0 && (
+                <div style={cover}>
+                  <h1 style={storyTitle}>Το δάσος των χρωμάτων</h1>
+                </div>
+              )}
+
+              {page === 1 && (
+                <Story
+                  img="/preview/story1.jpg.PNG"
+                  text="Η Ελπίδα, με τα ξανθά μαλλιά και τα καστανά μάτια, ζούσε σε ένα μαγικό δάσος γεμάτο χρώματα."
+                />
+              )}
+
+              {page === 2 && (
+                <Story
+                  img="/preview/story2.jpg.PNG"
+                  text="Αγαπούσε το κόκκινο και είχε έναν φίλο, ένα μικρό κουνέλι."
+                />
+              )}
+
+              {page === 3 && (
+                <Story
+                  img="/preview/story3.jpg.PNG"
+                  text="Θυμήθηκε μια εκδρομή στη θάλασσα με τον παππού, τη γιαγιά, τη μαμά και τον μπαμπά."
+                />
+              )}
+
+              {page === 4 && (
+                <Story
+                  img="/preview/story4.jpg.PNG"
+                  text="«Είσαι ικανή για όλα. Θα είμαι πάντα εδώ.» της είπε η μαμά."
+                />
+              )}
+
+              {page === 5 && (
+                <Story
+                  img="/preview/story5.jpg.PNG"
+                  text="Και έτσι η Ελπίδα φώτισε όλο το δάσος με το αγαπημένο της κόκκινο."
+                />
+              )}
             </>
           )}
-
-          {/* 5 */}
-          {page === 5 && (
-            <Row title="τα γενέθλια σου" img="/preview/birthday.jpg.JPG" />
-          )}
-
-          {/* 6 */}
-          {page === 6 && (
-            <Row title="τα πρώτα βήματα στον κόσμο" img="/preview/social.jpg.JPG" />
-          )}
-
-          {/* 7 */}
-          {page === 7 && (
-            <Row title="η πρώτη μέρα στο σχολείο" img="/preview/school.jpg.JPG" />
-          )}
-
         </div>
 
-        {/* NAV */}
         <div style={nav}>
           <button onClick={() => go(page - 1)}>←</button>
-          <span>{page} / {TOTAL}</span>
+          <span>{page}/{total}</span>
           <button onClick={() => go(page + 1)}>→</button>
         </div>
       </div>
@@ -121,11 +211,24 @@ export default function PreviewPage() {
   );
 }
 
-/* ROW COMPONENT */
-function Row({ title, img }: { title: string; img: string }) {
+/* COMPONENTS */
+
+function Row({ title, text, img }: any) {
   return (
     <div style={row}>
-      <div style={text}>{title}</div>
+      <div style={textBox}>
+        <h3>{title}</h3>
+        <p>{text}</p>
+      </div>
+      <img src={img} style={image} />
+    </div>
+  );
+}
+
+function Story({ text, img }: any) {
+  return (
+    <div style={row}>
+      <p style={{ flex: 1 }}>{text}</p>
       <img src={img} style={image} />
     </div>
   );
@@ -133,37 +236,34 @@ function Row({ title, img }: { title: string; img: string }) {
 
 /* STYLES */
 
-const pageStyle: CSSProperties = {
-  padding: 12,
-  background: "#f5f2ef",
-  minHeight: "100vh"
-};
+const pageStyle: CSSProperties = { padding: 12 };
 
 const hamburger: CSSProperties = {
   position: "fixed",
-  top: 12,
-  left: 12,
-  fontSize: 22,
-  background: "white",
-  borderRadius: 8,
-  padding: "4px 10px",
-  border: "1px solid #ddd"
+  top: 10,
+  left: 10
 };
 
 const overlay: CSSProperties = {
   position: "fixed",
   inset: 0,
-  background: "rgba(0,0,0,.35)"
+  background: "rgba(0,0,0,.3)"
 };
 
 const drawer: CSSProperties = {
-  width: 220,
+  width: 200,
+  background: "white",
   height: "100%",
-  background: "#fff",
   padding: 20,
   display: "flex",
   flexDirection: "column",
-  gap: 12
+  gap: 10
+};
+
+const menuBtn: CSSProperties = {
+  padding: 10,
+  background: "#ddd",
+  border: "none"
 };
 
 const bookWrap: CSSProperties = {
@@ -173,66 +273,42 @@ const bookWrap: CSSProperties = {
 
 const pageBox: CSSProperties = {
   background: "#fff",
-  borderRadius: 24,
   padding: 20,
-  boxShadow: "0 10px 30px rgba(0,0,0,.1)"
+  borderRadius: 20
 };
 
-const cover: CSSProperties = {
-  textAlign: "center"
-};
+const cover: CSSProperties = { textAlign: "center" };
 
-const logo: CSSProperties = {
-  width: "55%",
-  maxWidth: 180
-};
+const logo: CSSProperties = { width: "50%" };
 
-const subtitle: CSSProperties = {
-  fontFamily: "Georgia, serif",
-  fontStyle: "italic",
-  fontSize: 20,
-  color: "#7a5c4a",
-  marginTop: 18
-};
+const subtitle: CSSProperties = { marginTop: 10 };
 
 const nameBox: CSSProperties = {
-  border: "1px solid #d8c2b0",
-  padding: 12,
-  marginTop: 24,
-  borderRadius: 14,
-  background: "#fffaf7"
+  border: "1px solid #ccc",
+  padding: 10,
+  marginTop: 20
 };
 
-const name: CSSProperties = {
-  display: "block",
-  fontSize: 26,
-  fontFamily: "Georgia, serif",
-  marginTop: 6,
-  color: "#7a5c4a"
-};
+const name: CSSProperties = { fontSize: 24 };
 
 const row: CSSProperties = {
   display: "flex",
-  gap: 12,
-  alignItems: "center",
+  gap: 10,
   marginBottom: 20
 };
 
-const text: CSSProperties = {
-  flex: 1,
-  fontSize: 15,
-  color: "#4d3a2f"
-};
+const textBox: CSSProperties = { flex: 1 };
 
 const image: CSSProperties = {
   width: 120,
-  borderRadius: 14,
-  objectFit: "cover"
+  borderRadius: 10
 };
 
 const nav: CSSProperties = {
   display: "flex",
-  justifyContent: "space-between",
-  marginTop: 12,
-  alignItems: "center"
+  justifyContent: "space-between"
+};
+
+const storyTitle: CSSProperties = {
+  fontSize: 28
 };
