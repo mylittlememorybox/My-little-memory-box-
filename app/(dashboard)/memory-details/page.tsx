@@ -298,7 +298,7 @@ export default function MemoryDetailsPage() {
                 <img src="/logo.png" alt="My Little Memory Box" style={coverLogoStyle} />
               </button>
 
-              <h1 style={coverTitleStyle}>
+             <h1 className={handwriting.className} style={coverTitleStyle}>
                 My Little Memory box 
                 Tα πρώτα χρόνια της ζωής σου
               </h1>
