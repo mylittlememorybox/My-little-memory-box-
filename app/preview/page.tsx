@@ -251,10 +251,10 @@ function Cover() {
     <section style={coverStyle}>
       <img src="/logo.png" alt="My Little Memory Box" style={coverLogoStyle} />
 
-      <div style={coverSubtitleStyle}>preview «τα πρώτα σου χρόνια ζωής»</div>
+      <div style={coverSubtitleStyle}>preview «Τα πρώτα σου χρόνια ζωής»</div>
 
       <div style={nameInputPreviewStyle}>
-        <span style={nameLabelStyle}>όνομα παιδιού:</span>
+        <span style={nameLabelStyle}>Όνομα παιδιού:</span>
         <span style={typingNameStyle}>Ελπίδα</span>
       </div>
     </section>
