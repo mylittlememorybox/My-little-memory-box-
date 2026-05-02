@@ -263,29 +263,26 @@ export default function MemoryDetailsPage() {
     );
   }
 
-  return (
-    <main style={pageStyle}>
-      <style>{`
-        @keyframes realisticFlip {
-          0% {
-            transform: perspective(900px) rotateY(0deg);
-            opacity: 1;
-            box-shadow: inset 8px 0 16px rgba(120,80,50,0.08);
-          }
-          42% {
-            transform: perspective(900px) rotateY(-42deg);
-            opacity: 0.78;
-            box-shadow: inset 34px 0 42px rgba(90,55,35,0.22);
-          }
-          100% {
-            transform: perspective(900px) rotateY(0deg);
-            opacity: 1;
-            box-shadow: inset 8px 0 16px rgba(120,80,50,0.08);
-          }
+ return (
+  <>
+    <style>{`
+      @keyframes realisticFlip {
+        0% {
+          transform: perspective(1200px) rotateY(0deg);
+          opacity: 1;
         }
-      `}</style>
-
-      <form onSubmit={submit} style={bookShellStyle}>
+        40% {
+          transform: perspective(1200px) rotateY(-55deg);
+          opacity: .7;
+        }
+        100% {
+          transform: perspective(1200px) rotateY(0deg);
+          opacity: 1;
+        }
+      }
+    `}</style>
+<main style={pageStyle}>
+ <form onSubmit={submit} style={bookShellStyle}>
         <div
           style={{
             ...paperStyle,
