@@ -659,7 +659,8 @@ export default function MemoryDetailsPage() {
         </div>
       </form>
     </main>
-  );
+  </>
+    );
   }
 function BookLogo({ onClick }: { onClick: () => void }) {
   return (
