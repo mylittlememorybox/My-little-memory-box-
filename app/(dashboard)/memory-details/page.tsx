@@ -149,7 +149,6 @@ export default function MemoryDetailsPage() {
 
   useEffect(() => {
     const saved = localStorage.getItem("memoryData");
-
     if (saved) {
       try {
         setValues(JSON.parse(saved) as FormValues);
@@ -419,8 +418,7 @@ export default function MemoryDetailsPage() {
                 />
               </Section>
             )}
-
-            {bookPage === 4 && (
+{bookPage === 4 && (
               <Section badge="Μεγαλώνεις" title="Τα πρώτα σου βήματα">
                 <Field label="Η πρώτη φορά που σηκώθηκες όρθιο">
                   <textarea style={textareaStyle} value={values.stoodUpFirstTime} onChange={onChange("stoodUpFirstTime")} />
@@ -434,12 +432,7 @@ export default function MemoryDetailsPage() {
                   <textarea style={textareaStyle} value={values.ranToMe} onChange={onChange("ranToMe")} />
                 </Field>
 
-                <UploadBox
-                  title="Φωτογραφίες & βίντεο από τα πρώτα βήματα"
-                  files={files.firstStepsMedia}
-                  onChange={onFileChange("firstStepsMedia")}
-                  multiple
-                />
+                <UploadBox title="Φωτογραφίες & βίντεο από τα πρώτα βήματα" files={files.firstStepsMedia} onChange={onFileChange("firstStepsMedia")} multiple />
               </Section>
             )}
 
@@ -448,15 +441,12 @@ export default function MemoryDetailsPage() {
                 <Field label="Μια μέρα που ένιωσα ότι δεν τα κατάφερνα">
                   <textarea style={textareaStyle} value={values.hardDay} onChange={onChange("hardDay")} />
                 </Field>
-
                 <Field label="Μια στιγμή που λύγισα (αλλά δεν το έδειξα)">
                   <textarea style={textareaStyle} value={values.silentBreak} onChange={onChange("silentBreak")} />
                 </Field>
-
                 <Field label="Κάτι που με δυσκόλεψε περισσότερο απ’ όσο περίμενα">
                   <textarea style={textareaStyle} value={values.harderThanExpected} onChange={onChange("harderThanExpected")} />
                 </Field>
-
                 <Field label="Και παρ’ όλα αυτά... συνέχισα γιατί">
                   <textarea style={textareaStyle} value={values.iContinuedBecause} onChange={onChange("iContinuedBecause")} />
                 </Field>
@@ -468,25 +458,17 @@ export default function MemoryDetailsPage() {
                 <Field label="Η στιγμή που ένιωσα περήφανη για σένα">
                   <textarea style={textareaStyle} value={values.proudMoment} onChange={onChange("proudMoment")} />
                 </Field>
-
                 <Field label="Κάτι μικρό που για μένα ήταν τεράστιο">
                   <textarea style={textareaStyle} value={values.smallButHuge} onChange={onChange("smallButHuge")} />
                 </Field>
-
                 <Field label="Μια αγκαλιά που δεν ήθελα να τελειώσει">
                   <textarea style={textareaStyle} value={values.endlessHug} onChange={onChange("endlessHug")} />
                 </Field>
-
                 <Field label='Η στιγμή που σκέφτηκα "αυτό είναι η ευτυχία"'>
                   <textarea style={textareaStyle} value={values.thisIsHappiness} onChange={onChange("thisIsHappiness")} />
                 </Field>
 
-                <UploadBox
-                  title="Φωτογραφίες & βίντεο ιδιαίτερων στιγμών"
-                  files={files.emotionalMomentsMedia}
-                  onChange={onFileChange("emotionalMomentsMedia")}
-                  multiple
-                />
+                <UploadBox title="Φωτογραφίες & βίντεο ιδιαίτερων στιγμών" files={files.emotionalMomentsMedia} onChange={onFileChange("emotionalMomentsMedia")} multiple />
               </Section>
             )}
 
@@ -495,29 +477,20 @@ export default function MemoryDetailsPage() {
                 <Field label="Σήμερα γίνεσαι ... ετών">
                   <input style={inputStyle} value={values.birthdayAge} onChange={onChange("birthdayAge")} />
                 </Field>
-
                 <Field label="Έσβησες την τούρτα σου με αυτούς τους αγαπημένους σου">
                   <textarea style={textareaStyle} value={values.birthdayCakeWith} onChange={onChange("birthdayCakeWith")} />
                 </Field>
-
                 <Field label="Κάτι που έμαθες">
                   <textarea style={textareaStyle} value={values.birthdayLearned} onChange={onChange("birthdayLearned")} />
                 </Field>
-
                 <Field label="Μία στιγμή που δεν θα ξεχάσω από αυτή τη χρονιά">
                   <textarea style={textareaStyle} value={values.birthdayUnforgettableMoment} onChange={onChange("birthdayUnforgettableMoment")} />
                 </Field>
-
                 <Field label="Η ευχή μου για σένα">
                   <textarea style={textareaStyle} value={values.birthdayWish} onChange={onChange("birthdayWish")} />
                 </Field>
 
-                <UploadBox
-                  title="Φωτογραφίες & βίντεο γενεθλίων"
-                  files={files.birthdayMedia}
-                  onChange={onFileChange("birthdayMedia")}
-                  multiple
-                />
+                <UploadBox title="Φωτογραφίες & βίντεο γενεθλίων" files={files.birthdayMedia} onChange={onFileChange("birthdayMedia")} multiple />
               </Section>
             )}
 
@@ -526,29 +499,20 @@ export default function MemoryDetailsPage() {
                 <Field label="Η πρώτη φορά που έπαιξες με άλλα παιδάκια">
                   <textarea style={textareaStyle} value={values.firstPlayWithKids} onChange={onChange("firstPlayWithKids")} />
                 </Field>
-
                 <Field label='Η πρώτη σου "φιλία" όπως την είδα εγώ'>
                   <textarea style={textareaStyle} value={values.firstFriendship} onChange={onChange("firstFriendship")} />
                 </Field>
-
                 <Field label="Κάτι που σε ενθουσίασε πολύ">
                   <textarea style={textareaStyle} value={values.excitement} onChange={onChange("excitement")} />
                 </Field>
-
                 <Field label="Κάτι που σε φόβισε">
                   <textarea style={textareaStyle} value={values.fear} onChange={onChange("fear")} />
                 </Field>
-
                 <Field label="Η στιγμή που κατάλαβα ότι μεγαλώνεις">
                   <textarea style={textareaStyle} value={values.iRealizedYouAreGrowing} onChange={onChange("iRealizedYouAreGrowing")} />
                 </Field>
 
-                <UploadBox
-                  title="Φωτογραφίες κοινωνικών στιγμών"
-                  files={files.socialMomentsMedia}
-                  onChange={onFileChange("socialMomentsMedia")}
-                  multiple
-                />
+                <UploadBox title="Φωτογραφίες κοινωνικών στιγμών" files={files.socialMomentsMedia} onChange={onFileChange("socialMomentsMedia")} multiple />
               </Section>
             )}
 
@@ -557,90 +521,54 @@ export default function MemoryDetailsPage() {
                 <Field label="Σήμερα πήγες για πρώτη φορά σχολείο...">
                   <textarea style={textareaStyle} value={values.firstSchoolDay} onChange={onChange("firstSchoolDay")} />
                 </Field>
-
                 <Field label="Και εγώ ένιωσα">
                   <textarea style={textareaStyle} value={values.schoolHowIFelt} onChange={onChange("schoolHowIFelt")} />
                 </Field>
-
                 <Field label="Εσύ έδειχνες">
                   <textarea style={textareaStyle} value={values.schoolHowYouLooked} onChange={onChange("schoolHowYouLooked")} />
                 </Field>
-
                 <Field label="Η στιγμή που σε άφησα">
                   <textarea style={textareaStyle} value={values.schoolWhenILeftYou} onChange={onChange("schoolWhenILeftYou")} />
                 </Field>
-
                 <Field label="Η σκέψη που δεν έφυγε από το μυαλό μου">
                   <textarea style={textareaStyle} value={values.schoolThoughtInMind} onChange={onChange("schoolThoughtInMind")} />
                 </Field>
-
                 <Field label="Όταν σε ξαναείδα">
                   <textarea style={textareaStyle} value={values.schoolWhenISawYouAgain} onChange={onChange("schoolWhenISawYouAgain")} />
                 </Field>
 
-                <UploadBox
-                  title="Φωτογραφίες σχολείου"
-                  files={files.schoolMedia}
-                  onChange={onFileChange("schoolMedia")}
-                  multiple
-                />
+                <UploadBox title="Φωτογραφίες σχολείου" files={files.schoolMedia} onChange={onFileChange("schoolMedia")} multiple />
               </Section>
             )}
 
             {bookPage === 10 && (
               <Section badge="Μικρή παύση" title="Μια σκέψη για σένα">
-                <textarea
-                  style={{ ...textareaStyle, minHeight: "130px" }}
-                  value={values.thoughtForYou}
-                  onChange={onChange("thoughtForYou")}
-                />
+                <textarea style={{ ...textareaStyle, minHeight: "130px" }} value={values.thoughtForYou} onChange={onChange("thoughtForYou")} />
               </Section>
             )}
 
             {bookPage === 11 && (
               <Section badge="Αναμνήσεις σε εικόνες" title="Μια σελίδα με φωτογραφίες">
-                <UploadBox
-                  title="Φωτογραφίες αυτής της σελίδας"
-                  files={files.photoPageMedia}
-                  onChange={onFileChange("photoPageMedia")}
-                  multiple
-                />
+                <UploadBox title="Φωτογραφίες αυτής της σελίδας" files={files.photoPageMedia} onChange={onFileChange("photoPageMedia")} multiple />
               </Section>
             )}
 
             {bookPage === 12 && (
               <Section badge="Λίγο πριν το τέλος" title="Μια τελευταία σκέψη">
-                <textarea
-                  style={{ ...textareaStyle, minHeight: "130px" }}
-                  value={values.finalThought}
-                  onChange={onChange("finalThought")}
-                />
-
-                <UploadBox
-                  title="Φωτογραφία για αυτή τη σελίδα"
-                  files={files.finalThoughtMedia}
-                  onChange={onFileChange("finalThoughtMedia")}
-                />
+                <textarea style={{ ...textareaStyle, minHeight: "130px" }} value={values.finalThought} onChange={onChange("finalThought")} />
+                <UploadBox title="Φωτογραφία για αυτή τη σελίδα" files={files.finalThoughtMedia} onChange={onFileChange("finalThoughtMedia")} />
               </Section>
             )}
 
             {bookPage === 13 && (
               <Section badge="Το πιο προσωπικό" title="Ένα γράμμα για εσένα">
-                <textarea
-                  style={{ ...textareaStyle, minHeight: "220px" }}
-                  value={values.letterForYou}
-                  onChange={onChange("letterForYou")}
-                />
+                <textarea style={{ ...textareaStyle, minHeight: "220px" }} value={values.letterForYou} onChange={onChange("letterForYou")} />
               </Section>
             )}
 
             {bookPage === 14 && (
               <Section badge="Τέλος" title="Μια τελευταία φράση">
-                <textarea
-                  style={{ ...textareaStyle, minHeight: "160px" }}
-                  value={values.finalClosing}
-                  onChange={onChange("finalClosing")}
-                />
+                <textarea style={{ ...textareaStyle, minHeight: "160px" }} value={values.finalClosing} onChange={onChange("finalClosing")} />
 
                 {status === "error" && <div style={errorBoxStyle}>{errorMessage}</div>}
 
@@ -652,21 +580,11 @@ export default function MemoryDetailsPage() {
 
             {bookPage !== 0 && (
               <div style={bookNavStyle}>
-                <button
-                  type="button"
-                  style={navButtonStyle}
-                  onClick={() => goToBookPage(bookPage - 1)}
-                  disabled={bookPage === 0}
-                >
+                <button type="button" style={navButtonStyle} onClick={() => goToBookPage(bookPage - 1)} disabled={bookPage === 0}>
                   Προηγούμενη
                 </button>
 
-                <button
-                  type="button"
-                  style={navButtonStyle}
-                  onClick={() => goToBookPage(bookPage + 1)}
-                  disabled={bookPage === TOTAL_PAGES - 1}
-                >
+                <button type="button" style={navButtonStyle} onClick={() => goToBookPage(bookPage + 1)} disabled={bookPage === TOTAL_PAGES - 1}>
                   Επόμενη
                 </button>
               </div>
@@ -699,15 +617,7 @@ function TwoCols({ children }: { children: ReactNode }) {
   return <div style={twoColsStyle}>{children}</div>;
 }
 
-function Section({
-  badge,
-  title,
-  children,
-}: {
-  badge: string;
-  title: string;
-  children: ReactNode;
-}) {
+function Section({ badge, title, children }: { badge: string; title: string; children: ReactNode }) {
   return (
     <section style={sectionCardStyle}>
       <div style={sectionBadgeStyle}>{badge}</div>
@@ -732,19 +642,8 @@ function UploadBox({
   return (
     <div style={uploadCardStyle}>
       <div style={uploadTitleStyle}>{title}</div>
-      <div style={uploadTextStyle}>
-        {files.length > 0
-          ? `Επιλεγμένα αρχεία: ${names(files)}`
-          : "Δεν έχουν επιλεγεί αρχεία ακόμα."}
-      </div>
-
-      <input
-        type="file"
-        accept="image/*,video/*"
-        multiple={multiple}
-        onChange={onChange}
-        style={fileInputStyle}
-      />
+      <div style={uploadTextStyle}>{files.length > 0 ? `Επιλεγμένα αρχεία: ${names(files)}` : "Δεν έχουν επιλεγεί αρχεία ακόμα."}</div>
+      <input type="file" accept="image/*,video/*" multiple={multiple} onChange={onChange} style={fileInputStyle} />
     </div>
   );
 }
