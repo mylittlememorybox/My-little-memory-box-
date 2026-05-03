@@ -23,63 +23,40 @@ export default function StoryDetailsPage() {
 
     setLoading(true);
 
-    // 🔥 PROMPTS ΕΙΚΟΝΩΝ (ΤΟ ΣΗΜΑΝΤΙΚΟ)
-    const illustrationPrompts = [
-      `Pixar style 3D illustration of a little girl named ${childName}, with ${hairColor} hair and ${eyeColor} eyes, holding a ${favoriteColor} balloon, standing next to a ${favoriteAnimal}, in a colorful magical forest, warm cinematic lighting, no text`,
 
-      `The same girl playing happily in her garden with the ${favoriteColor} balloon, sunny day, Pixar style, no text`,
-
-      `The same girl watching the balloon fly away into the sky, emotional moment, cinematic lighting, no text`,
-
-      `The same girl running toward a magical forest trying to catch the balloon, slightly scared but curious, no text`,
-
-      `The girl sees a ${favoriteAnimal} and smiles with relief in front of the forest, magical atmosphere, no text`,
-
-      `The girl walking inside a darker forest with the ${favoriteAnimal}, slightly scared, cinematic lighting, no text`,
-
-      `The girl glowing with warm golden light (inspired by her mother's words: ${momMessage}), forest lights up again, magical moment, no text`,
-
-      `The girl catching the ${favoriteColor} balloon near a colorful tree inside the forest, ${favoriteAnimal} next to her, happy scene, no text`,
-
-      `The girl lying in her garden holding the balloon, waking up like from a dream, peaceful ending, no text`,
-    ];
+    
 
     try {
       const result = await fetch("/api/generate-story", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    childName,
+    age,
+    hairColor,
+    eyeColor,
+    favoriteAnimal,
+    favoriteColor,
+    favoriteThings,
+    memory,
+    momMessage
+  }),
+});
 
-        // 🔥 ΑΥΤΑ ΠΑΝΕ ΣΤΟ MAKE
-        body: JSON.stringify({
-          childName,
-          age,
-          hairColor,
-          eyeColor,
-          favoriteAnimal,
-          favoriteColor,
-          favoriteThings,
-          memory,
-          momMessage,
+const data = await result.json();
 
-          illustrationPrompts,
+if (!data.story || data.story.trim() === "") {
+  alert("Δεν δημιουργήθηκε παραμύθι 😢");
+  return;
+}
 
-          illustrationStyle:
-            "Pixar / Disney style 3D παιδική εικονογράφηση, cinematic lighting, soft shadows, magical atmosphere, ίδιο παιδί σε όλες τις εικόνες, χωρίς γράμματα μέσα στις εικόνες",
-        }),
-      });
+localStorage.setItem("story", data.story);
+localStorage.setItem("images", JSON.stringify(data.images || []));
 
-      const data = await result.json();
+window.location.href = "/result";
 
-      if (!data.story || data.story.trim() === "") {
-        alert("Δεν δημιουργήθηκε παραμύθι 😢");
-        return;
-      }
-
-      localStorage.setItem("images", JSON.stringify(data.images || []));
-
-      window.location.href = "/result";
     } catch (error) {
       console.error(error);
       alert("Κάτι πήγε στραβά 😢");
