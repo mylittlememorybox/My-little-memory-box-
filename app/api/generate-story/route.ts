@@ -1,105 +1,45 @@
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const body = await req.json();
-
-  const {
-    childName,
-    age,
-    hairColor,
-    eyeColor,
-    favoriteAnimal,
-    favoriteColor,
-  } = body;
-
   try {
-    // 🔹 1. Φτιάχνουμε story + prompts
-    const storyRes = await fetch("https://api.openai.com/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: "gpt-4o-mini",
-        messages: [
-          {
-            role: "system",
-            content: "Είσαι συγγραφέας παιδικών παραμυθιών.",
-          },
-          {
-            role: "user",
-            content: `
-ΜΗΝ αλλάξεις την πλοκή.
+    const body = await req.json();
 
-Η ιστορία έχει 9 σκηνές:
-1. Παιχνίδι στον κήπο
-2. Χάσιμο μπαλονιού
-3. Κυνήγι μπαλονιού
-4. Εμφάνιση αγαπημένου ζώου μπροστά από πολύχρωμο δάσος
-5. Περίπατος στο πολύχρωμο δάσος
-6. Σκοτείνιασμα δάσους
-7. Φως από το παιδί
-8. Πιάσιμο μπαλονιού
-9. Επιστροφή στον κήπο
+    const {
+      childName,
+      age,
+      hairColor,
+      eyeColor,
+      favoriteAnimal,
+      favoriteColor,
+      favoriteThings,
+      memory,
+      momMessage,
+    } = body;
 
-Προσωποποίησε:
-Όνομα: ${childName}
-Ηλικία: ${age}
-Μαλλιά: ${hairColor}
-Μάτια: ${eyeColor}
-Αγαπημένο ζώο: ${favoriteAnimal}
-Αγαπημένο χρώμα: ${favoriteColor}
+    // 🔥 STORY
+    const story = `
+Μια φορά κι έναν καιρό ήταν ένα παιδί που το έλεγαν ${childName}.
+Ήταν ${age} χρονών, με ${hairColor} μαλλιά και ${eyeColor} μάτια.
 
-Επέστρεψε ΑΥΣΤΗΡΑ JSON:
+Αγαπούσε πολύ τα ${favoriteThings} και το αγαπημένο του ζώο ήταν το ${favoriteAnimal}.
+Μια μέρα, θυμήθηκε το ${memory} και ένιωσε χαρά.
 
-{
-  "story": "...",
-  "illustrationPrompts": ["...","...","...","...","...","...","...","...","..."]
-}
-`,
-          },
-        ],
-      }),
-    });
+Η μαμά του πάντα του έλεγε: "${momMessage}"
 
-    const storyData = await storyRes.json();
-    const text = storyData.choices[0].message.content;
+Και έτσι έμαθε πως η αγάπη είναι πάντα μαζί του 💖
+`;
 
-    const parsed = JSON.parse(text);
+    // 🔥 IMAGE PROMPTS
+    const prompts = [
+      `Pixar style, a child named ${childName} playing happily`,
+      `Pixar style, child with ${favoriteAnimal}`,
+      `Pixar style magical forest adventure`,
+    ];
 
-    const story = parsed.story;
-    const prompts = parsed.illustrationPrompts;
-
-    // 🔹 2. Δημιουργία εικόνων
-    const images: string[] = [];
-
-    for (const prompt of prompts) {
-      const imgRes = await fetch("https://api.openai.com/v1/images/generations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({
-          model: "gpt-image-1",
-          prompt: `
-${prompt}
-
-Pixar style 3D illustration, cinematic lighting, soft shadows, warm colors, children's storybook, same character, no text
-`,
-          size: "1024x1024",
-        }),
-      });
-
-      const imgData = await imgRes.json();
-
-      const base64 = imgData.data[0].b64_json;
-
-      const imageUrl = `data:image/png;base64,${base64}`;
-
-      images.push(imageUrl);
-    }
+    // 🔥 FAKE IMAGES για να δούμε ότι δουλεύει
+    const images = prompts.map(
+      (_, i) => `https://picsum.photos/seed/${i}/500/500`
+    );
 
     return NextResponse.json({
       story,
@@ -107,6 +47,10 @@ Pixar style 3D illustration, cinematic lighting, soft shadows, warm colors, chil
     });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "error" }, { status: 500 });
+
+    return NextResponse.json(
+      { error: "Something went wrong" },
+      { status: 500 }
+    );
   }
 }
