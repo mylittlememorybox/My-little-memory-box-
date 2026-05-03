@@ -77,8 +77,7 @@ export default function StoryDetailsPage() {
         return;
       }
 
-      localStorage.setItem("story", data.story || "");
-      localStorage.setItem("image", data.image || "");
+      localStorage.setItem("images", JSON.stringify(data.images || []));
 
       window.location.href = "/result";
     } catch (error) {
