@@ -9,7 +9,10 @@ export default function DashboardLayout({
     <main
       style={{
         minHeight: "100vh",
-        display: "flex",
+        width: "100%",
+        maxWidth: "100vw",
+        overflowX: "hidden",
+        display: "block",
         backgroundColor: "#F6EFE8",
       }}
     >
@@ -17,8 +20,10 @@ export default function DashboardLayout({
 
       <section
         style={{
-          flex: 1,
+          width: "100%",
+          maxWidth: "100vw",
           minWidth: 0,
+          overflowX: "hidden",
         }}
       >
         {children}
