@@ -39,7 +39,7 @@ export default function PaymentSuccessPage() {
         </p>
 
         <a
-          href="/story-details"
+          href="/memory-details"
           style={{
             display: "block",
             width: "100%",
