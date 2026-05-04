@@ -1,8 +1,3 @@
-
-Christina <info@mylittlememorybox.gr>
-11:20 μ.μ. (πριν από 0 λεπτά)
-προς εγώ
-
 import OpenAI from "openai";
 
 export const runtime = "nodejs";
