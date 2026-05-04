@@ -83,9 +83,10 @@ export async function POST(req: Request) {
           size: "1024x1024",
         });
 
-        const base64 = img.data[0].b64_json;
+        const base64 = img.data?.[0]?.b64_json;
+        if (!base64) continue;
 
-        images.push(`data:image/png;base64,${base64}`);
+       images.push(`data:image/png;base64,${base64}`);
       } catch (err) {
         console.log("Image error:", err);
       }
