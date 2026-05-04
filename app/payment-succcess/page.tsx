@@ -1,92 +1,60 @@
-import Link from "next/link";
-import Image from "next/image";
-import type { CSSProperties } from "react";
-import { Playfair_Display } from "next/font/google";
-
-const elegantFont = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const wrap: CSSProperties = {
-  minHeight: "100vh",
-  backgroundColor: "#F6EFE8",
-  padding: "60px 24px",
-  color: "#5E4B42",
-};
-
-const inner: CSSProperties = {
-  maxWidth: "900px",
-  margin: "0 auto",
-};
-
-const card: CSSProperties = {
-  backgroundColor: "rgba(255, 248, 243, 0.95)",
-  borderRadius: "30px",
-  padding: "38px",
-  boxShadow: "0 10px 28px rgba(0,0,0,0.05)",
-  textAlign: "center",
-};
+"use client";
 
 export default function PaymentSuccessPage() {
   return (
-    <main style={wrap}>
-      <div style={inner}>
-        <div style={{ textAlign: "center", marginBottom: "28px" }}>
-          <Link href="/" style={{ display: "inline-block" }}>
-            <Image
-              src="/logo.png"
-              alt="My Little Memory Box"
-              width={250}
-              height={250}
-              style={{ objectFit: "contain", cursor: "pointer" }}
-              priority
-            />
-          </Link>
-        </div>
+    <main
+      style={{
+        minHeight: "100vh",
+        backgroundColor: "#F6EFE8",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "24px",
+        color: "#5E4B42",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "480px",
+          width: "100%",
+          backgroundColor: "#FFF8F3",
+          borderRadius: "28px",
+          padding: "28px 22px",
+          textAlign: "center",
+          boxShadow: "0 10px 28px rgba(0,0,0,0.08)",
+        }}
+      >
+        <img
+          src="/logo.png"
+          alt="My Little Memory Box"
+          style={{ width: "180px", maxWidth: "70vw", marginBottom: "22px" }}
+        />
 
-        <div style={card}>
-          <h1
-            className={elegantFont.className}
-            style={{
-              fontSize: "42px",
-              color: "#7D6457",
-              marginBottom: "16px",
-            }}
-          >
-            Η πληρωμή ολοκληρώθηκε
-          </h1>
+        <h1 style={{ color: "#7D6457", fontSize: "26px", marginBottom: "14px" }}>
+          Η πληρωμή ολοκληρώθηκε ✨
+        </h1>
 
-          <p
-            style={{
-              fontSize: "18px",
-              lineHeight: "1.85",
-              color: "#7A6A62",
-              maxWidth: "700px",
-              margin: "0 auto 30px",
-            }}
-          >
-            Σε ευχαριστούμε 💛 Τώρα μπορείς να προχωρήσεις στη δημιουργία
-            λογαριασμού και να ξεκινήσεις να συμπληρώνεις τις αναμνήσεις που
-            θα μετατραπούν στο παραμύθι σας.
-          </p>
+        <p style={{ fontSize: "17px", lineHeight: "1.7", marginBottom: "24px" }}>
+          Ευχαριστούμε πολύ! Τώρα μπορείς να συνεχίσεις στη δημιουργία του Memory Box και του Παραμυθιού σου.
+        </p>
 
-          <Link
-            href="/create-memory"
-            style={{
-              display: "inline-block",
-              padding: "16px 30px",
-              borderRadius: "20px",
-              backgroundColor: "#EAD7CF",
-              color: "#5C4A42",
-              fontSize: "18px",
-              fontWeight: "600",
-              textDecoration: "none",
-            }}
-          >
-            Συνέχεια στη δημιουργία λογαριασμού
-          </Link>
-        </div>
+        <a
+          href="/story-details"
+          style={{
+            display: "block",
+            width: "100%",
+            padding: "16px",
+            borderRadius: "999px",
+            backgroundColor: "#DCC4B8",
+            color: "#4F4039",
+            fontSize: "18px",
+            fontWeight: 700,
+            textDecoration: "none",
+            boxSizing: "border-box",
+          }}
+        >
+          Συνέχεια στη δημιουργία
+        </a>
       </div>
     </main>
   );
