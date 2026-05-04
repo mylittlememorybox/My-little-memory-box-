@@ -1,34 +1,11 @@
 "use client";
 
-import { useState } from "react";
-
 export default function CheckoutPage() {
-  const [loading, setLoading] = useState(false);
+  const stripePaymentLink = "https://buy.stripe.com/aFa6oHcIj4I2cwtcRaeZ201";
 
-  const handleCheckout = async () => {
-  console.log("CLICKED");
-
-  try {
-    const res = await fetch("/api/checkout", {
-      method: "POST",
-    });
-
-    console.log("RES:", res);
-
-    const data = await res.json();
-    console.log("DATA:", data);
-
-    if (!data.url) {
-      alert("No URL returned");
-      return;
-    }
-
-    window.location.href = data.url;
-  } catch (err) {
-    console.error("ERROR:", err);
-  }
-};
-
+  const handleCheckout = () => {
+    window.location.href = stripePaymentLink;
+  };
 
   return (
     <main
@@ -59,12 +36,12 @@ export default function CheckoutPage() {
           style={{ width: "180px", maxWidth: "70vw", marginBottom: "22px" }}
         />
 
-        <h1 style={{ color: "#7D6457", fontSize: "26px", marginBottom: "12px" }}>
+        <h1 style={{ color: "#7D6457", fontSize: "26px", marginBottom: "14px" }}>
           My Little Memory Box
         </h1>
 
-        <p style={{ fontSize: "17px", lineHeight: "1.7", marginBottom: "8px" }}>
-          Εικονογραφημένο προσωποποιημένο παραμύθι & Memory Box.
+        <p style={{ fontSize: "17px", lineHeight: "1.7", marginBottom: "10px" }}>
+          Περιλαμβάνει προσωποποιημένο παραμύθι, εικονογράφηση και Memory Box.
         </p>
 
         <p style={{ fontSize: "22px", fontWeight: 700, marginBottom: "24px" }}>
@@ -73,7 +50,6 @@ export default function CheckoutPage() {
 
         <button
           onClick={handleCheckout}
-          disabled={loading}
           style={{
             width: "100%",
             padding: "16px",
@@ -83,63 +59,12 @@ export default function CheckoutPage() {
             color: "#4F4039",
             fontSize: "18px",
             fontWeight: 700,
-            cursor: loading ? "not-allowed" : "pointer",
+            cursor: "pointer",
           }}
         >
-          {loading ? "Μεταφορά στο Stripe..." : "Πληρωμή"}
+          Πληρωμή
         </button>
       </div>
     </main>
   );
-}
-import Stripe from "stripe";
-
-export const runtime = "nodejs";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
-
-export async function POST() {
-  try {
-    if (!process.env.STRIPE_SECRET_KEY) {
-      return new Response(
-        JSON.stringify({ error: "Missing STRIPE_SECRET_KEY" }),
-        { status: 500 }
-      );
-    }
-
-    const session = await stripe.checkout.sessions.create({
-      mode: "payment",
-
-      line_items: [
-        {
-          price_data: {
-            currency: "eur",
-            product_data: {
-              name: "My Little Memory Box",
-              description: "Εικονογραφημένο παραμύθι & Memory Box",
-            },
-            unit_amount: 2999,
-          },
-          quantity: 1,
-        },
-      ],
-
-      automatic_tax: {
-        enabled: true,
-      },
-
-      success_url: "https://mylittlememorybox.gr/payment-success",
-      cancel_url: "https://mylittlememorybox.gr/payment-cancel",
-    });
-
-    return new Response(JSON.stringify({ url: session.url }), {
-      status: 200,
-    });
-  } catch (error) {
-    console.error("Stripe checkout error:", error);
-
-    return new Response(JSON.stringify({ error: "Stripe checkout failed" }), {
-      status: 500,
-    });
-  }
 }
