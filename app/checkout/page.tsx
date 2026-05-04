@@ -171,7 +171,7 @@ export default function CheckoutPage() {
               </p>
 
               <a
-                href="https://buy.stripe.com/test_8x2dRa2aT4aWajM9W67g400"
+                href="https://buy.stripe.com/aFa6oHcIj4I2cwtcRaeZ201"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
