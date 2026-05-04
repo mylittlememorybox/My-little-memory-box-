@@ -6,28 +6,29 @@ export default function CheckoutPage() {
   const [loading, setLoading] = useState(false);
 
   const handleCheckout = async () => {
-    setLoading(true);
+  console.log("CLICKED");
 
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-      });
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+    });
 
-      const data = await res.json();
+    console.log("RES:", res);
 
-      if (!data.url) {
-        alert("Δεν ξεκίνησε η πληρωμή.");
-        return;
-      }
+    const data = await res.json();
+    console.log("DATA:", data);
 
-      window.location.href = data.url;
-    } catch (error) {
-      console.error(error);
-      alert("Κάτι πήγε στραβά.");
-    } finally {
-      setLoading(false);
+    if (!data.url) {
+      alert("No URL returned");
+      return;
     }
-  };
+
+    window.location.href = data.url;
+  } catch (err) {
+    console.error("ERROR:", err);
+  }
+};
+
 
   return (
     <main
