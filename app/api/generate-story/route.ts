@@ -1,129 +1,107 @@
-import { NextResponse } from "next/server";
+import OpenAI from "openai";
 
 export const runtime = "nodejs";
-export const maxDuration = 300;
 
-type RequestBody = {
-  childName?: string;
-  age?: string;
-  hairColor?: string;
-  eyeColor?: string;
-  skinTone?: string;
-  favoriteAnimal?: string;
-  favoriteColor?: string;
-  favoriteThings?: string;
-  memory?: string;
-  momMessage?: string;
-};
-
-function value(text: string | undefined, fallback: string) {
-  return text && text.trim() !== "" ? text.trim() : fallback;
-}
 export async function POST(req: Request) {
   try {
     if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json(
-        { error: "Missing OPENAI_API_KEY" },
+      return new Response(
+        JSON.stringify({ error: "Missing OPENAI_API_KEY" }),
         { status: 500 }
       );
     }
 
-    const body: RequestBody = await req.json();
+    const body = await req.json();
 
-    const childName = value(body.childName, "το παιδί");
-    const age = value(body.age, "μικρό");
-    const hairColor = value(body.hairColor, "όμορφα");
-    const eyeColor = value(body.eyeColor, "λαμπερά");
-    const skinTone = value(body.skinTone, "light skin tone");
-    const favoriteAnimal = value(body.favoriteAnimal, "ζωάκι");
-    const favoriteColor = value(body.favoriteColor, "ροζ");
-    const favoriteThings = value(body.favoriteThings, "παιχνίδια");
-    const memory = value(body.memory, "μια όμορφη ανάμνηση");
-    const momMessage = value(body.momMessage, "θα είμαι πάντα δίπλα σου");
+    const {
+      childName,
+      age,
+      hairColor,
+      eyeColor,
+      favoriteAnimal,
+      favoriteColor,
+      favoriteThings,
+      memory,
+      momMessage,
+    } = body;
 
-    // 📖 STORY (ΣΤΑΘΕΡΗ ΠΛΟΚΗ)
-    const storyPages = [
-      `Η ${childName} ήταν ${age}, με ${hairColor} μαλλιά και ${eyeColor} μάτια. Έπαιζε στον κήπο με όλα όσα αγαπούσε: ${favoriteThings}. Κρατούσε ένα ${favoriteColor} μπαλόνι.`,
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
-      `Ξαφνικά, ένα αεράκι πήρε το ${favoriteColor} μπαλόνι και το πέταξε μακριά. Η ${childName} άρχισε να το κυνηγά.`,
+    // 📖 Δημιουργία παραμυθιού
+    const storyResponse = await openai.chat.completions.create({
+      model: "gpt-4o-mini",
+      messages: [
+        {
+          role: "system",
+          content:
+            "Είσαι συγγραφέας παιδικών παραμυθιών. Γράψε ένα ζεστό, συναισθηματικό παραμύθι για μικρό παιδί.",
+        },
+        {
+          role: "user",
+          content: `
+Γράψε ένα παραμύθι με:
 
-      `Έτρεξε μέσα στον κήπο χωρίς να σταματά, γιατί της θύμιζε κάτι όμορφο: ${memory}.`,
+Όνομα: ${childName}
+Ηλικία: ${age}
+Μαλλιά: ${hairColor}
+Μάτια: ${eyeColor}
+Αγαπημένο ζωάκι: ${favoriteAnimal}
+Αγαπημένο χρώμα: ${favoriteColor}
+Αγαπημένα πράγματα: ${favoriteThings}
+Ανάμνηση: ${memory}
+Μήνυμα μαμάς: ${momMessage}
 
-      `Μπροστά της εμφανίστηκε ένα πολύχρωμο δάσος. Εκεί την περίμενε ένα ${favoriteAnimal}.`,
+Το παραμύθι να είναι τρυφερό, με αρχή-μέση-τέλος και χαρούμενο τέλος.
+`,
+        },
+      ],
+    });
 
-      `Περπάτησαν μαζί μέσα στο μαγικό δάσος γεμάτο χρώματα.`,
+    const story =
+      storyResponse.choices[0]?.message?.content || "Δεν δημιουργήθηκε";
 
-      `Ξαφνικά το δάσος σκοτείνιασε και η ${childName} φοβήθηκε λίγο.`,
-
-      `Τότε θυμήθηκε τα λόγια της μαμάς της: "${momMessage}" και άρχισε να λάμπει.`,
-
-      `Το φως την οδήγησε στο ${favoriteColor} μπαλόνι. Το έπιασε ξανά.`,
-
-      `Ξύπνησε στον κήπο κρατώντας το μπαλόνι και ένιωσε αγάπη και δύναμη.`,
-    ];
-
-    const story = storyPages.join("\n\n");
-
-    // 🎨 CHARACTER BASE (ΚΡΑΤΑΕΙ ΤΟ ΙΔΙΟ ΠΑΙΔΙ)
-    const baseCharacter = `
-A young child named ${childName}, ${age} years old,
-with ${hairColor} hair, ${eyeColor} eyes, ${skinTone},
-same character in every image, same face, same hairstyle, same clothes,
-Pixar style 3D, soft lighting, children's book illustration, no text
-`;
-
+    // 🎨 Prompts για εικόνες
     const prompts = [
-      `${baseCharacter}, playing happily in a garden with a ${favoriteColor} balloon`,
-      `${baseCharacter}, watching the ${favoriteColor} balloon fly away`,
-      `${baseCharacter}, running through a garden chasing the balloon`,
-      `${baseCharacter}, meeting a friendly ${favoriteAnimal} at a colorful forest`,
-      `${baseCharacter}, walking in a magical colorful forest with ${favoriteAnimal}`,
-      `${baseCharacter}, forest turning dark and mysterious`,
-      `${baseCharacter}, glowing with light inside a dark forest`,
-      `${baseCharacter}, catching the ${favoriteColor} balloon near a glowing tree`,
-      `${baseCharacter}, back in the garden holding the balloon peacefully`,
+      `Pixar style illustration of a little girl named ${childName}, ${age} years old, with ${hairColor} hair and ${eyeColor} eyes`,
+      `The same girl playing happily with a ${favoriteAnimal}, colorful scene`,
+      `The girl in a magical forest, cinematic lighting, ${favoriteColor} tones`,
+      `The girl remembering a moment: ${memory}, emotional scene`,
+      `Happy ending scene with the girl smiling, warm light, magical`,
     ];
 
     const images: string[] = [];
 
+    // 🖼 Δημιουργία εικόνων
     for (const prompt of prompts) {
-      const res = await fetch("https://api.openai.com/v1/images/generations", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({
+      try {
+        const img = await openai.images.generate({
           model: "gpt-image-1",
           prompt,
           size: "1024x1024",
-          quality: "low",
-        }),
-      });
+        });
 
-      const data = await res.json();
+        const base64 = img.data[0].b64_json;
 
-      if (!res.ok) {
-        console.error(data);
-        continue;
-      }
-
-      const base64 = data?.data?.[0]?.b64_json;
-
-      if (base64) {
         images.push(`data:image/png;base64,${base64}`);
+      } catch (err) {
+        console.log("Image error:", err);
       }
     }
 
-    return NextResponse.json({
-      story,
-      images,
-      storyPages,
-    });
-  } catch (err) {
-    console.error(err);
-    return NextResponse.json(
-      { error: "Κάτι πήγε στραβά" },
+    return new Response(
+      JSON.stringify({
+        story,
+        images,
+      }),
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error(error);
+
+    return new Response(
+      JSON.stringify({ error: "Something went wrong" }),
       { status: 500 }
     );
   }
