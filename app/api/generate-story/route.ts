@@ -1,3 +1,4 @@
+console.log("HAS KEY:", !!process.env.OPENAI_API_KEY);
 import OpenAI from "openai";
 
 export const runtime = "nodejs";
